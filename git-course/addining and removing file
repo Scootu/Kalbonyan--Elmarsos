@@ -1,0 +1,135 @@
+                                                                                                                                                    
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ ls      
+f-path
+                                                                                                                                                    
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        f-path
+
+nothing added to commit but untracked files present (use "git add" to track)
+                                                                                                                                                    
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git add f-path 
+                                                                                                                                                    
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git status    
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   f-path
+
+                                                                                                                                                    
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ touch file.txt            
+                                      
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ touch Index.html
+                                      
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ touch date.cpp  
+                                      
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git add .     
+                                      
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Index.html
+        new file:   date.cpp
+        new file:   f-path
+        new file:   file.txt
+
+                                      
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git rm file.txt
+error: the following file has changes staged in the index:
+    file.txt
+(use --cached to keep the file, or -f to force removal)
+                                      
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git rm -f file.txt
+rm 'file.txt'
+                                      
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git status        
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Index.html
+        new file:   date.cpp
+        new file:   f-path
+
+                                      
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ touch file.txt
+                                      
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git add .  
+                                      
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git rm --cathed file.txt 
+error: unknown option `cathed'
+usage: git rm [<options>] [--] <file>...
+
+    -n, --dry-run         dry run
+    -q, --quiet           do not list removed files
+    --cached              only remove from the index
+    -f, --force           override the up-to-date check
+    -r                    allow recursive removal
+    --ignore-unmatch      exit with a zero status even if nothing matched
+    --sparse              allow updating entries outside of the sparse-checkout cone
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+                                      
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git rm file.txt          
+error: the following file has changes staged in the index:
+    file.txt
+(use --cached to keep the file, or -f to force removal)
+                                      
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git rm --cached file.txt 
+rm 'file.txt'
+                                      
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git status               
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Index.html
+        new file:   date.cpp
+        new file:   f-path
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file.txt
+
+                                      
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ 
+                                      
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ 

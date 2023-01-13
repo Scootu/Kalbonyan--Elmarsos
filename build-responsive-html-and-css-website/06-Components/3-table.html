@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion Component</title>
+    <style>
+        /*GENERAL STAYLE */
+        body { 
+            font-family: "Inter",sans-serif;
+            color: #343a40;
+            line-height: 1;
+            /* for optimization */
+            display: flex;
+            justify-content: center;
+        }
+        *{ 
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+        table { 
+            width: 800px;
+            font-size: 18px;
+            border-collapse:collapse ;
+            margin-top: 100px;
+            
+        }
+        /*TABLE PROPERTY */
+        thead { 
+            background-color: #087f5b;
+            color: #fff;
+            height: 68px; /* what is the defrent */ 
+
+        }
+        table tbody th { 
+            width: 25%;
+            
+        }
+        table tbody tr:nth-child(2n+1){ 
+             background-color:  #f8f9fa;
+             
+        } 
+
+        tbody tr:nth-child(2n) { 
+            background-color: #e9ecef ;
+        }
+        th, td { 
+            padding: 16px 24px;
+            
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Chair</th>
+                <th>The Laid Back</th>
+                <th>The Worker Bee</th>
+                <th>The Chair 4/2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Width</th>
+                <td>80 cm</td>
+                <td>60 cm</td>
+                <td>220 cm</td>
+            </tr>
+            <tr>
+                <th>Height</th>
+                <td>100 cm</td>
+                <td>110 cm</td>
+                <td>90 cm</td>
+            </tr>
+            <tr>
+                <th>Depth</th>
+                <td>70 cm</td>
+                <td>65 cm</td>
+                <td>80 cm</td>
+            </tr>
+            <tr>
+                <th>Weight</th>
+                <td>16 Kg</td>
+                <td>22 Kg</td>
+                <td>80 Kg</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

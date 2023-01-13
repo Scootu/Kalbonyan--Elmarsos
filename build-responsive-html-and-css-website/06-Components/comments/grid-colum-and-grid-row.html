@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position of grid item with grid colum and grid row</title>
+     <style>
+        .container { 
+            display: grid;
+            grid-template-columns: 5% 1fr 5% 1%;
+            background-color: royalblue;
+
+        }
+        .parent { 
+            display: flex;
+            flex-direction: row;
+            background-color: aqua;
+           
+            flex-grow: 1;
+            
+        }
+        /* items property */
+       .container p { 
+            grid-column: 2;
+        }
+        .parent p { 
+            flex-grow: 1;
+        }
+        .parent .child { 
+            flex-grow: 1;
+        }
+        .parent .child-2 { 
+            background-color: red;
+            flex-grow: 2;
+        }
+    
+     </style>
+</head>
+<body>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, iste eligendi rem dolorum atque alias enim, laudantium quasi possimus culpa error commodi voluptatem aspernatur distinctio ipsam, ad velit laboriosam nisi!</p>
+        <div class="child">hello</div>
+        <div class="child-2">hi</div>
+    </div>
+    <div class="parent">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, iste eligendi rem dolorum atque alias enim, laudantium quasi possimus culpa error commodi voluptatem aspernatur distinctio ipsam, ad velit laboriosam nisi!</p>
+        <div class="child">hello</div>
+        <div class="child-2">hi</div>
+    </div>
+</body>
+</html>

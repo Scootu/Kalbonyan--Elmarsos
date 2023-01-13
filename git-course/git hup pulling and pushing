@@ -1,0 +1,164 @@
+git@github.com:Scootu/NewGithupReppsitory.git
+
+
+/*************** git pushing and pulling with ssh key without password and username ********/ 
+:
+──(scoote㉿DESKTOP-27N738V)-[~/Desktop/newfile]
+└─$ cd GitRepresitoryCon
+                                                                                                                   
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/newfile/GitRepresitoryCon]
+└─$ git push                 
+Enter passphrase for key '/home/scoote/.ssh/id_ed25519': 
+Enter passphrase for key '/home/scoote/.ssh/id_ed25519': 
+ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+                                                                                                                   
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/newfile/GitRepresitoryCon]
+└─$ git push                 
+Enter passphrase for key '/home/scoote/.ssh/id_ed25519': 
+ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+                                                                                                                   
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/newfile/GitRepresitoryCon]
+└─$ git push -u origin master
+Enter passphrase for key '/home/scoote/.ssh/id_ed25519': 
+ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+                                                                                                                   
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/newfile/GitRepresitoryCon]
+└─$ git remote set-url origin git@github.com:Scootu/NewGithupReppsitory.git                      
+                                                                                                                   
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/newfile/GitRepresitoryCon]
+└─$ git push -u origin master                                              
+Enter passphrase for key '/home/scoote/.ssh/id_ed25519': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 377 bytes | 377.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Scootu/NewGithupReppsitory.git
+   246e8cc..81e7f8d  master -> master
+branch 'master' set up to track 'origin/master'.
+                                                                                                                   
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/newfile/GitRepresitoryCon]
+└─$ git log                  
+commit 81e7f8d615f6231f3c5b25d8e761d2d9a3ee910b (HEAD -> master, origin/master)
+Author: scootu <bacetd2004@gmail.com>
+Date:   Thu Jan 12 12:39:48 2023 -0500
+
+    add file readme
+
+commit fdf4aa480f68013481a2eb5c125351f0ae737631
+Author: scootu <bacetd2004@gmail.com>
+Date:   Thu Jan 12 12:38:22 2023 -0500
+
+    delete file readme
+
+commit 246e8cc37f12e3b0f01a7a9759fac46181182e54
+Author: scootu <bacetd2004@gmail.com>
+Date:   Thu Jan 12 08:51:56 2023 -0500
+
+    add new file readme
+
+commit 3110717c18649424297a4328eafa64a03bd6f1c9
+Author: scootu <bacetd2004@gmail.com>
+Date:   Thu Jan 12 08:50:49 2023 -0500
+
+    removing redme file
+
+commit 455b1a0e91777f9edb62cdf658868a2c00848684 (origin/main)
+Author: aneshamdaoui <97843566+Scootu@users.noreply.github.com>
+Date:   Thu Jan 12 08:05:54 2023 -0500
+
+    Initial commit
+                                                                                                                   
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/newfile/GitRepresitoryCon]
+└─$ touch README13.md
+                                                                                                                   
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/newfile/GitRepresitoryCon]
+└─$ git status 
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README13.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+                                                                                                                   
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/newfile/GitRepresitoryCon]
+└─$ git add .  
+                                                                                                                   
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/newfile/GitRepresitoryCon]
+└─$ git status 
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   README13.md
+
+                                                                                                                   
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/newfile/GitRepresitoryCon]
+└─$ git commit -m "add file readme13 "
+[master 767f046] add file readme13
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README13.md
+                                                                                                                   
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/newfile/GitRepresitoryCon]
+└─$ git log                           
+commit 767f046544011122081edd032819ae4d6ec949d8 (HEAD -> master)
+Author: scootu <bacetd2004@gmail.com>
+Date:   Thu Jan 12 12:55:13 2023 -0500
+
+    add file readme13
+
+commit 81e7f8d615f6231f3c5b25d8e761d2d9a3ee910b (origin/master)
+Author: scootu <bacetd2004@gmail.com>
+Date:   Thu Jan 12 12:39:48 2023 -0500
+
+    add file readme
+
+commit fdf4aa480f68013481a2eb5c125351f0ae737631
+Author: scootu <bacetd2004@gmail.com>
+Date:   Thu Jan 12 12:38:22 2023 -0500
+
+    delete file readme
+
+commit 246e8cc37f12e3b0f01a7a9759fac46181182e54
+Author: scootu <bacetd2004@gmail.com>
+Date:   Thu Jan 12 08:51:56 2023 -0500
+
+                                                                                                                   
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/newfile/GitRepresitoryCon]
+└─$ git push -u origin main  
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:Scootu/NewGithupReppsitory.git'
+                                                                                                                   
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/newfile/GitRepresitoryCon]
+└─$ git push -u origin master
+Enter passphrase for key '/home/scoote/.ssh/id_ed25519': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 366 bytes | 366.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Scootu/NewGithupReppsitory.git
+   81e7f8d..767f046  master -> master
+branch 'master' set up to track 'origin/master'.
+                                                                                                                   
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/newfile/GitRepresitoryCon]
+└─$ 
+                                                                                                                   
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/newfile/GitRepresitoryCon]

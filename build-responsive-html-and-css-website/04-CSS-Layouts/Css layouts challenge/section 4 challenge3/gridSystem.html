@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid layout specifiquation </title>
+    <style>
+        
+        .container { 
+            height: 200px;
+            width: 450px;
+            margin: 0 auto;
+            background-color: #fae;
+            display: grid ; 
+            grid-template-columns:[colum1] 100px [colum2]auto [colum3]100px ;
+            grid-template-rows:[row1] 25% [row2] 100px [row3]auto  ;
+        }
+        .item { 
+            
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <!-- grid item -->
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+</html>

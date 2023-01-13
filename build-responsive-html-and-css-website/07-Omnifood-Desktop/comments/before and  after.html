@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>work with before and after to make a slide show backout from img</title>
+    <style>
+        /* widht of the img */
+        /* the widht of the container and we will make it a flex container */ 
+        .container-img { 
+            display: flex;
+            /* for centering all the element in the container img or backout slash */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* ***** */ 
+            width: 22rem;
+            
+            margin: 0 auto;
+            position: relative;
+        }
+        .img-4 { 
+            width: 10rem;
+        }
+        /* img dont accespt peusuclass element lile before and after */
+        .container-img::before , .container-img::after { 
+            content: "";
+            position: absolute;  
+            /* we give my element a widht for defain the content size */
+            /* this step is important */ 
+            width: 65%;
+           
+            /* know nothing happend in the screen */
+            padding-bottom: 65%;
+           
+            
+        }
+        .container-img::before { 
+            background:linear-gradient( orange , red 10% ) ;
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            /** centering the element **/
+            
+            /* z index */
+             z-index: -2;
+        }
+        .container-img::after { 
+             
+               border-radius: 50%;
+              background-color: #ffe8d2;
+              
+              z-index: -1;
+        } 
+        
+    </style>
+</head>
+<body>
+    <div class="container-img">
+        <img class="img-4" src="/img/app/app-screen-1.png" alt="app screen" />
+
+    </div>
+</body>
+</html>

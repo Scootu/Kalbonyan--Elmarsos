@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clear propreter and float </title>
+    <style>
+        /*clear property with non-floating element */
+
+        .container { 
+            width: 100%;
+            float: right;
+        }
+        p {
+            padding: 20px 0;
+            clear: none; /* from that you can control in the margin edge of all relevant flow */
+            
+        }
+        .box { 
+            width: 40px;
+            height: 40px;
+            /* float removed the element from the flow of the page but (stille a part) 
+            and from the inline and block display of the element 
+            */
+
+           /* float: right; */
+            /* why the paragraphe don't wrap (حول) the box ? 
+            because the float element move just at it's containing block */
+            
+
+                }
+        .box1 {
+            float: right; 
+            background-color: red;
+        }
+        .box2 { 
+            background-color: blue ;
+            float:left;
+            
+            
+        
+        }
+        .box3 { 
+            float: right;
+            background-color: aqua;
+            height: 90px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1"></div>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos consequuntur error excepturi sunt veniam, debitis enim, ad similique numquam incidunt nisi aut ut iusto tempore praesentium deleniti voluptatibus inventore tenetur.</p>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente consequatur qui fugit earum sint iure, et reprehenderit magni, accusamus tempore est? Recusandae voluptatibus possimus facilis veritatis ad blanditiis vel maiores!</p>
+        
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur quae ipsam ea laborum. Pariatur at molestias necessitatibus voluptate cumque eos nemo ex dolores aliquid quidem illo ipsam, veniam, quasi excepturi.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html { 
+            font-size: 62.5%;
+        }
+        .parent { 
+            display: flex;
+            max-width:120rem ;
+            margin: 0 auto ;
+        }
+        .child { 
+            padding: 4rem;
+            background-color: #efa111;
+            flex-grow: 1;
+        }
+        .child1 { 
+            padding: 4rem;
+            background-color: #b07403;
+            flex-grow: 1;
+        }
+        /* media querri */ 
+         /**************************/
+         /* BELOW 1344px (Smaller desktops) */
+         /**************************/
+        @media (max-width:34rem) {
+               .parent{ 
+                  flex-direction: column;
+                  height: 40rem;
+               }  
+               .child { 
+                 padding: 2rem;
+                 background-color: aqua;
+                 flex-grow: 1;
+               }
+               .child1 { 
+                padding: 3rem;
+                background-color: rgb(0, 255, 170);
+                flex-grow: 2;
+               }
+        }
+    </style>
+</head>
+<body>
+    <div class="parent"> 
+        <div class="child"></div>
+        <div class="child1"></div>   
+        
+    </div>
+</body>
+</html>

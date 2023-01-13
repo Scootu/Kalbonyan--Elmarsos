@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work with before</title>
+    <style>
+       .burst-8 { 
+        background: rgb(246,156,85);
+        width: 40px;
+        height: 40px;
+        position: relative;
+        text-align: center;
+        -ms-transform: rotate(20deg);
+        transform: rotate(20deg);
+
+       }
+       .burst-8::after{ 
+           content: "";
+           position: absolute;
+           
+           height: 40px;
+           width: 40px;
+           background: rgb(246,156,85);
+        /*   -ms-transform: rotate(135deg);*/
+          /* transform: rotate(135deg);*/
+       }
+    </style>
+</head>
+<body>
+    <!--a burst-->
+    <div class="burst-8"></div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion Component</title>
+    <style>
+        /*General style*/
+        *{ 
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        body{ 
+            font-family: "Inter",sans-serif;
+            color: #343a40;
+            line-height: 1;
+        }
+        .container { 
+            width: 700px;
+            
+            margin: 100px auto;
+            display: flex;
+            flex-direction: column;
+            gap:24px;
+
+            /* grid layout 
+            display: grid;
+            grid-template-rows:70px auto 100px ;
+            gap: 50px;*/
+        }
+        /*SLIDE*/
+        .slide { 
+            box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+            display: grid;
+            grid-template-columns: 5% auto 5%;
+            /*grid-template-colums:auto 1fr auto */
+            column-gap: 24px;
+            row-gap: 32px;
+            align-items: center;
+        
+           background-color: #ffffff;
+            
+            
+        }
+        .slid-1 { 
+           flex-grow: 1;
+        }
+        .slide-2 { 
+            flex-grow: 3;
+            border-top: 5px solid #087f5b;
+        }
+        .slide-text-01  p { 
+            line-height: 1.6;
+             margin-bottom: 24px;
+        }
+        .slide-text-01  ul{ 
+            color: #868e96;
+            margin-left: 20px;
+             display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+        }
+        .slide-3 { 
+           flex-grow: 1 ;
+        }
+        /*SLIDE TEXT */
+        .slide-text .text , .slide > p{ 
+            font-size: 24px;
+            font-weight: 500;
+            
+        }
+        .slide.slide-2 > p { 
+            color: #087f5b;
+
+        }
+        .number { 
+            justify-self: center;
+        }
+        /* svg property */
+        .icon { 
+            width: 24px;
+            height: 24px;
+            stroke: #087f5b;
+        }
+        
+    </style>
+</head>
+<body>
+    <article>
+    <div class="container">
+         <div class="slide slide-1">
+      
+           <p class="number">01</p>
+           <div class="slide-text">
+           <p class="text">Where are these chairs assembled?</p>
+           
+           </div>
+           <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+         <div class="slide slide-2">
+            <p class="number">02</p>
+            <p>How long do i have to return my chair?</p>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            <svg></svg>
+            <div class="slide-text-01">
+
+               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium dolor at sequi obcaecati cupiditate. Voluptates repellendus cupiditate aperiam! Incidunt amet quo neque.</p>
+                <ul>
+                 <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+                  <li>Quasi accusamus corporis totam tempora suscipit ab obcaecati.</li>
+                  <li>Tempora, et atque officia at consequatur laborum!</li>
+                   <li>Repudiandae praesentium illo voluptate in, atque enim.</li>
+                  </ul>
+            </div>
+
+         </div>
+       <div class="slide slide-3">
+        <p class="number">03</p>
+        <div class="slide-text">
+            <p class="text">Do you ship to countries outside the EU?</p>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+       </div>
+    </div>
+</article>
+</body>
+</html>

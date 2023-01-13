@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Layout</title>
+     <style>
+     /* because the grid allow to every element take a space in my trea i need to add margin and anthor deferent make the website (respunsif (متماسك)object ) */
+        /*GENERAL SETING */ 
+        *{ 
+
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body { 
+            font-family:sans-serif;
+            line-height: 1;
+            color: #444;
+            height: 100vh;
+            display: grid; 
+            grid-template-columns: 80px 400px 1fr 300px;
+            grid-template-rows: 74px 1fr;
+            
+        }
+        .main-section {
+            width: 100%;
+            margin:0 0px ;
+            grid-column: 2 /-1;
+         }
+         .main-nav { 
+            background-color:#343a40;
+            color: #f7f7f7;
+            font-size: 22px;
+            padding: 24px 15px;
+            grid-column: 1;
+            grid-row: 1 / -1 ; /* its mean from the start to the end */
+            
+         }
+         /*HEADER STAYLING*/
+         
+        
+         nav { 
+            display: flex;
+            background-color: #7048e8;
+            width: 100%;
+            
+            gap: 10px;
+         }
+        /* anchor property */
+        .btn { 
+            
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            background-color: #5f3dc4;
+            color: #fff;
+            
+            padding: 8px 12px;
+            margin: 20px 0;
+            cursor: pointer;
+
+        }
+        .btn:nth-child(1) { 
+           margin-left: 40px;
+            
+        }
+        .btn:last-child { 
+            background-color: #d6336c;
+             margin-right: 80px;
+             margin-left: auto;
+        }
+       /* ROOMS PROPERTY */
+        /*email container */ 
+        .email-container { 
+             display: flex;
+             flex-direction: column;
+             gap: 10px;
+             background-color: #e9ecef;
+             overflow: scroll;
+             
+        }
+         .email { 
+            font-size: 30px;
+            font-weight:bold ;
+            background-color: #adb5bd;
+            border: none;
+            flex-shrink: 0; /* for preventing shrinking */
+            margin: 30px;
+            padding: 40px 0px;
+         }
+         /*SECONDE ROOM */
+         p.par {
+             
+             font-size: 22px;
+             font-weight: bold;
+             margin-top: 20px;
+             text-align: center;
+             
+         }
+         /*THIRD ROOM */ 
+         .third-room { 
+            background-color: #e9ecef;
+         }
+     </style>
+</head>
+<body>
+    <nav class="main-nav">
+        Nav
+    </nav>
+    <section class="main-section">
+             
+                <nav>
+                    <a class="btn" href="#">New</a>
+                    <a class="btn" href="#">Reply</a>
+                    <a class="btn" href="#">Forward</a>
+                    <a class="btn" href="#">Mark unread</a>
+                    <a class="btn last" href="#">Trash</a>
+                </nav>
+            
+            </section>
+             
+                <div class="email-container"> 
+                    <button class="email">Email 1</button>
+                    <button class="email">Email 2</button>
+                    <button class="email">Email 3</button>
+                    <button class="email">Email 4</button>
+                    <button class="email">Email 5</button>
+                    <button class="email">Email 6</button>
+                    <button class="email">Email 7</button>
+                    <button class="email">Email 8</button>
+                    <button class="email">Email 9</button>
+                    <button class="email">Email 10</button>
+                </div>    
+                <div class="second-room">
+                 <p class="par">Email view</p>
+                </div>
+                <div class="third-room">
+                <p class="par">Additional info</p>
+                </div>
+         
+    
+</body>
+</html>

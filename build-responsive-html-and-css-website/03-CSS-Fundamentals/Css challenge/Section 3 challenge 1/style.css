@@ -1,0 +1,51 @@
+body {
+    border: 5px solid black; 
+    font-family: sans-serif;
+    line-height: 1.4;
+}
+h2 {
+    text-transform: uppercase;
+    font-size: 22px;
+    
+}
+.navbar {
+   background-color: #f7f7f7;
+   text-align: center;
+
+}
+.price {
+    font-weight: bolder;
+    font-size: 22px;
+}
+.cart { 
+    color:#777 ;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.MoreInformation:link , .MoreInformation:visited {
+    color: #000;
+}
+.MoreInformation:hover ,.MoreInformation:active {
+    text-decoration: none;
+}
+h4 {
+    text-transform: uppercase;
+    font-size: 16px;
+}
+ul {
+    list-style-type: square;
+}
+
+.BottomButton {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+    background-color: #000;
+    border: none; /*whith 0 border size */
+}
+.BottomButton:hover {
+    background-color: white;
+    color: #000;
+    cursor: pointer;
+}

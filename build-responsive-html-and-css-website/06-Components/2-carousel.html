@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Component</title>
+    <style>
+        /*GENERAL STAYLE*/
+        * { 
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body { 
+            font-family: "Inter", sans-serif;
+            color: #343a40;
+            line-height: 1;
+        }
+        .slide-container {
+            margin: 100px auto; 
+            display: flex ;
+            flex-direction: row;
+            position: relative;
+            width: 800px;
+            padding: 32px 48px 32px 86px;
+            gap: 86px;
+            color: #fff;
+            background-color: #087f5b; 
+            box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            align-items: center;
+            /*
+            display: grid;
+            grid-template-columns:25% 1fr ;
+            */
+        }
+        /*SLIDE STAYLE */ 
+         .slide-img { 
+            height: 200px;
+            transform: scale(1.5);
+            border-radius: 10px;
+            
+         }
+         .slide-text{  
+             font-size:1rem;
+             line-height: 1.5;
+             
+         }
+         .slide-text .text { 
+            margin-bottom: 20px;
+            
+         }
+         .slide-text .text ~ p { 
+            font-size: 12px;
+            font-weight: 500;
+            color: #c3fae8;
+         }
+         svg { 
+            width:50px;
+         } 
+         /*BUTTON sytle */
+         .btn { 
+            background-color: #fff;
+            border: none;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+             cursor: pointer;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+         }
+         .btn-left { 
+          left: -20px;
+         }
+         .btn-icon{ 
+            stroke: #087f5b;
+            width: 24px;
+            height: 24px;
+         }
+         .btn-right {
+            right: -20px; 
+           
+         }
+
+         .dot-container { 
+            display: flex;
+            flex-direction: row; 
+            position:absolute ;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%,40px);
+            width: 84px;
+            gap: 10px;
+         }
+         .dot{ 
+            width: 12px;
+            height: 12px;
+            border: 2px solid #087f5b;
+            border-radius: 50%;
+            cursor: pointer;
+         }
+         .dot--fill { 
+            background-color: #087f5b;
+         }
+         
+
+    </style>
+</head>
+<body>
+    <div class="slide-container"> 
+        <button class="btn btn-left">
+            <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+             
+
+        </button>
+        <img class="slide-img" src="eating.jpeg" alt="a man eating somthing " />
+     <div class="slide-text">
+            <p class="text">"Lorem elit. Praesentium cupiditate perferendis magnam soluta. Placeat, enim, exercitationem excepturi labore accusantium eligendi, necessitatibus nesciunt distinctio autem velit inventore veritatis quos unde reiciendis."</p>
+            <p>ben de Almeida</p>
+            <p>Senior Product Manager at EDP Comercial</p>
+     </div>
+     <button class="btn btn-right">
+        <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+
+     </button>
+     <div class="dot-container">
+            <button class="dot dot--fill"></button>
+            <button class="dot"></button>
+            <button class="dot"></button>
+            <button class="dot"></button>
+        </div>
+   </div>
+        
+</body>
+</html>

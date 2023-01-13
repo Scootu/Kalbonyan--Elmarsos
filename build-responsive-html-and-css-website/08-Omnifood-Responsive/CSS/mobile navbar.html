@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html { 
+           overflow: hidden;
+        }
+        .navbar { 
+            display: flex;
+            background-color: #e39229;
+            position: relative;
+
+        }
+        .btn-mobile-nav { 
+            margin-left: auto;
+            padding: 1rem;
+        }
+        .main-nav { 
+            position: absolute;
+            background-color: rgb(28, 116, 194);
+            right: 0;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+             display: flex; 
+             flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: translateX(100%); /* its still visible */ 
+            transition:all 0.5s ease-in; 
+
+            /* hide navigation */ 
+            opacity: 0; /* hide it visualie */
+            /* make it inaccessible to mouse and keybored */
+            pointer-events: none;
+            /* hide it from the screen rider */ 
+            visibility: hidden;
+        }
+
+        .nav-list { 
+            list-style: none;
+            opacity: 1;
+            pointer-events: auto;
+            visibility: visible;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <nav class="main-nav">
+        <ul class="nav-list">
+            <li><a href="#">hello</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">comunity</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+    </nav>
+     <button class="btn-mobile-nav">
+        <ion-icon class="icon-mobile-nav md hydrated" name="menu-outline" role="img" aria-label="menu outline"></ion-icon>
+        <ion-icon class="icon-mobile-nav md hydrated" name="close-outline" role="img" aria-label="close outline"></ion-icon>
+     </button>
+    </div>
+</body>
+</html>

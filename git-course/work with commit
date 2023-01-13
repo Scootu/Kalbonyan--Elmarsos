@@ -1,0 +1,86 @@
+                                                                         
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git config --global user.email "bacetd2004@gmail.com"
+                                                                         
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git config --global user.name "scootu"               
+                                                                         
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git commit -m "Initial commit"        
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+                                                                         
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git add .                                         
+                                                                         
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git commit -m "Initial commit"
+[master 0fc261b] Initial commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file.txt
+                                                                         
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ touch file1.txt                                      
+                                                                         
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git add .                     
+                                                                         
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file1.txt
+
+                                                                         
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ touch file2.txt 
+                                                                         
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git add . 
+                                                                         
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file1.txt
+        new file:   file2.txt
+
+                                                                         
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git commit -m "Initial commit"
+[master 22d8833] Initial commit
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+ create mode 100644 file2.txt
+                                                                         
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ git log                       
+commit 22d8833b9e46cd20a5ae4eec3ac724c65a82f1f2 (HEAD -> master)
+Author: scootu <bacetd2004@gmail.com>
+Date:   Thu Jan 5 10:40:35 2023 -0500
+
+    Initial commit
+
+commit 0fc261b4fa787de7e2b55b51f30ac595ee015412
+Author: scootu <bacetd2004@gmail.com>
+Date:   Thu Jan 5 10:39:31 2023 -0500
+
+    Initial commit
+
+commit 00b7ef2f1b2b743a86255c3e421b2ea627162660
+Author: aneshamdaoui <bacetd2004@gmail.com>
+Date:   Thu Jan 5 10:36:57 2023 -0500
+
+    Initial commit
+                                                                         
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$ 
+                                                                         
+┌──(scoote㉿DESKTOP-27N738V)-[~/Desktop/MySoftware]
+└─$       

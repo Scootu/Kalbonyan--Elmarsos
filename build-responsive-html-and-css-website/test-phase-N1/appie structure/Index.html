@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- the font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <!-- title icon -->
+    
+    <!-- google font icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <!--Css file -->
+    <link rel="stylesheet" href="CSS/general.css" />
+    <link rel="stylesheet" href="CSS/style.css" /> 
+    <link rel="stylesheet" href="CSS/queris.css" /> 
+    <!--ion icon -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script
+    defer
+    src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+  ></script>
+  <script src="https://unpkg.com/phosphor-icons"></script>
+  <script src="https://kit.fontawesome.com/bc1553f16f.js" crossorigin="anonymous"></script>
+    <link rel="icon" src="/img/favicon.png" />
+    <title>Appie &dash; app platform</title>
+</head>
+<body>
+   <header class="header ">
+       <div class="logo">
+          <img class="logo-img" src="img/logo.png" alt="appie logo" />
+       </div>
+       <!-- you cant use anchor in selecte
+            you can use another way 
+    -->
+       <nav class="nav-bar">
+            <ul class="nav-bar-list">
+                <li class="nav-list-anchor">
+                 <a class="nav-bar-link nd" href="#">Home</a>
+                 <span class="material-symbols-outlined size-anchor-icon ">
+                    expand_more
+                    </span>
+                </li>
+                  <li>
+                       <a class="nav-bar-link nd" href="#">Service</a>
+                     </li>
+                <li class="nav-list-anchor">
+                   <a class="nav-bar-link nd" href="#">Pages</a>
+                   <span class="material-symbols-outlined size-anchor-icon ">
+                    expand_more
+                    </span>
+                </li>
+
+                <li class="nav-list-anchor">
+                 <a class="nav-bar-link nd" href="#">News</a>
+                 <span class="material-symbols-outlined size-anchor-icon ">
+                    expand_more
+                    </span>
+            </li>
+                <li>
+                    <a class="nav-bar-link nd" href="#">Contact</a>
+            </li>
+               
+            </ul>
+            <div class="nav-cta-lf">
+                <a class="nav-bar-link nav-cta" href="#">Get Started</a>
+            </div>
+            <button class="mobile-nav-bar">
+                <ion-icon class="open-menu" name="menu-outline"></ion-icon>
+                <ion-icon class="close-menu" name="close-outline"></ion-icon>
+            </button>
+       </nav>
+   </header>
+    <main>
+        <!--SECTION HERO-->
+        <section class="section-hero">
+            <div class="hero container grid grid--2col">
+            <div class="main-hero"> 
+                <div class="main-hero-content">
+                   <div class="heading-primary"><p>
+                    Ready to launch your app in one,</p>
+                    <p><strong>Application</strong></p>
+                </div> 
+                    <p class="sub-text">Find the best application in the appie</p>
+                    <div class="form">
+                        <div class="form-img">
+                            <ion-icon class="form-icon" name="mail-outline"></ion-icon>
+                        </div>
+                        <input 
+                         id="email"
+                         class="rf"
+                         type="email"
+                         name="email"
+                         placeholder="info@appie.com"
+                         required
+                         />
+                         <div class="form-img lf">
+                            <ion-icon class="form-icon" name="arrow-forward-outline"></ion-icon>
+                         </div>
+                    </div>
+                   <div class="customer-hero">
+                        <div class="customer-img">
+                            <img class="customer-icon" src="img/people/customer-1.jpg" alt="customer 1" />
+                            <img class="customer-icon" src="img/people/customer-2.jpg" alt="customer 2" />
+                            <img class="customer-icon" src="img/people/customer-4.jpg" alt="customer 4" />
+                            <img class="customer-icon" src="img/people/customer-4.jpg" alt="customer 4" />
+                        </div>
+                        <div class="customer-text">
+                            <p class="k-30"><strong>30k</strong></p>
+                            <p class="feedback">Feedback</p>
+                        </div>
+                   </div>
+                </div>
+            </div>
+                <div class="main-hero-img">
+                    <img class="hero-img" src="img/hero.png" /> 
+                </div>
+            </div>
+        </section>
+        <section class="how-it-work">
+                 <div class="main-how container">
+                      <div class="main-how-text">
+                        <p class="sub-hed">How does it work</p>
+                        <p class="sub-text">The full monty spiffing good time no biggie cack grub fantastic</p>
+                         </div>
+                         <button class="btn btn--features">
+                           <a class="btn-link nd" href="#">View all Features</a>
+                           <div class="form-img">
+                            <img class="btn-icon-video" src="img/next.png" alt="next " />
+                         </div>
+                        </button>
+                    </div>
+                 </div>
+                 <div class="main-how-cart container grid grid--3col">
+                    <div class="cart">
+                        <ion-icon  class="box flash" name="flash-sharp"></ion-icon>
+                        <div class="main-cart">
+                            <p class="heading-secondary">Fast and intuitive</p>
+                            <p class="cart-text">Oxford posh bevvy give us a bell jutted mate spend a penny quaint cockup plastered.</p>
+                            <div class="btn--cart">
+                            <a class="redmor nd">Read Mor</a>
+                            <div class="form-img ">
+                                <img class="btn-icon-video" src="img/next.png" alt="next " />
+                             </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <ion-icon class="box home" name="home"></ion-icon>
+                        <div class="main-cart">
+                            <p class="heading-secondary">Fast and intuitive</p>
+                            <p class="cart-text">Oxford posh bevvy give us a bell jutted mate spend a penny quaint cockup plastered.</p>
+                            <div class="btn--cart">
+                            <a class="redmor nd">Read Mor</a>
+                            <div class="form-img">
+                                <img class="btn-icon-video" src="img/next.png" alt="next " />
+                             </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <ion-icon class="box link" name="link"></ion-icon>
+                        <div class="main-cart">
+                            <p class="heading-secondary">Fast and intuitive</p>
+                            <p class="cart-text">Oxford posh bevvy give us a bell jutted mate spend a penny quaint cockup plastered.</p>
+                            <div class="btn--cart">
+                            <a class="redmor nd">Read Mor</a>
+                            <div class="form-img">
+                                <img class="btn-icon-video" src="img/next.png" alt="next " />
+                             </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <ion-icon class="box notification" name="notifications-sharp"></ion-icon>
+                        <div class="main-cart">
+                            <p class="heading-secondary">Fast and intuitive</p>
+                            <p class="cart-text">Oxford posh bevvy give us a bell jutted mate spend a penny quaint cockup plastered.</p>
+                            <div class="btn--cart">
+                            <a class="redmor nd">Read Mor</a>
+                            <div class="form-img">
+                                <img class="btn-icon-video" src="img/next.png" alt="next " />
+                             </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <ion-icon class="box setting" name="settings-sharp"></ion-icon>
+                        <div class="main-cart">
+                            <p class="heading-secondary">Fast and intuitive</p>
+                            <p class="cart-text">Oxford posh bevvy give us a bell jutted mate spend a penny quaint cockup plastered.</p>
+                            <div class="btn--cart">
+                            <a class="redmor nd">Read Mor</a>
+                            <div class="form-img">
+                          <!--      <ion-icon class="form-icon redmor-icon" name="arrow-forward-outline"></ion-icon>-->
+                          <img class="btn-icon-video" src="img/next.png" alt="next " />
+                             </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <ion-icon class="box lock" name="lock-closed"></ion-icon>
+                        <div class="main-cart">
+                            <p class="heading-secondary">Fast and intuitive</p>
+                            <p class="cart-text">Oxford posh bevvy give us a bell jutted mate spend a penny quaint cockup plastered.</p>
+                            <div class="btn--cart">
+                            <a class="redmor nd">Read Mor</a>
+                            <div class="form-img">
+                                <img class="btn-icon-video" src="img/next.png" alt="next " />
+                             </div>
+                           </div>
+                        </div>
+                    </div>
+                 </div>
+                 <!--Marketing-->
+                 <div class="marketing container grid grid--2col ">
+                     <div class="img-marketing">
+                          
+                        <img class="icon-marketing" src="img/about-thumb.png" />
+                       
+                     </div>
+                     <div class="main-marketing">
+                        <p class="red-hed-text">Marketing</p>
+                        <p class="sub-hed">Make a lasting impression with appie.</p>
+                        <p class="sub-text">Jolly good quaint james bond victoria sponge happy days cras arse over blatant.</p>
+                        <div class="main-option-marketing grid grid--2col">
+                             <div class="option">
+                                <ion-icon class="check-icon" name="checkmark-circle"></ion-icon> 
+                             
+                             <div class="option-text">
+                                  <p class="heading-secondary">Carefully designed</p>
+                                  <p class="sub-text">Mucker plastered bugger all mate morish are.</p>
+                             </div>
+                            </div>
+                            <div class="option">
+                                <ion-icon class="check-icon" name="checkmark-circle"></ion-icon>
+                             
+                             <div class="option-text">
+                                  <p class="heading-secondary">Choose a App</p>
+                                  <p class="sub-text">Mucker plastered bugger all mate morish are.</p>
+                             </div>
+                            </div>
+                        </div>
+                     </div>
+                 </div>
+        </section>
+        <!--Wherever you need use the most-->
+        <section class="section-need">
+             <div class="main-section-need container">
+                 <div class="container md">
+                    <p class="need-hed sub-hed md ms cl-whitte">Wherever you need</p><p class="need-hed sub-hed md cl-whitte" >us the most</p>
+                    <p class="sub-text md cl-whitte">The full monty spiffing good time no biggie cack grub fantastic.</p>
+                 </div>
+                 <div class="container sub-section-need grid grid--2col">
+                     <div class="grid need-grid">
+                        <div class="need-cart">
+                            <div class="option slide" >
+                                <div class="ellipse cl-eps-1"></div>
+                                <div class="option-text">
+                                <p class="heading-secondary eps-size cl-whitte">Well Integrated</p>
+                                <p class="sub-text ms cl-op-nd-text">The bee's knees chancer car boot absolutely.</p>
+                            </div> 
+                        </div>
+
+                        </div>
+                        <div class="need-cart">
+                            <div class="option slide" >
+                                <div class="ellipse cl-eps-2"></div>
+                                <div class="option-text"> 
+                                <p class="heading-secondary eps-size cl-whitte">Clean and modern Design</p>
+                                <p class="sub-text ms cl-op-nd-text">The bee's knees chancer car boot absolutely.</p>
+                            </div>
+                        </div>
+
+                        </div>
+                        <div class="need-cart">
+                            <div class="option slide" >
+                                <div class="ellipse cl-eps-3 "></div>
+                                <div class="option-text">
+                        
+                                <p class="heading-secondary eps-size cl-whitte">Light and dark mode</p>
+                                <p class="sub-text ms cl-op-nd-text">The bee's knees chancer car boot absolutely.</p>
+                            </div>
+                        </div>
+
+                        </div>
+                     </div>
+                     <div class="need-img">
+                        <img class="need-img-icon" src="img/features-thumb-2.png" alt="feature timp 2" />
+                     </div>
+                 </div>
+             </div>
+
+        </section>
+        <!--How does it work -->
+        <section class="how-work"> 
+            <div class="main-how-text container">
+                <p class="sub-hed">How does it work</p>
+                <p class="sub-text">The full monty spiffing good time no biggie cack grub fantastic</p>
+            </div>
+            <div class="container how-work-grid  grid grid--4col">
+                <div class="feature">
+                    <img class="feature-img" src="img/icons/counter-icon-1.svg" alt="counter" />
+                
+                        <p class="k-40"><strong>45k+</strong></p>
+                        <p class="feed-feature">Active Installation</p>
+                
+                </div>
+                <div class="feature">
+                    <img class="feature-img" src="img/icons/counter-icon-2.svg" alt="counter" />
+                    
+                        <p class="k-40"><strong>108k+</strong></p>
+                        <p class="feed-feature">Active Installation</p>
+                    
+                </div>
+                <div class="feature">
+                    <img class="feature-img" src="img/icons/counter-icon-3.svg" alt="counter" />
+                    
+                        <p class="k-40"><strong>307+</strong></p>
+                        <p class="feed-feature">Active Installation</p>
+                    
+                </div>
+                <div class="feature">
+                    <img class="feature-img" src="img/icons/counter-icon-4.svg" alt="counter" />
+                    
+                        <p class="k-40"><strong>725k+</strong></p>
+                        <p class="feed-feature">Active Installation</p>
+                    
+                </div>
+            </div>
+            <div class=" container grid video-section">
+                 <div class="video-img-big">
+                    <div class="play-icon">
+                        <!-- 
+                        <div class="tringle-icon"></div>
+                        -->
+                        <ion-icon class="play" name="play"></ion-icon>
+                    </div>
+                   <img class="img-big" src="img/video-thumb-1.jpg" alt="video thumb " />
+                   <div class="main-video-text">
+                    <p class="heading-secondary eps-size">Watch the two-minute video to learn how.</p>
+                    <p class="cart-text">The wireless cheesed on your bike mate zonked a load of old tosh hunky dory it's all gone to pot haggle william car boot pear shaped geeza.</p>
+                    <button class="btn btn--features"> <!--nd for text decoration-->
+                        <a class="btn-link nd" href="#">Get Started</a>
+                     </button>
+                  </div>
+                 </div>
+                 <div class="video-img-slide">
+                    <img class="icon-slide" src="img/video-slide-1.jpg" alt="video slide" />
+                    <div class="btn-video">
+                        <button class="btn  btn--arrow">
+                            <a class="nd btn-icon-video"> 
+                                <img class="btn-icon-video" src="img/next-left.png" alt="next left " /> 
+                           
+                        </a>
+                        </button>
+                        <button class="btn btn--arrow ">
+                            <a class="nd btn-icon-video" href="#">
+                                <img class="btn-icon-video" src="img/next.png" alt="next " />
+                            </a>
+                        </button>
+                      </div>
+                 </div>
+            </div> <!--
+            <div class="video-text video-section" > 
+               
+                      <div class="main-video-text">
+                        <p class="heading-secondary eps-size">Watch the two-minute video to learn how.</p>
+                        <p class="cart-text">The wireless cheesed on your bike mate zonked a load of old tosh hunky dory it's all gone to pot haggle william car boot pear shaped geeza.</p>
+                        <button class="btn btn--features"> --> <!--nd for text decoration-->
+                            <!-- 
+                            <a class="btn-link nd" href="#">Get Started</a>
+                         </button>
+                      </div>
+                    -->
+                    <!--  
+                      <div class="btn-video">
+                        <button class="btn  btn--arrow">
+                            <a class="nd btn-icon-video"> 
+                                <img class="btn-icon-video" src="img/next-left.png" alt="next left " /> 
+                           
+                        </a>
+                        </button>
+                        <button class="btn btn--arrow ">
+                            <a class="nd btn-icon-video" href="#">
+                                <img class="btn-icon-video" src="img/next.png" alt="next " />
+                            </a>
+                        </button>
+                      </div>  
+                 </div>
+              -->
+        </section>
+        <!-- download the app-->
+        <section class="down-app"> 
+           <div class="main-down-app container grid grid--2col">
+            <div class="dow-app-contntent" > 
+               <p class="red-hed-text">Download Our App</p>
+               <span class="sub-hed">App is available</span>
+               <p class="sub-hed mar-sub-hed">for free on app store</p>
+               <p class="cart-text">Jolly good quaint james bond victoria sponge happy days cras arse over blatent</p>             
+           
+           <div class="box-app-btn">
+                <button class="btn btn--app ios">
+                    <ion-icon class="logo-app ios-text" name="logo-apple"></ion-icon>
+                    <a class="nd feed-feature app-text ios-text" href="#">Download for <span class="k-20">iOS</span></a>
+                </button>
+                <button class="btn btn--app android  ">
+                    <img class="logo-app " src="img/google-play.png" alt="google play icon" />
+                    <a class="nd feed-feature app-text android-text" href="#">Download for <span class="k-20">Android</span></a>
+                </button>
+           </div>
+        </div>
+    </div>
+        </section>
+        <!--Pricing-->
+        <section class="section-pricing">
+            <div class="main-hed-text container"> 
+            <p class="sub-hed md">Simple pricing for Everyone</p>
+            <p class="sub-text md">The full monty spiffing good time no biggie cack grub fantastic.</p>
+        </div>
+        <div class="main-pricing container">
+            <div class="button-container-pricing lf rf">
+            <div class="btn btn-con-pricing">
+                <div class="btn monthly">Monthly</div>
+                <div class="yearly">Yearly</div>
+            </div> 
+        </div>
+        <div class="main-pricing-cart grid grid--3col">
+            <div class="price-grid"> 
+            <div class="price">
+                <div class="main-text">
+                    <p class="pricing-cart-text cl-blue">Fresh</p>
+                    <span class="dollar cl-blue ">$</span>
+                    <span class="k-50 cl-blue ">04</span>
+                    <span class="feed-price">/month</span>
+                    <p class="sub-price-text">Get your 14 day free trial</p>
+                    
+                </div>
+                <div class="list-price">
+                    <ul class="list">
+                        <li class="list-item">
+                            <ion-icon class="check-icon-list"name="checkmark-outline"></ion-icon>
+                             <span>60-day chat history</span>
+                        </li>
+                        <li class="list-item">
+                            <ion-icon class="check-icon-list"name="checkmark-outline"></ion-icon>
+                             <span>15 GB cloud storage</span>
+                        </li>
+                        <li class="list-item">
+                            <ion-icon class="check-icon-list"name="checkmark-outline"></ion-icon>
+                             <span>24/7 Support</span>
+                        </li>
+                    </ul>
+                    <div class="button-container-pricing  rf">
+                    <a class="btn btn--price nd">
+                        Choose plan
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="price-grid">
+            <div class="price price-md">
+                <div class="main-text">
+                    <p class="pricing-cart-text cl-blue">Sweet</p>
+                    <span class="dollar cl-blue">&dollar;</span>
+                    <span class="k-50 cl-blue">16</span>
+                    <span class="feed-price">/month</span>
+                    <p class="sub-price-text">Billed $276 per website annually.</p>
+                    
+                </div>
+                <div class="list-price">
+                    <ul class="list">
+                        <li class="list-item">
+                            <ion-icon class="check-icon-list"name="checkmark-outline"></ion-icon>
+                             <span>60-day chat history</span>
+                        </li>
+                        <li class="list-item">
+                            <ion-icon class="check-icon-list"name="checkmark-outline"></ion-icon>
+                             <span>50 GB cloud storage</span>
+                        </li>
+                        <li class="list-item">
+                            <ion-icon class="check-icon-list"name="checkmark-outline"></ion-icon>
+                             <span>24/7 Support</span>
+                        </li>
+                    </ul>
+                    <div class="button-container-pricing  rf">
+                    <a class="btn btn--price red-btn nd">
+                        Choose plan
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="price-grid">
+            <div class="price">
+                <div class="main-text">
+                    <p class="pricing-cart-text cl-blue">Juicy</p>
+                    <span class="dollar cl-blue">&dollar;</span>
+                    <span class="k-50 cl-blue">27</span>
+                    <span class="feed-price">/month</span>
+                    <p class="sub-price-text">Billed $276 per website annually</p>
+                    
+                </div>
+                <div class="list-price">
+                    <ul class="list">
+                        <li class="list-item">
+                            <ion-icon class="check-icon-list last-price-item"name="checkmark-outline"></ion-icon>
+                             <span>60-day chat history</span>
+                        </li>
+                        <li class="list-item">
+                            <ion-icon class="check-icon-list last-price-item"name="checkmark-outline"></ion-icon>
+                             <span>Data security</span>
+                        </li>
+                        <li class="list-item">
+                            <ion-icon class="check-icon-list last-price-item"name="checkmark-outline"></ion-icon>
+                             <span>100 GB cloud storage</span>
+                        </li>
+                        <li class="list-item">
+                            <ion-icon class="check-icon-list last-price-item"name="checkmark-outline"></ion-icon>
+                             <span>24/7 Support</span>
+                        </li>
+                    </ul>
+                    <div class="button-container-pricing  rf">
+                     <a class="btn btn--price nd">
+                        Choose plan
+                     </a>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+        <!--testimonial section -->
+        <div class="testimonial-section">
+            <div class="main-testimonial grid container">
+                 <div class="testimonial-img">
+                    <img class="testimonial-img-icon" src="img/people/customer-5.jpg" alt="hanson deck" />
+                    <div class="icon-stars lf rf">
+                        <ion-icon class="star" name="star"></ion-icon>
+                        <ion-icon class="star" name="star"></ion-icon>
+                        <ion-icon  class="star"  name="star"></ion-icon>
+                        <ion-icon class="star" name="star"></ion-icon>
+                        <ion-icon class="star" name="star"></ion-icon>
+                    </div>
+                    <p class="k-60">(4.7) review</p>
+                  </div>
+                  <div class="testimonial-text">
+                    <p class="sub-text-testimonial cl-whitte">Why i say old chap that is spiffing chip shop such a fibber the bee's knees,the wireless Richard fantastic do one cracking goal pukka baking cakes starkers mush don't get shirty with me argy bargy,I naff chimney po blimey he lost his bottle cup.</p>
+                    <div class="sub-text-container grid grid--2col">
+                        <div class="text-sub-text-testimonial">
+                        <p class="heading-secondary ms cl-whitte">
+                            Hanson Deck
+                        </p>
+                        <p class="k-60">Web developer</p>
+                    </div>
+                    <div class="btn-video">
+                        <button class="btn  btn--arrow">
+                            <a class="nd btn-icon-video cl-whitte"> 
+                                <ion-icon class="btn-icon-video" name="arrow-back-sharp"></ion-icon>
+                                
+                        </a>
+                        </button>
+                        <button class="btn btn--arrow ">
+                            <a class="nd btn-icon-video cl-whitte" href="#">
+                                <ion-icon class="btn-icon-video" name="arrow-forward-sharp"></ion-icon>
+                            </a>
+                        </button>
+                      </div>
+                 </div>
+                  </div>
+            </div>
+        </div>
+        </section>
+  <!-- sponsors -->
+  <section class="section-sponsor">
+    <div class="main-hed-text container"> 
+        <div class="container md">
+            <p class="sub-hed md ms">Appie works best with</p><p class="sub-hed md" >your favorite platforms</p>
+            <p class="sub-text md">Join over 40,000 businesses worldwide.</p>
+         </div>
+        </div> 
+         <div class="container"> 
+         <div class="grid-sponsor1 grid lf rf">
+            <div class="sponser">
+               <img class="img-sponser" src="img/sponsers/sponser-1.png" alt="company" />
+            </div>
+            <div class="sponser">
+                <img class="img-sponser" src="img/sponsers/sponser-2.png" alt="brand" />
+             </div>
+             <div class="sponser">
+                <img class="img-sponser" src="img/sponsers/sponser-3.png" alt="company" />
+             </div>
+             <div class="sponser">
+                <img class="img-sponser" src="img/sponsers/sponser-4.png" alt="javascript" />
+             </div>
+             <div class="sponser">
+                <img class="img-sponser" src="img/sponsers/sponser-5.png" alt="company" />
+             </div>
+             <div class="sponser">
+                <img class="img-sponser" src="img/sponsers/sponser-6.png" alt="brand name" />
+             </div>
+        </div>
+        <div class="container"> 
+            <div class="grid-sponsor2 grid lf rf">
+                <div class="sponser">
+                    <img class="img-sponser" src="img/sponsers/sponser-7.png" alt="brand" />
+                 </div>
+                 <div class="sponser">
+                    <img class="img-sponser" src="img/sponsers/sponser-8.png" alt="company" />
+                 </div>
+                 <div class="sponser">
+                    <img class="img-sponser" src="img/sponsers/sponser-9.png" alt="javascript" />
+                 </div>
+                 <div class="sponser">
+                    <img class="img-sponser" src="img/sponsers/sponser-10.png" alt="company" />
+                 </div>
+                
+            </div>
+        </div>
+  </section>
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container grid footer-grid">
+            <div class="contact">
+                <img class="logo-img" src="img/logo.png" alt="appie logo">
+                <p class="cart-text">Appie WordPress is theme is the last theme you will ever have.</p>
+                <div class="btn-contract">
+                <a class="nd">Read More</a>
+                    <ion-icon class="btn-icon-video md hydrated" name="arrow-forward-sharp" role="img" aria-label="arrow forward sharp"></ion-icon>
+              </div>
+              <div class="social-media">
+                <i class="fa-brands fa-facebook-f social"></i>
+                <i class="fa-brands fa-twitter social"></i>
+                <i class="ph-pinterest-logo social"></i>
+                <i class="fa-brands fa-linkedin-in social"></i>
+                
+              </div>
+            </div>
+            <div class="nav-footer">
+                <p class="heading-secondary">Company
+                </p>
+                <ul class="list">
+                    <li class="list-item"><a class="nd cl-body" href="#">About Us</a></li>
+                    <li class="list-item"><a class="nd cl-body" href="#">Service</a></li>
+                    <li class="list-item"><a class="nd cl-body"href="#">Case Studies</a></li>
+                    <li class="list-item"><a class="nd cl-body"href="#">Blog</a></li>
+                    <li class="list-item"><a class="nd cl-body"href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-footer">
+                <p class="heading-secondary">Support
+                </p>
+                <ul class="list">
+                    <li class="list-item"><a class="nd cl-body" href="#">Community</a></li>
+                    <li class="list-item"><a class="nd cl-body" href="#">Resources</a></li>
+                    <li class="list-item"><a class="nd cl-body" href="#">Faqs</a></li>
+                    <li class="list-item"><a class="nd cl-body" href="#">Privacy Policy</a></li>
+                    <li class="list-item"><a class="nd cl-body" href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="address">
+                <p class="heading-secondary">Get In Touch
+                </p>
+              <ul class="address-list">
+                <li class="ad-list-item">
+                    <span class="material-symbols-outlined cl-size-footer-icon">
+                        mail
+                        </span>
+                     <span class="ad-list-item-text">support@appie.com</span>
+                </li>
+                <li class="ad-list-item">
+                    <span class="material-symbols-outlined cl-size-footer-icon">
+                        phone_enabled
+                        </span>
+                    <span class="ad-list-item-text">+(642) 342 762 44</span>
+                </li>
+                <li class="ad-list-item">
+                    <span class="material-symbols-outlined cl-size-footer-icon">
+                        location_on
+                        </span>
+                     <span class="ad-list-item-text">442 Belle Terre St Floor 7,San Francisco,AV 4206</span>
+                </li>
+              </ul>
+            </div>
+        </div>
+        <div class="container copyright grid grid--2col">
+             <div class="btn--footer-grid">
+                <!--pseudo class dont work -->
+                <button class="btn btn--footer ios-background-color">
+                    <ion-icon class="logo-app-small" name="logo-apple"></ion-icon>
+                    <a class="app-text nd cl-blue ms" href="#">Download for iOS</a>
+                </button>
+                <button class="btn btn--footer ">
+                    <img class="logo-app-small" src="img/google-play.png" alt="google play icon">
+                    <a class="app-text nd cl-blue ms" href="#">Download for Android</a>
+                </button>
+             </div>
+             <div class="copyright-grid">
+                <p class="cart-text lf">Copyright &copy; 2021 Appie.All right reserved.</p>
+             </div>
+        </div> 
+    </footer>
+</body>
+</html>

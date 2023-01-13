@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box outer inline block</title>
+    <style>
+        .container { 
+            display: block;
+            width: 400px;
+            height: 45vh;
+            margin: 0 auto;
+            background-color: red;
+        }
+        a { 
+            /* widht and height not apply 
+            width: 45px;
+            height: 45px;
+            */
+            /* vertical padding and margin and border will not cause other inline boxes to move away from the box */ 
+            /* horizontal padding and margin and borer will cause to inline boxes to move away from the box */ 
+            display :inline-block;
+            padding:5px;
+            background-color: rebeccapurple;
+            box-sizing: content-box;
+            width: 100px;
+            height: 85px;
+        }
+        .block { 
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            padding-right: 45px;
+            display:inline;
+        }
+        .inline { 
+            /* width and height will not apply */ 
+            width: 50px;
+            height: 50px;
+            padding:10px ;
+            display: inline;
+            background-color: blue;
+        }
+        .inline-block { 
+            background-color: red;
+            padding: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <a href="#">hello</a> <span>hello i am a developer!</span>
+    </div>
+    <!--in vertical inline box the padding and margin or border dont push outer inline box but what about the block box ?-->
+    
+    <div class="block">i am block</div>
+    <span class="inline">i am inline</span>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia optio tempora sapiente sit aliquam aliquid placeat culpa nulla, reiciendis laborum similique necessitatibus minima unde <span class="inline-block">strong</span>obcaecati quasi? Incidunt nemo tenetur suscipit.</p>
+        
+    
+</body>
+</html>
