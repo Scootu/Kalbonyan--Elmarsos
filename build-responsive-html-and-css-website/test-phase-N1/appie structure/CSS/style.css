@@ -179,6 +179,9 @@ input::placeholder {
     padding: 4rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
+.cart:nth-child(2) { 
+   border-top: 4px solid #ea4d89;
+}
 .cart-text {
     font-size: 1.6rem;
     line-height: 1.5;
@@ -307,10 +310,11 @@ padding: 9.6rem 4.8rem;
    padding-left: 5.2rem;
  }
  .play-icon { 
-    position: absolute;
-    cursor: pointer;
-    top: 21%;
-    left: 42.26%;
+   position: absolute;
+   cursor: pointer;
+   top: 32%;
+   left: 50%;
+   transform: translate(-50%,-50%);
  }
  
  .tringle-icon { 
@@ -574,19 +578,29 @@ font-weight: 700;
  .section-sponsor { 
     padding-bottom: 9.6rem;
  }
+
  .grid-sponsor1 { 
+   display: flex;
+   justify-content: center;
+   gap: 4.2rem;
+   /*
     grid-template-columns: repeat(6,1fr);
     width: 71% ;
     column-gap: 3rem;
     justify-items: center;
-    margin-bottom: 3rem;
+    */
+
  }
  .grid-sponsor2 { 
+   display: flex;
+   justify-content: center;
+   gap: 5.8rem;
+   /*
     grid-template-columns: repeat(4,1fr); 
     width: 59%;
     column-gap: 7.6rem;
     justify-items: center;
-   
+   */
  }
  .sponser { 
     display: flex;

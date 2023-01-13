@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image transform</title>
+    <style>
+        html { 
+            font-size: 62.5%;
+        }
+        * { 
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body { 
+             overflow-x: hidden;
+        }
+        .parent { 
+            max-width: 120rem;
+            margin:10rem auto ;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            position: relative;
+        }
+        .child { 
+            height: 30rem;
+            background-color: brown;
+        }
+        .se-child { 
+           
+            height: 30rem;
+            background-color: blueviolet;
+        }
+        .sub-se-child { 
+            height: 10rem;
+            background-color: red;
+            position: relative;
+            top: 10rem;
+            right: 10rem;
+            transform: scaleY(2);
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+        </div>
+        <div class="se-child">
+            <div class="sub-se-child"></div>
+        </div>
+    </div>
+</body>
+</html>
