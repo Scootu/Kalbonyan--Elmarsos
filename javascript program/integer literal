@@ -1,0 +1,9 @@
+numerical literal 
+
+decimal(base 10 ) (normal number)
+octal (base 2) 
+hexadecimal (base 16 ) include 0x(0 -9 and a - f or A - F ) 
+0b or 0B binary integer include the digits 0 - 1 
+
+a trailing n suffix on an integer literal indicates a BigInt literal. 
+
