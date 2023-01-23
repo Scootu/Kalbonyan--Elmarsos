@@ -1,0 +1,57 @@
+
+
+/* generale style */ 
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*style style */ 
+
+header { 
+     text-align: center;   
+     background-color: rgb(0, 110, 255);
+     padding: 2rem 0;
+
+}
+
+#calculator { 
+
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 1.2rem;
+border: 5px solid #327ff3;
+width: 35%;
+margin: 2rem auto;
+
+}
+
+#input-number { 
+    font-size: 2rem;
+    text-align: center;
+}
+#input-number { 
+    outline: none;
+}
+#calc-actions { 
+
+    display: flex;
+    gap: 2rem; 
+    margin-bottom: 1rem;
+
+}
+#btn-add { 
+    padding: 1rem;
+    background-color: #327ff3;
+    width: 49px; /* i dont know how to put the element inside the button in the center */ 
+    border: none;
+}
+#btn-add:hover { 
+    cursor: pointer;
+    background-color: #24539a;
+}
+
+#results { 
+    text-align: center;
+}

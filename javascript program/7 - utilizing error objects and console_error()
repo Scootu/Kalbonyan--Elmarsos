@@ -1,0 +1,28 @@
+#using console.error() 
+
+#Utilizing Error objects
+we have an throw error in function we can use the name and message properties in the catch to gut more refinde message . 
+
+
+---
+If you are throwing your own exceptions, in order to take advantage of these properties (such as if your catch block doesn't discriminate between your own exceptions and system ones), you can use the Error constructor. 
+------------------------------------------------------
+
+function doSomethingErrorProne() {
+  if (ourCodeMakesAMistake()) {
+    throw new Error('The message');
+  } else {
+    doSomethingToGetAJavaScriptError();
+  }
+}
+
+try {
+  doSomethingErrorProne();
+} catch (e) {
+  // Now, we actually use `console.error()`
+  console.error(e.name); // 'Error'
+  console.error(e.message); // 'The message', or a JavaScript error message
+}
+
+
+ 
