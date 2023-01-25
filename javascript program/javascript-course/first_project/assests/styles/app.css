@@ -41,13 +41,13 @@ margin: 2rem auto;
     margin-bottom: 1rem;
 
 }
-#btn-add { 
+#calc-actions > * { 
     padding: 1rem;
     background-color: #327ff3;
     width: 49px; /* i dont know how to put the element inside the button in the center */ 
     border: none;
 }
-#btn-add:hover { 
+#calc-actions > *:hover { 
     cursor: pointer;
     background-color: #24539a;
 }
