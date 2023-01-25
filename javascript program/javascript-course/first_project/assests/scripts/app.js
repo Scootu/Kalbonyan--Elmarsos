@@ -1,11 +1,12 @@
 
 let defaultResult = 0 ;
 let currentResult = defaultResult ; 
-
+let logEntries = [] ; // log value of user input data 
+//
 function getUserInput() { 
     return parseInt(userInput.value) ; 
 }
-
+//gut operators and current and entred number and output result and ther description 
 function creatAndWriteOutput(operator ,resultBeforCaLL,callNum) { 
          const calculDescription = `${resultBeforCaLL} ${operator} ${callNum} `;
          outputResult(calculDescription,currentResult) ; // we use currentResult here (global value)
@@ -14,8 +15,21 @@ function creatAndWriteOutput(operator ,resultBeforCaLL,callNum) {
 function add(num1 , num2) { 
  const entredNumber = getUserInput() ; 
  const initialNumber = currentResult ; 
- currentResult = currentResult + entredNumber ;
- creatAndWriteOutput('+',initialNumber,entredNumber);
+ currentResult = currentResult + entredNumber ; // val += deval 
+
+ creatAndWriteOutput( //we can use this lake a name calculationDescription and use outputResult 
+    '+',
+    initialNumber,
+    entredNumber
+    );
+    const logEntry = {
+          number:entredNumber ,
+          operation:"ADD", 
+          prevResult:initialNumber ,
+          result:currentResult 
+             }
+    logEntries.push(logEntry);
+    console.log(logEntries);
 }
 
 function subtract() {
