@@ -11,7 +11,23 @@ function creatAndWriteOutput(operator ,resultBeforCaLL,callNum) {
          const calculDescription = `${resultBeforCaLL} ${operator} ${callNum} `;
          outputResult(calculDescription,currentResult) ; // we use currentResult here (global value)
 }
+// a function for console log a tracked array for every function button 
 
+function writeToLog(
+operationIdentifier ,
+prevResult,
+operationNumber,
+newResult) { 
+       const logEntry = {
+          number:operationNumber,
+          operation:operationIdentifier, 
+          prevResult:prevResult,
+          result:newResult 
+             }
+    logEntries.push(logEntry);
+    console.log(logEntries);
+
+} ;
 function add(num1 , num2) { 
  const entredNumber = getUserInput() ; 
  const initialNumber = currentResult ; 
@@ -22,14 +38,7 @@ function add(num1 , num2) {
     initialNumber,
     entredNumber
     );
-    const logEntry = {
-          number:entredNumber ,
-          operation:"ADD", 
-          prevResult:initialNumber ,
-          result:currentResult 
-             }
-    logEntries.push(logEntry);
-    console.log(logEntries);
+   writeToLog('ADD',initialNumber,entredNumber,currentResult);
 }
 
 function subtract() {
@@ -37,6 +46,7 @@ function subtract() {
     const initialNumber = currentResult ; 
     currentResult = currentResult - entredNumber ; 
     creatAndWriteOutput('-',initialNumber,entredNumber);
+    writeToLog('subtract',initialNumber,entredNumber,currentResult);
  }
 
 function multiply() {
@@ -44,6 +54,7 @@ function multiply() {
     const initialNumber = currentResult ; 
     currentResult = currentResult * entredNumber ; 
     creatAndWriteOutput('*',initialNumber,entredNumber);
+    writeToLog('multiply',initialNumber,entredNumber,currentResult);
 }
 
 function divide() {
@@ -51,6 +62,7 @@ function divide() {
     const initialNumber = currentResult ; 
     currentResult = currentResult / entredNumber ; 
     creatAndWriteOutput('/',initialNumber,entredNumber);
+    writeToLog('divide',initialNumber,entredNumber,currentResult);
  }
 addBtn.addEventListener('click',add);
 subtractBtn.addEventListener('click',subtract);
@@ -59,3 +71,11 @@ divideBtn.addEventListener('click',divide);
 
 let currentResultDescription = `(${currentResult} +10/2+3)` ;
 //outputResult(currentResultDescription,currentResult);  we change this because we want the output return value when we click in the button 
+
+
+/// undefiend null and NaN 
+
+//null represent the absence of object value 
+
+//NaN Not a Number (3 * 'hi') 
+//undefiend represent undefiend value for a variable or function ...
