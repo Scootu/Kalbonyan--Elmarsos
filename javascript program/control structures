@@ -1,0 +1,95 @@
+Module Introduction
+02:26
+Introducing "if" Statements & Boolean (Comparison) Operators
+09:26
+Using Booleans in Conditions & More on Text Comparisons
+01:05
+Using "if" Statements
+07:23
+Working with "if", "else" and "else-if"
+05:10
+Exercise: Getting Started with if Statements
+1 question
+Beware When Comparing Objects & Arrays for Equality!
+04:06
+The Logical AND and OR Operators
+09:10
+Understanding Operator Precedence
+07:20
+if & Boolean Operators - The Basics
+7 questions
+Beyond true/ false: "Truthy" and "Falsy" Values
+07:30
+Coercion vs Conversion
+01:08
+Falsy and Truthy Values
+4 questions
+Setting Up a Bigger Example Project (The "Monster Killer")
+02:59
+Adding an "Attack" Function
+07:57
+Using "if" Statements for Checking the Win-Condition
+09:17
+Adding More "if" Statements & A "Strong Attack" Functionality
+07:41
+Time for a "Heal Player" Functionality!
+10:15
+Controlling the Conditional Bonus Life (Without Boolean Operators!)
+05:59
+Adding a "Reset Game" Functionality
+06:00
+Validating User Input
+06:17
+Utilizing Global Constants as Identifiers in Conditional Code
+03:20
+Adding a Conditional Battle Log
+16:37
+Introducing the Ternary Operator
+07:31
+A Bit of Theory: Statements vs Expressions
+01:40
+Logical Operator "Tricks" & Shorthands
+12:58
+Logical Operators - A Quick Summary
+01:03
+Logical Operators & How They Work
+8 questions
+Working with the "switch-case" Statement
+07:10
+Introducing Loops
+06:40
+The "for" Loop
+07:38
+Exercise: for Loops
+1 question
+The "for-of" Loop
+05:16
+The "for-in" Loop
+06:49
+The "while" & "do-while" Loops
+08:00
+Loops - Basics
+7 questions
+Time to Practice: Control Structures
+1 question
+Controlling Loops with "break"
+08:11
+Controlling Iterations with "continue"
+02:21
+More Control with Labeled Statements
+06:26
+break & continue
+6 questions
+Error Handling with "try-catch" - An Introduction
+02:25
+Throwing Custom Errors
+05:16
+Exercise: Throwing & Handling Errors
+1 question
+Working with "try-catch" to Catch & Handle Errors
+08:14
+Error Handling
+3 questions
+Wrap Up
+03:21
+Useful Resources & Links

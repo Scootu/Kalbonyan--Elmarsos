@@ -1,0 +1,9 @@
+https://github.com/Shalabyelectronics/JavaScript-Course/tree/section4  
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#block_statement 
+
+https://mikkegoes.com/javascript-projects-for-beginners
+
+https://codepen.io/cathydutton/pen/JjpxMm
+
+https://javascript.info/ifelse#conditional-operator
