@@ -1,84 +1,101 @@
 
 function randomValue(max, min) {
-    const attackValue = Math.random() * (max - min) + min;
-    return Math.floor(attackValue);
+    const Value = Math.random() * (max - min) + min;
+    return Math.floor(Value);
   }
 
 let playerHealth =  getUserInput();
 //try ... catch statement 
+let health = randomValue(15, 5);
 let playerAttack = randomValue(10,5);  
 let SpeacialAttack = playerAttack * 2;   
 let monsterHealth = 100 ; 
 let monsterAttack = randomValue(20,10);
+let monsterSpecialAttack = randomValue(30,20);
 let logEntries = [] ; 
-let countRound  =  0 ;
+
+let countAttack =  0 ;
 
 //output the result 
-userOutput(playerHealth,monsterHealth) ;
+userOutput(playerHealth,monsterHealth) ; 
 //log 
 function writeToLog(
     caracter,
-    countRound,
-    playerHealth,
-    monsterHealth,
+    countAttack ,
+    health,
     isDraw ,
     isWin ,
 
     ) { 
            const logEntry = {
               event:caracter,
-              Round:countRound, 
-              currentPlayerHealthValue:playerHealth,
-              currentMonsterHealthValue:monsterHealth ,
+              Attack: countAttack ,  
+              currentHealthValue:health,
               Draw:isDraw,
               Win:isWin
                  }
         logEntries.push(logEntry);
-        console.log(logEntries);
+         console.log(logEntry);
     
     } ;
-    function isDraw() { 
-        if(playerHealth === 0 && monsterHealth === 0) { 
-            alert('it\' a draw !');
-            return true ;
-          
-        }else { 
-            return false ; 
-        }
-    }
-    function isWin(){ 
-        if(playerHealth > 0 && monsterHealth <=0 ) {  
-            alert("you win !");
-           return true ; 
-          
-        }else if(playerHealth <= 0 && monsterHealth >0) { 
-            alert('you lose !');
-            //repete 
-            
-            return false ; 
-            
-        }else { 
-            return false ; 
-        }
-    }
-    // 
-    let win = isWin() ;
-    let draw = isDraw();
+    
     //button 
 
-function attackHandler() {
-         playerHealth -=monsterAttack ; 
+function attackHandler() { 
+  
          monsterHealth -=playerAttack ; 
-         countRound++;
-         win = isWin();
-         draw = isDraw() ;
-         writeToLog('player',countRound ,playerHealth,monsterHealth,draw,win);
+         writeToLog('Player Attack', countAttack ,playerHealth,isDraw(),false); 
+
+         playerHealth -=monsterAttack ; 
+         //writeToLog('Monster Attack', countAttack +,monsterHealth,isDraw(),isWin());
+
+         countAttack ++; 
+         
          userOutput(playerHealth,monsterHealth);
 }
+function strongAttackHundler() { 
+         
+         if(monsterHealth === (2*playerHealth)) { 
+            monsterHealth -= SpeacialAttack ; 
+            playerHealth -= monsterAttack ;  
+         }else { 
+            monsterHealth -=SpeacialAttack ; 
+            playerHealth -= monsterSpecialAttack ; 
+            
+         }
+          countAttack ++ ; 
+         writeToLog('Player Special Attack', countAttack ,playerHealth,isDraw());
 
+         userOutput(playerHealth , monsterHealth,) ; 
 
+}
+let Round = 5 ; // هذا عجز  
+function playerHealthBounes() {
+          //undefiend 
+
+         if(Round > 0) { 
+         
+         console.log('player use health!');
+         playerHealth += health;  
+         heal.innerHTML = (`heal ${Round}`); 
+         Round-- ; 
+
+         }else { 
+        
+            playerHealth -= monsterSpecialAttack ;
+            
+            console.log('respect the rool');
+         }
+      
+       
+       userOutput(playerHealth,monsterHealth);
+
+}
+function playerSurrender() { 
+         confirm('you lose, you want to REPEAT !') ;    
+}
 attack.addEventListener('click',attackHandler);
-heal.addEventListener('click');
-special.addEventListener('click');
-surrender.addEventListener('click');
+heal.addEventListener('click',playerHealthBounes);
+special.addEventListener('click',strongAttackHundler);
+surrender.addEventListener('click',);
 
