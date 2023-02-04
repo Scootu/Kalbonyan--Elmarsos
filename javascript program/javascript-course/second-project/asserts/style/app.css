@@ -1,0 +1,96 @@
+* { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html { 
+    font-size: 62.5%;
+}
+body { 
+    font-size:2rem ; 
+    background-color: beige; 
+}
+.header { 
+ text-align:center; 
+ padding: 2rem 0;
+ background-color: aqua;
+}
+.container { 
+  display: flex;
+flex-direction: column;
+align-items: center;
+gap: 2rem;
+margin-bottom: 2rem;
+}
+
+.button { 
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+    column-gap: 3rem;
+    row-gap: 1rem;
+    justify-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+}
+#Barriear {
+   width:40rem ; 
+   height:4rem ; 
+   
+}
+#barMonster {
+width: 100%;
+height: 100%;
+background-color: green;
+border-bottom-right-radius: 27px;
+border-top-right-radius: 27px; 
+  
+}
+#barPlayer {
+ width: 100%;
+height: 100%;
+background-color: green;
+border-bottom-right-radius: 27px;
+border-top-right-radius: 27px; 
+}
+.battleCon { 
+  display:flex ; 
+  justify-content:center ; 
+}
+.btn {
+ width: 20rem;
+font-weight: bold;
+padding: 2rem 0;
+font-size: 2rem;
+border:none ; 
+border-radius: 9px;
+}
+.btn:hover { 
+   cursor: pointer;
+  
+}
+.button::nth-cild(1):hover { 
+
+}
+.button::nth-child(2):hover { 
+  background-color:#b9831c ;
+}
+
+#surrender {
+background-color: #aea5a5; 
+}
+#heal { 
+background-color: #00ff4c;
+}
+#special-attack { 
+background-color:#ff0202 ; 
+
+}
+#attack { 
+background-color:#ffa700; 
+}
+#BattleLog {
+ background-color: wheat;
+}

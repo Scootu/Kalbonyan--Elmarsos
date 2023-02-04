@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <link href="assests/styles/app.css" rel="stylesheet" type="text/css">
+  <link href="asserts/style/app.css" rel="stylesheet" type="text/css">
       <script src="asserts/scripts/vendor.js" type="text/javascript" defer></script>
        <script src="asserts/scripts/app.js" type="text/javascript" defer></script>
   <title>Basic claculator</title>
@@ -16,14 +16,24 @@
    <h2 class="header">Monster slayer</h2>
        <div class="container">
             <div id="Monster">Monster health:100% </div>
+            <div id="Barriear">
+                 <div id="barMonster"></div>
+            </div>
             <div id="player">Player health :100%</div>
+            <div id="Barriear">
+                 <div id="barPlayer"></div>
+            </div>
        </div>
        <div class="button">
-            <button id="attack">Attack</button>
-            <button id="special-attack">Special-attack</button>
-            <button id="heal">heal (just 5 time!)</button>
-            <button id="surrender">surrender</button>
+            <button class='btn' id="attack">Attack</button>
+            <button class='btn' id="special-attack">Special-attack</button>
+            <button class='btn' id="heal">heal (just 5 time!)</button>
+            <button class='btn' id="surrender">surrender</button>
        </div>
+       <div class="battleCon"> 
+       <button class='btn' id="BattleLog">Battle log</button>
+       </div>
+       
 
   </body>
 </html>
