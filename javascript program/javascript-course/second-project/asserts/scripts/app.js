@@ -56,13 +56,14 @@ function writeToLog(
     //button 
 
 function attackHandler() { 
-         if(playerHealth >=0 ) { 
+         if(playerHealth >=0 && monsterHealth >=0 ) { 
          monsterHealth -=playerAttack ; 
+         playerHealth -=monsterAttack ; 
+         }else {
+            playerHealth = 0 ;
+            monsterHealth = 0 ;
          }
         
-         if(monsterHealth >=0) { 
-         playerHealth -=monsterAttack ; 
-         }
          //writeToLog('Monster Attack', countAttack +,monsterHealth,isDraw(),isWin());
         // console.log(`Monster attack attackHandler ${monsterAttack}`);    
          writeToLog('Player Attack', countAttack ,playerHealth); 
@@ -71,22 +72,25 @@ function attackHandler() {
 }
 function strongAttackHundler() { 
          
-         if(monsterHealth >= (30 * playerHealth / 100)) { 
+         if(playerHealth >=0 && monsterHealth >= (30 * playerHealth / 100)&& monsterHealth >=0) { 
             monsterHealth -= SpeacialAttack ; 
             playerHealth -= monsterAttack ;  
-         }else { 
+         }else if(playerHealth >=0 && monsterHealth >=0){ 
             monsterHealth -=SpeacialAttack ; 
             playerHealth -= monsterSpecialAttack ; 
             
+         }else {
+            playerHealth = 0 ;
+            monsterHealth = 0 ;
          }
          
-         writeToLog('Player Special Attack', countAttack ,playerHealth);
-     
          countAttack++ ; 
+         writeToLog('Player Special Attack', countAttack ,playerHealth);
+        
          gameCheck(playerHealth , monsterHealth,) ; 
 
 }
-let Round = 4 ; // هذا عجز  
+let Round = 4 ; // هذا عجز
 let i = 1 ; 
 function playerHealthBounes() {
           //undefiend 

@@ -38,7 +38,7 @@ margin-bottom: 2rem;
 #Barriear {
    width:40rem ; 
    height:4rem ; 
-   
+   border: 4px solid #ef5412;
 }
 #barMonster {
 width: 100%;
@@ -46,7 +46,7 @@ height: 100%;
 background-color: green;
 border-bottom-right-radius: 27px;
 border-top-right-radius: 27px; 
-  
+
 }
 #barPlayer {
  width: 100%;
