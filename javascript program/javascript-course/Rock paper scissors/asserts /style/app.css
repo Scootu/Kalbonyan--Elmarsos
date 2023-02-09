@@ -1,0 +1,31 @@
+
+html { 
+    font-size: 100%;
+}
+
+/*IMAGE BUTTON  */ 
+.imgBtnCot { 
+    height: 10rem;
+    
+}
+.ResultContainer {
+    position: relative; 
+    width: 10rem;
+    border: 5px solid black;
+    display: flex;
+}
+.badge { 
+    position: absolute;
+}
+#comp-label { 
+    right: 0;
+}
+#user-score { 
+    margin-left: auto;
+}
+#comp-score { 
+    margin-right: auto;
+}
+.btnControlCot { 
+    display: flex;
+}
