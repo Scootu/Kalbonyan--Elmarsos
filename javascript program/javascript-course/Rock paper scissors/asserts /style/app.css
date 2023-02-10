@@ -1,31 +1,148 @@
-
+* { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 html { 
     font-size: 100%;
 }
-
-/*IMAGE BUTTON  */ 
-.imgBtnCot { 
-    height: 10rem;
-    
+body { 
+    background: #24272e;
+	color: #fff;
+	font-family: "Roboto", sans-serif;
 }
+/* GENERAL PARAMETARE */  
+
+.btn { 
+    font-size: 16px;
+    background-color: #188b1a;
+    padding: 1rem 3rem;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+
+}
+.btn:hover { 
+    cursor: pointer;
+    background-color: #0c440d;
+
+}
+
+/* HEADER */ 
+
+ .header { 
+    text-align: center;
+    background: #fff;
+	color: #24272e;
+    padding: 2rem;
+    margin-bottom: 2rem;
+ }
+/* Result */ 
+
 .ResultContainer {
     position: relative; 
-    width: 10rem;
-    border: 5px solid black;
+    width: 300px;
+    border: 3px solid #ffffff;
     display: flex;
+    padding: 2rem;
+    font-size: 40px;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 .badge { 
     position: absolute;
+    font-size: 22px;
+    background-color: #e2584d;
+}
+#user-label { 
+position: absolute;
+top: 50%;
+left: -9%;
+transform: translate(-10%, -50%);
+padding: 5px;
+border-radius:5px ;
 }
 #comp-label { 
-    right: 0;
+    position: absolute;
+    top: 50%;
+    right: -12%;
+    transform: translate(-10%, -50%);
+    padding: 5px;
+    border-radius:5px ;
 }
+
 #user-score { 
     margin-left: auto;
 }
 #comp-score { 
     margin-right: auto;
 }
-.btnControlCot { 
-    display: flex;
+/*Button play */
+.feed-in { 
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  margin-bottom: 2rem;
+  transition: opacity 0.3s ease 0.5s ;
+} 
+.result { 
+    text-align: center;
 }
+.resultLive { 
+    font-size: 32px;
+    margin-bottom: 2rem;
+}
+.feed-in-btn { 
+    
+}
+.feed-out { 
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.3s ease 0.5s;
+}
+.fade-in { 
+    position: relative;
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+    transition: opacity 0.3s ease 0.5s;
+}
+
+
+/*IMAGE BUTTON  */
+.btnControlCot { 
+   display: flex;
+   gap: 2rem;
+   justify-content: center;
+   margin-bottom: 2rem;
+}
+.btnControl { 
+    border-radius: 50%;
+    border: 3px solid ;
+    padding: 1rem;
+} 
+.btnControl:nth-child(1) { 
+    background-color: #00b7ff;
+}
+.btnControl:nth-child(3) { 
+    background-color:antiquewhite ;
+}
+.imgBtnCot { 
+    height: 4rem;
+}
+.btnControlCot:hover { 
+    cursor: pointer;
+   
+}
+.btnControl:hover  { 
+    border: 3px solid red;
+}
+#resteGame { 
+    display: flex;
+    margin: 0 auto;
+}
+/*Help Control */ 
+
