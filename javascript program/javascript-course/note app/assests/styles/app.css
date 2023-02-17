@@ -87,9 +87,10 @@ body {
   .popup-box { 
     pointer-events: none;
     opacity: 0;
+    z-index: 2;
     transition: all 0.25s ease;
   }
-  .popup-box.show { 
+  .popup-box.show , .settingBtn.show { 
     opacity: 1;
     pointer-events: auto;
   }
@@ -144,4 +145,40 @@ body {
     border-radius: 4px;
     background: #6A93F8;
   }
+
+  /* slide note */ 
+  .details { 
+    height: 70%;
+    overflow: auto;
+    margin-bottom: 1rem  }
   
+
+  /* Buttom content */ 
+  .bottom-content { 
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    position: relative;
+  }
+  /* setting */ 
+  .settingBtn { 
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.25s ease;
+
+    position: absolute;
+    top: -42px;
+    right: 20px;
+    background-color: aliceblue;
+    border-radius: 5px;
+  }
+  .settings:hover { 
+    cursor: pointer;
+  }
+  .btnSetting { 
+    padding: 0 1.5rem;
+    border-bottom: 2px solid;
+  }
+  .btnSetting:hover { 
+    background-color: rgb(135, 142, 136);
+  }

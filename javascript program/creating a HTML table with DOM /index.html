@@ -5,15 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Traversing an HTML table</title>
+    <style>
+        .btnAddNode { 
+            pointer-events: none;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+        }
+        .showUp { 
+            pointer-events: auto;
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+        }
+    </style>
 </head>
-<body>
-    <input id="inputButton" type="button" value="Generate a table" />
 
-    <script>
-        alert('you are amazing !');
+<body>
+    <h1>Create a Table !</h1>
+    <input id="inputButton" type="button" value="Generate a table" />
+    <h2>Change the content of the paragraphe</h2>
+    <input
+       type="button"
+       value="Set paragraph background color"
+       onclick="setBackground()" />
+       <input
+       type="button"
+       value="Set a text paragraph"
+       onclick="addTextNode()" />
+
+      <p>hi</p>
+      <p>hello</p>
+      <button id="delet">Delet Child</button>
+
+      <button id="addNode" class="btnAddNode">Add a node p element</button>
+     <script>
+        
         const generateBtn = document.getElementById('inputButton');
-    
+        const addBtnElement = document.getElementById('addNode');
         generateBtn.addEventListener('click',()=> { 
+
           const table =  document.createElement('table');
 
           const tBody = document.createElement('tBody');
@@ -35,13 +66,64 @@
           }
              //put the tBody to the table
              table.appendChild(tBody);
+             console.log('create a table !');
              //put the table in the body 
              document.body.appendChild(table);
              // 
               // sets the border attribute of tbl to '2'
               table.setAttribute("border", "2"); // we need this 
-
+              
         });
+
+        let setBackground = function() { 
+            //selecte the p element 
+            const paragraphs = document.getElementsByTagName('p');
+            //selecte the seconde paragraphe 
+            const secondParagraph = paragraphs[1];
+            //set the inline style 
+            secondParagraph.style.backgroundColor ='red'; 
+            
+             
+        }
+        let addTextNode = ()=> { 
+             //selecte the p element 
+             const paragraphs = document.getElementsByTagName('p');
+            //selecte the seconde paragraphe 
+             const secondParagraph = paragraphs[1];
+            //create a text node 
+             const myTextNode = document.createTextNode('World');
+            //add the text node to the paragraphe add like a child 
+             secondParagraph.appendChild(myTextNode) ; 
+
+            // console.log(`the next sibling ${secondParagraph.nextSibling}`);
+            const paragraph =  myTextNode.previousSibling;
+             console.log(`the sibling : ${paragraph.data}`);
+             console.log('the text node \'word\' here reperesent the child of the p element secondeParegraph ');
+             removeChild(secondParagraph,myTextNode);            
+            //add new p 
+            
+             addNode(myTextNode);
+        }
+        let removeChild = function (textNode,textChildNode) { 
+            const deletBtn = document.getElementById('delet') ;
+            deletBtn.addEventListener('click',()=> { 
+                //remove nodeElement from the p
+                 textNode.removeChild(textChildNode);
+                 addBtnElement.classList.remove('btnAddNode');
+            });
+        }
+        //add a new Node element to the body 
+        let addNode =(text) => { 
+        
+            addBtnElement.addEventListener('click',()=> { 
+            const newParagraph = document.createElement('p');
+            newParagraph.appendChild(text);
+            console.log(`this is the first items from the paragraphe add : ${text.data}`);
+            document.body.appendChild(newParagraph); // add to the last of the page 
+        });
+        }
+
+
     </script>
 </body>
 </html>
