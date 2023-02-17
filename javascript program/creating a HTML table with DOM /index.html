@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversing an HTML table</title>
+</head>
+<body>
+    <input id="inputButton" type="button" value="Generate a table" />
+
+    <script>
+        alert('you are amazing !');
+        const generateBtn = document.getElementById('inputButton');
+    
+        generateBtn.addEventListener('click',()=> { 
+          const table =  document.createElement('table');
+
+          const tBody = document.createElement('tBody');
+          
+          for(let i =0 ;i<2;i++) { 
+              //create a table row 
+              const row = document.createElement('tr');
+              
+              
+              for(let j =0 ;j <2 ;j++) { 
+                 const colum = document.createElement('td');
+                 colum.textContent = `hello ${i},${j} `;
+                 row.appendChild(colum);
+                 
+              }
+              tBody.appendChild(row); 
+               
+             
+          }
+             //put the tBody to the table
+             table.appendChild(tBody);
+             //put the table in the body 
+             document.body.appendChild(table);
+             // 
+              // sets the border attribute of tbl to '2'
+              table.setAttribute("border", "2"); // we need this 
+
+        });
+    </script>
+</body>
+</html>

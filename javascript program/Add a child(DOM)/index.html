@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a child</title>
+    <style>
+        .container { 
+            display: block;
+            width: 300px;
+            height: 200px;
+        }
+        .parent { 
+            border: 1px solid black;
+        }
+        div.child { 
+            width: 50px;
+            height: 50px;
+
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="parent">Parent</div>
+        <button id="add-child">add scware</button>
+        <button id="remove-child">remove scware</button>
+    </div>
+    <script>
+        const parent = document.body.querySelector(".parent");
+      const addChild = document.getElementById('add-child'),
+      removeChild = document.getElementById('remove-child');
+
+      const child = document.createElement('div');
+            addChild.addEventListener('click',() => { 
+         
+          child.classList.add('child');
+          
+          child.textContent = "child";
+          parent.appendChild(child);
+
+      });
+      removeChild.addEventListener('click',()=> { 
+          /*child.classList.remove('child');*/
+          parent.removeChild(child);
+      });
+    </script>
+</body>
+</html>

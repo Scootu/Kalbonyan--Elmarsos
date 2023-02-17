@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversing an HTML table</title>
+</head>
+<body>
+    <input id="inputButton" type="button" value="Generate a table" />
+    
+    <script>
+        const inputBtn = document.getElementById('inputButton');
+            
+           inputBtn.addEventListener('click',() => { 
+           //creates a <table> element and a <tBody> 
+            const tab1 = document.createElement('table');
+            const tb1Body = document.createElement('tBody');
+            //create all cells 
+            //tr -> td -> text
+            for(let i= 0;i<2;i++) {
+                // create a table row   
+            const row = document.createElement('tr');
+
+               for(let j=0 ;j<2;j++) { 
+                //create a <td> element a text node make the text
+                //node the contents of the <td> ,and put the <td> at
+                // the end of the table row 
+                const cell = document.createElement('td');
+                const cellText = document.createTextNode(`cell in row ${i}, column ${j}`);
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+                
+               }
+            }
+
+
+            
+                
+              
+            
+        });
+    </script>
+</body>
+</html>
