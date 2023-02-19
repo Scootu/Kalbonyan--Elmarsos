@@ -12,10 +12,11 @@ const mounths = ["January","February",'March',"April","May",'June','July',
 "August","Septmber","October","Novermber","December"];
 
 // control in the textarea 
+/*
 const textarea = document.body.getElementsByClassName('textarea')[0];
 textarea.focus(); // Set focus to the textarea
 textarea.setSelectionRange(0, 0);
-
+*/
 addBox.addEventListener("click",()=> { 
    //titleTag.focus();
   
