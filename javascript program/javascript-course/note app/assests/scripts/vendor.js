@@ -1,5 +1,6 @@
 const addBox = document.querySelector('.add-box'),
 popupBox = document.querySelector(".popup-box"),
+popupTitle =document.querySelector('header p'),
 closeIcon = popupBox.querySelector('header i'),
 titleTag = popupBox.querySelector('.input'),
 descTag = popupBox.querySelector('.textarea'),
@@ -10,10 +11,18 @@ settingbtn = document.body.querySelector('.settingBtn');
 const mounths = ["January","February",'March',"April","May",'June','July',
 "August","Septmber","October","Novermber","December"];
 
+// control in the textarea 
+const textarea = document.body.getElementsByClassName('textarea')[0];
+textarea.focus(); // Set focus to the textarea
+textarea.setSelectionRange(0, 0);
+
 addBox.addEventListener("click",()=> { 
-   popupBox.classList.add('show');
+   //titleTag.focus();
   
+  popupBox.classList.add('show');
+   
 });
+let isUpdate =false , updated ; 
 // i need the data i stored in localStorage 
 
 let notes = [] ; 
@@ -28,7 +37,9 @@ if(localStorage.getItem('notes')) {
 
 function showNotes(notes) { 
    document.querySelectorAll('.note').forEach(note => note.remove());//this is the answeres it's remove the old and build all the notes 
-   notes.forEach((note,index)=> { 
+   let i = 0 ; 
+   notes.forEach((note)=> {
+      
       let liTag =`<li class="note">
                      <p>${note.title}</p>
                      <div class="details">
@@ -38,13 +49,14 @@ function showNotes(notes) {
                             <span>${note.date}</span>
                          <div class="settings">
                           <div class="settingBtn">
-                          <div class="btnSetting edite">Edit</div>
-                            <div class="btnSetting delet" onclick="showDelete(`${index}`)">Delet</div>
+                            <div class="btnSetting edite" onclick="nodeEdite(${i},'${note.title}','${note.description}')">Edit</div>
+                            <div class="btnSetting delet" onclick="showDelete(${i})">Delet</div>
                           </div>
                             <i onclick="showMenu(this)" class="uil uil-ellipsis-h"></i>
                         </div>
                       </div>
                   </li>`  ; 
+            i++;
     addBox.insertAdjacentHTML('afterend',liTag); 
 
    });
@@ -59,14 +71,35 @@ function showMenu(elem) {
       }
      })
 }
+
 function showDelete(nodeId) {
-     console.log('this is true ');
+     let isConfirm = confirm('Are you sure you want to delete this note?');
+     if(!isConfirm) return ; 
+     //removing the note and do i update 
+     notes.splice(nodeId,1);
+     //Saving this in a localStorage 
+     localStorage.setItem("notes",JSON.stringify(notes));
+     //update 
+     showNotes(notes);
 }
 
+function nodeEdite(nodeId,title,desc) {
+      isUpdate = true ; 
+      updated = nodeId ;
+      addBox.click();
+      titleTag.value = title ; 
+      descTag.value = desc ; 
+      addBtn.innerHTML = 'Update Note';
+      popupTitle.innerHTML = 'Update a Note';
+      console.log(nodeId,title,desc);
+}
 
 closeIcon.addEventListener("click",()=> { 
+    isUpdate = false;
     titleTag.value ='';
     descTag.value ='' ;
+    addBtn.innerHTML = 'Add Note';
+    popupTitle.innerHTML = 'Add a Note';
     popupBox.classList.remove('show');
  });
 
@@ -84,19 +117,21 @@ closeIcon.addEventListener("click",()=> {
       let noteInfo = { 
          title:noteTitle ,
          description:noteDesc , 
-         date:`${mounth} ${day} ,${years}`
+         date:`${mounth} ${day} ,${years}`,
       }
-      
+      if(isUpdate === false) { 
       //saving note to a new array 
       console.log('add note');
       notes.push(noteInfo); 
-
+      }else { 
+         isUpdate =false ; 
+         console.log('edite note');
+         notes[updated] = noteInfo ;
+      }
       //saving this in a localStorage 
       localStorage.setItem("notes",JSON.stringify(notes));
 
      
-
-   
    }
    showNotes(notes);
    /*
