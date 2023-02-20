@@ -46,10 +46,14 @@ body {
   .add-box .icon:hover { 
     cursor: pointer;
   }
+  
   .add-box p{
     color: #88ABFF;
     font-weight: 500;
     margin-top: 20px;
+  }
+  .icon > i { 
+    width: 55%;
   }
   /* Popup-box */ 
 
@@ -127,7 +131,7 @@ body {
   form .row textarea{
     height: 150px;
     resize: none;
-   
+    padding: 10px;
   }
   form .row.description input { 
     height: 150px;
@@ -147,6 +151,8 @@ body {
     position: relative;
   }
   .note > p { 
+    font-weight: bolder;
+    font-size: 20px;
     overflow: auto;
   }
   /* slide note */ 
@@ -184,11 +190,15 @@ body {
     cursor: pointer;
   }
   .btnSetting { 
-    padding: 0 1.5rem;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 0 0.5rem;
     border-bottom: 2px solid;
   }
   .btnSetting:hover { 
     background-color: rgb(135, 142, 136);
   }
 
-  
+  /* hr */
+ 

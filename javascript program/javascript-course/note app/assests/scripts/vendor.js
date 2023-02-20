@@ -46,14 +46,21 @@ function showNotes(notes) {
                      <div class="details">
                          <span>${note.description}</span>
                      </div>
+                     <hr>
                        <div class="bottom-content">
                             <span>${note.date}</span>
                          <div class="settings">
                           <div class="settingBtn">
-                            <div class="btnSetting edite" onclick="nodeEdite(${i},'${note.title}','${note.description}')">Edit</div>
-                            <div class="btnSetting delet" onclick="showDelete(${i})">Delet</div>
+                            <div class="btnSetting edite" onclick="nodeEdite(${i},'${note.title}','${note.description}')">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                            <span>Edit</span></div>
+                            <div class="btnSetting delet" onclick="showDelete(${i})">
+                            <i class="fa-regular fa-trash-can"></i>
+                            <span>Delet</span></div>
                           </div>
-                            <i onclick="showMenu(this)" class="uil uil-ellipsis-h"></i>
+                            <!--<i class="uil uil-ellipsis-h"></i>-->
+                            <i onclick="showMenu(this)" class="fas fa-ellipsis-h"></i>
+                            
                         </div>
                       </div>
                   </li>`  ; 
