@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and iterators </title>
+   
+</head>
+<body>
+ <input 
+ type="button"
+ value="Delete fruites"
+ onclick="deleteFruites()"
+ />
+
+<button onclick="addFruites()">Add a fruites</button>
+
+    <script> 
+        //refrence to the original array 
+    let arr = [1,2,3];
+    //we want to work with the original array without the last element and with not modifeing the original array 
+    //we work with slice();
+    //arr.slice(0,-1);
+       /* working with push with a array-like obj */ 
+       
+           // create a Html node that show the length of this obj 
+           let counter = document.createElement('p');
+           let Tbody = document.getElementsByTagName('body')[0];
+           Tbody.appendChild(counter);
+
+         //  counter.innerHTML=`,\nthe lenght of : ${obj.length}`; // yes, lenght here is a property or a built in property 
+        //push() is the add one or more a item in the last of a array 
+           let paragraphe = ['hello'];
+           let par1Text = document.createTextNode('HELLO'); 
+           let par1 = document.createElement('p');
+           par1.appendChild(par1Text);
+           Tbody.appendChild(par1);
+           let i = 0 ;
+           let logEntries = {};
+           //build a show function 
+           let showFunction = ()=> { 
+                  item =  paragraphe[paragraphe.length - 1] ; 
+                  logEntries[item] = item ; // create a key pair for the obj 
+                  console.log(logEntries);
+
+                 
+          }   
+
+           //log the initial function 
+           showFunction();
+          function addFruites() {
+              paragraphe.push(`${i++} fruite`);
+             /*
+              paragraphe.push(`${i++} fruite`);
+              par1Text = document.createTextNode(`${paragraphe.pop()}`);
+              
+              par1.appendChild(par1Text);
+              let separator = document.createTextNode('| |');
+              par1.appendChild(separator);
+              */
+              showFunction();
+              par1Text = document.createTextNode(item);
+              par1.append(par1Text);
+          }
+          function deleteFruites(){ 
+              paragraphe.shift(); // delete the first element 
+              //we need to delete the last element by pop() 
+              par1.removeChild(par1Text);
+              
+          }
+      
+        
+            //
+            ////
+            //////
+            ///////
+            ////////
+            /////////
+       
+         
+
+        </script>
+</body>
+</html>

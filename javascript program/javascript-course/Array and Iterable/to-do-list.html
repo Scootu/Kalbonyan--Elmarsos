@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <style>
+
+     * { 
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+     }
+     .container { 
+    
+        display: flex;
+        justify-content: center;
+        margin: 10rem auto;
+    
+     }
+     .content { 
+        display: inline-block;
+     }
+      .form { 
+        margin-bottom: 16px;
+      }
+      form .label { 
+        display: block;
+      }
+      #inputList { 
+        display: block;
+        margin-bottom: 12px;
+      }
+      .buttons { 
+        position: absolute;
+        background-color: red;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        top: -32px;
+        right: -43px;
+        transform: scale(1.2);
+      }
+      .buttons :hover { 
+        cursor: pointer;
+
+      }
+      .sendToOne , .buttons{
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .show  { 
+         visibility: visible;
+         opacity: 1;
+         pointer-events: auto;
+      }
+      .buttons  > button{ 
+        display: block;
+      }
+
+      .result { 
+        
+      }
+      .result > li { 
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+      }
+      .conterol:hover { 
+         cursor: pointer;
+      }
+    </style>
+</head>
+<body>
+
+ 
+   
+    <div class="container">
+        <div class="content">
+        <form class="form" action="#">
+    <label class="label">Put your text here</label>
+    <input
+    id="inputList" 
+    type="text"
+    placeholder="Put your do here"
+    />
+    <button id="addButton">+</button>
+    </form>
+    <div class="result"> 
+    
+    </div>
+        </div>
+       
+    </div>
+    <div class="copyContainer">
+      <button class="copyList">Copy to do list !</button>
+      <div class="copyedList">
+           <li class="sendToOne">Send to another !</li>
+      </div>
+      <button class="ShowCopy" onclick="showCopy()" >Show with Date</button>
+    </div>
+    <script>
+    
+      const content = document.body.querySelector('.content'), 
+      addButton = content.querySelector('#addButton'),
+      result = content.querySelector('.result'),
+      copyedList = document.querySelector('.copyList');
+      
+      let logEntries = [] ; 
+
+      let getUserInput = ()=> {
+        let userInput = document.getElementById('inputList').value; 
+        return userInput ;
+      }
+      showLog() ;
+      sendCopy();
+      // 
+
+      function sendCopy() {
+
+      copyedList.addEventListener('click',()=> {
+           
+           copyedList.nextElementSibling.firstElementChild.classList.add('show');
+           console.log('Sending-------to:');
+           console.log(`elements : ${logEntries.slice(0,5)}`);
+          });
+       }
+
+      function showLog() {
+          addButton.addEventListener('click',() => {
+            //by using splice() to add new element 
+            logEntries.splice(logEntries.length,0,getUserInput()); 
+            console.log(logEntries); 
+            showResult();
+            // 
+
+          }); 
+     
+          
+      };
+      function showCopy() {
+        const name = new Date();
+
+          let logListCopy = logEntries.map((item) => { 
+              
+              return item +' '+ logEntries.indexOf(item);
+              
+             });
+              console.log(`this is copy ${logListCopy}`); 
+              console.log(name.getDate);
+      }
+      let z = 0 ;
+      let isTrueFind  = false; 
+      let idX = 0 ; 
+      function showResult() {
+        //  let logList = logEntries ; 
+        let logList = logEntries.slice(0); // copying all the logEntries items 
+             //remove all child in the next time 
+             removeChildern(); // remove all the children 
+             //add all the children 
+          
+          let i = 0;
+         logList.forEach((item) => { 
+         
+          let element =`<li>
+            <span>${item}</span>
+            <span class="conterol" onclick="showMenu(this)">...</span>
+            <div class="buttons">
+                <button class="edit">Edit</button>
+                <button class="delete" onclick='deleteElement(${i++})'>delete</button>
+                 
+                </div>
+        </li>` ; 
+          
+         result.insertAdjacentHTML('beforeend',element); //before end add element as a child 
+     //    document.getElementById('inputList') = ''; 
+          
+         });
+          //we can do this lastIndexOf() right to left 
+
+         if(z == 0 &&(logList.indexOf('hello') ==  true || logList.indexOf('hello') === 0)) { 
+           console.log('hello ! , you to !!!');
+           z++;  
+          }
+          /* 
+            
+            idX = logList.indexOf('hello',idX++);
+            if(idX != -1) { 
+               console.log('hello !, again ') ;
+               console.log(idX); 
+            } 
+          */  
+       
+        //finding staff with find() and findIndex()
+        //[].find(element ,index , array , thisArg ) 
+      //  Ex : 
+          
+         
+        //[].find(calllBackFn, thisArg)
+             if(isTrueFind === false ) { 
+
+              let prompetList = logList.find((item) => {
+                  return (item == 'study'); 
+              });
+                if(prompetList == 'study') { // we can use includes() here 
+                  isTrueFind = true;
+                  alert(`good day with : ${prompetList}`); // John
+               }
+               }
+        //[].find(function(element,index,array) ,thisArg)
+          
+         
+      };
+     
+       
+      function removeChildern(){ 
+        // we can use firstChild if the element tagName isn't the same 
+          while(result.firstChild) { 
+          result.removeChild(result.firstChild);
+          }
+      }
+
+      function showMenu(elem) { 
+        /*
+        const conterolIcon = document.querySelector('.result li .conterol'),
+         buttons = document.querySelector('.result li .buttons');
+         */
+         elem.nextElementSibling.classList.add('show'); 
+        
+          document.addEventListener('click',e => {  
+          if(e.target != elem) { 
+           //buttons.classList.remove('show');
+           elem.nextElementSibling.classList.remove('show');
+           
+          }
+         });
+         
+       
+        }
+
+  function deleteElement(elem) { 
+          /*
+              const parent = elem.parentElement;
+              const grandParent = parent.parentElement;
+              grandParent.remove(); // remove the grandparent from the DOM
+          */
+        elem = parseInt(elem);
+        logEntries.splice(elem,1);
+        console.log(elem); 
+        showResult();
+
+  }
+    </script>
+</body>
+</html>
