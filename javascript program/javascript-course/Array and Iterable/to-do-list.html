@@ -252,6 +252,34 @@
         showResult();
 
   }
+  function sorteAndReverseArray() {
+     
+let alphabit=['a','b','c','d','r','f','q','k','l','i','p','y','m'];
+
+console.log(alphabit.sort());
+
+let numbers = [4.15,7.45,45.785,0.458,0.478,0.98745,1.21234,451,2145,1554,25,14,45,1,4,855,478,65,14,5,5,48,21,58,63,154,21,45,154,241,1,4111,121,4,2,124,14,0112,1,1,4,0,1,14,10,1,214,41,1,4,0214,412,5,56,9,23,5,56,,23,2,56,65,56,56,652,5,25,15,1,5,25,0,5,1245,5,56,2,55,14,2,5,21,45,2,5,455,54,5,52,2,5,2,5,1,5,25,2,45,254,6,21,59,6,35,5,9,24,5,2,58]; // 111 
+let i = 0 ; 
+//Modifie the original function 
+
+console.log(numbers.sort((a,b) => {
+  i++ ; //638
+  return a-b ; // if < 0 before or > 0 after  or === 0  like the original (no change)
+})) ; 
+//reverse modifie the original array 
+console.log(numbers.reverse()) ; 
+ 
+// the sum of the original array 
+console.log(numbers.reduce((sum,current) => { 
+  return sum + current ; // 15565.52079 
+},0)) ; 
+// in this example we want to filter all the number that < 1 in the original array 
+//filter create a shallow copy so the original array don't modified 
+console.log(numbers.filter((value) => { 
+  return value <= 1 ;  // Array(14) [ 0.458, 0.478, 0.98745, 1, 1, 1, 1, 0, 1, 1, … ] 
+})) ; 
+//are we can do the same test with find ? 
+  }
     </script>
 </body>
 </html>

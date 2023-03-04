@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      //
+      function camelize(slt) {
+        return (
+          slt.split("-")[0] +
+          slt
+            .split("-")
+            .slice(1)
+            .map((item) => {
+              return item[0].toUpperCase() + item.slice(1);
+            })
+            .join("")
+        );
+        // arr3.join('');  join the arr3 without separator
+        /*
+        if (arr1.length !== "") {
+          console.log(arr1[0].concat(arr3.join("")));
+        }
+        */
+        // arr1[0] + arr3 ; // concat
+      }
+
+      console.log("first task ");
+      console.log(camelize("background-color") == "backgroundColor");
+      console.log(camelize("list-style-image") == "listStyleImage");
+      console.log(camelize("-webkit-transition") == "WebkitTransition");
+
+      // Filter Range
+      console.log("second task ");
+      function filterRange(arr, a, b) {
+        return arr.filter((item) => {
+          return item >= a && item <= b ? true : false;
+        });
+      }
+
+      let arr = [451, 448, 0, 12, 1.214, 78, 4, 5, 11, 5, 58, 4];
+
+      console.log(filterRange(arr, 4, 78));
+      //Filter range "in place"
+      console.log("filter Range in place");
+      function filterRangeInPlace(arr, a, b) {
+        arr.sort((item) => {
+            if (item >= a && item <= b) return  1;
+        });
+      }
+      filterRangeInPlace(arr,4,78);
+      //console.log(arr);
+       //correction 
+       function filterRangeInPlace1(arr,a,b) {
+            let i = 0 ; 
+             while (i < arr.length) {
+                if(arr[i] < a || arr[i] > b) { 
+                   arr.splice(i,1);
+                }else { 
+                  i++;
+                }         
+            }
+       }
+       console.log('the thierd task ');
+       filterRangeInPlace1(arr,4,78);
+       console.log(arr);
+       //decreasing function 
+       function decreasingFormInPlace(arr) {
+            arr.sort((a,b) => { 
+              return b - a ; // si <0 a before b , >0  a after b , 0===0 like the original one  
+            })
+       }
+       console.log('decreasing form');
+       let arr1 = [1,5,454,87,1,6,5,2,96,56,19,6,64,64,64]; 
+       decreasingFormInPlace(arr1);
+       console.log(arr1) ; 
+    </script>
+  </body>
+</html>
