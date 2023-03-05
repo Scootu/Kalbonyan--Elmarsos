@@ -1,0 +1,100 @@
+/*
+  font-family :Open-sans , sans-serif ;
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap');
+
+
+:root {
+    --back-col: #009578;
+    --task-back-col: #ffffff;
+    --add-back-col: #00866d;
+    --text-col: #defefa;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.kanban-board {
+    background-color: var(--back-col);
+    display: flex;
+    border: 2px solid #333;
+    justify-content: space-between;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* Task container */
+
+.task-container {
+    padding: 2rem;
+    width: 30rem;
+}
+
+.task-container .hed {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--text-col);
+    margin-bottom: 2.5rem;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.task-list .task {
+    background-color: var(--task-back-col);
+    padding: 1rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.task .control{ 
+    display: flex;
+    gap: 0.5rem;
+}
+.task .control span:hover { 
+   cursor: pointer;
+}
+/* Button */
+.addBtn {
+    background-color: var(--add-back-col);
+    color: var(--text-col);
+    font-size: 16px;
+    border: 2px solid var(--add-back-col);
+    border-radius: 5px;
+    padding: 10px;
+}
+.addBtn:hover { 
+    cursor: pointer;
+}
+/* Icon setting */ 
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
