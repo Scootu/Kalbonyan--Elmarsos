@@ -58,6 +58,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
+    margin-bottom: 0.8rem;
 }
 
 .task-list .task {
@@ -69,6 +70,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.task-list .taskInput { 
+    outline: none;
+
+    width: 100%;
+    font-size: 24px;
+
 }
 .task .control{ 
     display: flex;
@@ -84,6 +92,7 @@ body {
     font-size: 16px;
     border: 2px solid var(--add-back-col);
     border-radius: 5px;
+    width: 100%;
     padding: 10px;
 }
 .addBtn:hover { 
