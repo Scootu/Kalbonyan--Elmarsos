@@ -29,7 +29,9 @@
     </div>
     <script>
         const haut = document.querySelectorAll('.container');
-           
+           let liTag = document.createElement('p');
+           let text= document.createTextNode('hello');
+           liTag.appendChild(text);
         haut.forEach((elem) => { 
         elem.addEventListener('dragstart',()=> { 
             console.log('Event :','dragStart');
@@ -37,6 +39,10 @@
         elem.addEventListener('dragenter',()=> { 
             console.log('Event :','dragEnter');
         });
+        elem.addEventListener('dragover',(e)=> { 
+            e.preventDefault();
+            elem.appendChild(liTag);
+        })
     });
     </script>
 </body>
