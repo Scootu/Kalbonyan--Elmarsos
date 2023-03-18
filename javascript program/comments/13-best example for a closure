@@ -1,9 +1,0 @@
-function outerFunction(x) {
-  let y = x;
-  return function innerFunction(z) {
-    return y + z;
-  };
-}
-
-let closure = outerFunction(10);
-console.log(closure(5)); // 15

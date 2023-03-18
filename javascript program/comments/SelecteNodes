@@ -1,5 +1,0 @@
-/* ******************** */
-
-const popupBox = document.querySelector('.popup-box'),
-popupBox.querySelector('header i') ; // we can use querySelector directive to the node .
-
