@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mutation Observe</title>
+    <!--<link href="prism.css" rel="stylesheet" />-->
+    <link rel="stylesheet" href="prism.css" />
+    <script src="prism.js"></script>
+
+    <style>
+      .m {
+        color: red;
+      }
+      .edit {
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="highlight-demo"></div>
+    <!--<div class="edit" contenteditable="true">edit this</div>-->
+    <pre class="language-javascript" contenteditable="true">
+      <code > 
+      </code>
+    </pre>
+    <div class="addCode language-javascript"></div>
+
+    <button>add+</button>
+
+    <!--<script src="prism.js"></script>-->
+    <script>
+      let demoElem = document.getElementById("highlight-demo");
+      const btn = document.querySelector("button");
+      const edit = document.querySelector(".edit"),
+        code = document.querySelector(".language-javascript"),
+        divElem = document.querySelector(".addCode");
+      let observer = new MutationObserver((mutations) => {
+        //
+        for (let mutation of mutations) {
+          for (let node of mutation.addedNodes) {
+            //  node.classList.add('m');
+            if (!(node instanceof HTMLElement)) continue;
+            node.classList.add("m");
+          }
+          console.log(mutation);
+        }
+      });
+
+      // dynamically insert content with code snippets
+
+      observer.observe(demoElem, {
+        childList: true,
+        subtree: true,
+      });
+      const observerEdit = new MutationObserver((mutations) => {
+        for (const mutation of mutations) {
+          if (mutation.type === "childList") {
+            for (let node of mutation.addedNodes) {
+              if (node instanceof Element) {
+                console.log(node);
+              }
+
+              divElem.insertAdjacentHTML(
+                "beforeend",
+                mutation.target.outerHTML 
+              );
+             
+              Prism.highlightElement(divElem);
+              console.log(mutation.target.textContent);
+            }
+          }
+        }
+      });
+      function reloadStylesheet() {
+        const links = document.getElementsByTagName("link");
+        for (let link of links) {
+          if (link.rel === "stylesheet") {
+            link.href += "?timestamp=" + new Date().getTime();
+          }
+        }
+      }
+      /* 
+      observerEdit.observe(edit, {
+        subtree: true,
+        childList: true,
+        characterData: true,
+        characterDataOldValue: true,
+      }); 
+      */
+      observerEdit.observe(code, {
+        //subtree: true,
+        childList: true,
+        characterData: true,
+        characterDataOldValue: true,
+      });
+      btn.addEventListener("click", () => {
+        let liTag = `<p>this is element </p>`;
+        demoElem.insertAdjacentHTML("beforeend", liTag);
+      });
+    </script>
+  </body>
+</html>

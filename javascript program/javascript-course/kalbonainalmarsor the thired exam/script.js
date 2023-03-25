@@ -1,8 +1,11 @@
 //const taskList = document.querySelectorAll('')
 const task = document.getElementsByClassName("task");
 const startList = document.querySelector(".task-container.start"),
+      controlStart = startList.querySelector('.control') , 
   progList = document.querySelector(".task-container.prog"),
-  compList = document.querySelector(".task-container.comp");
+      controlProg = progList.querySelector('.control'),
+  compList = document.querySelector(".task-container.comp"),
+      controlComp = compList.querySelector('.control'); 
 
 //btn
 const startListBtn = startList.querySelector(".addBtn"),
@@ -64,48 +67,16 @@ function createList() {
 function indexElementFun() {
   return Math.random();
 }
-//Update Tasks
-/*
-function UpdateFunction() {
-  let indexElem , 
-      indexContent ; 
-  let arrObj = [] ; 
-  //load 
-  Array.from(task).forEach((elem ,index) => {
-    let inputTag = elem.firstElementChild;
-    indexElem =  elem.getAttribute('data-index');
-    indexContent = elem.firstElementChild.value ;
-  
-     elem.addEventListener("keydown", (key) => {
-      if (inputTag.disabled) {
-          console.log('entre');
-      }});
-   arrObj[index] = {
-      index:indexElem ,
-      Content : indexContent
-    };
-//save 
-    localStorage.setItem("tasks", JSON.stringify(arrObj));
-
-    });
-      
-  }
-  
-  //arrObj.push(elemObj);
-  //localStorage.setItem("tasks", JSON.stringify(arrObj));
-
-
-*/
 //there are a fow changes
  let fromItemCont ;
-function UpdateFunction() {
+function UpdateFunction() { 
   const taskInputs = document.querySelectorAll(".task");
 
   // Load existing tasks from localStorage
   const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
  
   // Update the task data and add event listeners
-  taskInputs.forEach((task, index) => {
+  taskInputs.forEach((task) => {
     const input = task.firstElementChild;
     const taskIndex = task.getAttribute("data-index");
     const taskContent = input.value;
@@ -134,12 +105,12 @@ function UpdateFunction() {
           // Save the task data to localStorage
 
           console.log(input.value);
-          localStorage.setItem("tasks", JSON.stringify(tasks));
+          
 
           // Disable the input field
           input.disabled = true;
           fromItemCont = task.firstElementChild.value;
-          console.log(`fromItemCont: ${fromItemCont}`);
+        
           addEventListener(task);
         }
       
@@ -151,31 +122,20 @@ function UpdateFunction() {
     }
   });
 }
-/*
-function swapFunction(fromItem, toItem) {
-  let arrTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
-  console.log(fromItem, toItem);
-  if (arrTasks != []) {
-    let contenrtItemfrom = arrTasks[fromItem].content,
-      contenrtItemto = arrTasks[toItem].content;
-    arrTasks[fromItem].content = contenrtItemto;
-    arrTasks[toItem].content = contenrtItemfrom;
+function edit(input) {
+  //edit 
+   input.addEventListener('keydown',()=> { 
+    
+   })
+  //update local storage 
 
-    //DOM
-    const taskList = document.querySelectorAll(".task");
-    Array.from(taskList).forEach((elem) => {
-      if (fromItem == elem.getAttribute("data-index")) {
-        elem.firstElementChild.value = contenrtItemto;
-      }
-      if (toItem == elem.getAttribute("data-index")) {
-       
-      }
-    });
-
-    localStorage.setItem("tasks", JSON.stringify(arrTasks));
+}
+function updateLocalStorage(ans, storage,tasks) {
+  if(ans){
+    //three local storage 
+    localStorage.setItem(`${storage}`, JSON.stringify(tasks));
   }
 }
-*/
 function dragStart() {
   // console.log("event : dragStart");
 }
@@ -195,58 +155,21 @@ function dragDrop() {
   //console.log("event : dragDrop");
   this.classList.remove("move");
   let toItemindex = this.getAttribute("data-index");
-  let toItemCont = this.firstElementChild.value;
 
-  toItemCont = fromItemCont; 
-  fromItemCont = this.firstElementChild.value; 
-  console.log(toItemCont,fromItemCont);
-  console.log('drop') ;
   // swapFunction(fromItem,toItem);
 }
 
 function addEventListener(task) {
+
   task.addEventListener("dragstart", dragStart);
   task.addEventListener("dragenter", dragEnter);
   task.addEventListener("dragover", dragOver);
   task.addEventListener("dragleave", dragLeave);
   task.addEventListener("drop",dragDrop);
 }
-//from chatGpt
-// Define the MutationObserver to observe changes to the task container
-// Define the MutationObserver to observe changes to each task container
-
-document.querySelectorAll(".task-container").forEach((taskContainer) => {
-  const observer = new MutationObserver((mutationsList) => {
-    for (let mutation of mutationsList) {
-      if (mutation.type === "childList") {
-        // Iterate over all added nodes and call the UpdateFunction for each task element
-        mutation.addedNodes.forEach((node) => {
-          if (node.classList && node.classList.contains("task")) {
-            UpdateFunction(node);
-          }
-        });
-
-        // Iterate over all removed nodes and do any necessary cleanup
-        mutation.removedNodes.forEach((node) => {
-          // your cleanup code here
-        });
-      }
-    }
-  });
-
-  // Start observing changes to the task container
-  observer.observe(taskContainer, { childList: true, subtree: true });
-});
-
-// Call the UpdateFunction for all task elements on the page
-document.querySelectorAll(".task").forEach((taskElement) => {
-  UpdateFunction(taskElement);
-});
-
-//Event listener btn
 
 startListBtn.addEventListener("click", createList);
 progListBtn.addEventListener("click", createList);
 compListBtn.addEventListener("click", createList);
 
-//
+
