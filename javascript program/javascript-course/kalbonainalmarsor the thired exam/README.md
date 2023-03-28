@@ -1,11 +1,15 @@
 
 
-This is the second project from kalbonian almarsos this project is a platform for managing your Tasks in a simple way .
+#Kanban board 
+### Link to the project []
 
-this project include : 
--A simple UI design 
--Add new tasks 
--Edit and delete tasks 
--Drag and Drop tasks 
--A local storage
+> ##this project include : 
+1-A simple UI design 
+2-Edit() and delete tasks 
+3-Drag and Drop tasks addEventListiner() 
+4-A local storage
 
+### this project is not dynamic you can do each operation one time :😔:
+
+>For next update i will make this project more dynamic 
+ ***save , edit ,delet and drag more than one task ***   
