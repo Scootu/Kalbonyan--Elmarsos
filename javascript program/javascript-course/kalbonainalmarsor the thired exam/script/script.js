@@ -22,7 +22,7 @@ function updateTasks(scoop, storage) {
 
   tasks.forEach((item) => {
     let liTag = `<li class="task" draggable="true" data-index=${item.index} >
-  <input type="text" class="taskInput" placeholder ="click in any point to finich" disabled= "true" >
+  <input type="text" class="taskInput" placeholder ="click to save" disabled= "true" >
   <span class="control">
       <span class="material-symbols-outlined">
           edit

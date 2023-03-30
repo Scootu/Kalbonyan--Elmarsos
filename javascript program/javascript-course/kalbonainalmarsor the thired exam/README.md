@@ -6,11 +6,13 @@
 ## this project include : 
 
 1. A simple UI design 
-2. Edit() and delete tasks 
-3. Drag and Drop tasks addEventListiner() 
-4. A local storage
+2. Edit and delete tasks 
+3. Drag and Drop tasks addEventListiner
+4. A local storage 
 
-### this project is not dynamic you can do each operation one time 😔
+*note you can save your task by clicking anywhere in the page or press 'Entre' in the keyword 
+
+### this project is dynamic you can do multible operation in one time 
 
  #### For next update i will make this project more dynamic 
  **save , edit ,delet and drag more than one task**
