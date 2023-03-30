@@ -167,12 +167,7 @@ function controlFunFirst(event) {
 
  
   input.disabled = false;
-   window.onclick = e =>  {
-    if(!event.target.parentElement.parentElement.contains(e.target)){
-       input.disabled = true; 
-         
-    }
-   }
+   
 }
 function controlFunLast(event) {
 
@@ -187,9 +182,18 @@ function controlFunLast(event) {
 
 function edit(li) {
   //edit
+ 
   let input = li.firstElementChild;
   let control = input.nextElementSibling;
- 
+   
+  window.onclick = e =>  {
+    if(!li.contains(e.target)){
+       input.disabled = true; 
+        let storage = getClassName(li.parentElement);
+         //console.log(storage,li);
+       updateTaskEvent(li.parentElement, storage);
+    }
+   }
   input.addEventListener("keydown", inputFun);
   control.firstElementChild.addEventListener("click", controlFunFirst);
   control.lastElementChild.addEventListener('click', controlFunLast);
