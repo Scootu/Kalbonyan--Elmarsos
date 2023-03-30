@@ -1,22 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie seat booking </title>
     <link rel="stylesheet" href="style.css">
+    <!--Font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
     <div class="movie-container">
         <label for="pickMovie">Pick a movie:</label>
-        <select  id="">
-            <option>Avengers: Endgame($10)</option>
-            <option>Joker($12)</option>
-            <option>Toy Story 4 ($10)</option>
-            <option>The Lion King($9)</option>
-        </select>
+        <select id="pickMovie">
+            <option value="10">Avengers: Endgame($10)</option>
+            <option value="12">Joker($12)</option>
+            <option value="10">Toy Story 4 ($10)</option>
+            <option value="9">The Lion King($9)</option>
+        </select> 
+        <ul class="showcase">
+        <li>
+            <div class="seat"></div>
+            <small>N/A</small>
+        </li>
+        <li>
+            <div class="seat selected"></div>
+            <small>Selected</small>
+        </li>
+        <li>
+            <div class="seat occupied"></div>
+            <small>Occupied</small>
+        </li>
+    </ul>
     </div>
+   
+    <div class="container">
+        <div class="screen"></div>
+        <div class="row-container">
+        
+        <div class="row">
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+        </div>
+        <div class="row">
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate occupied"></div>
+            <div class="seat rotate occupied"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+     
+    </div>
+    
+        <div class="row">
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate occupied"></div>
+            <div class="seat rotate occupied"></div>
+        </div>
+        <div class="row">
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+        </div>
+        <div class="row">
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate occupied"></div>
+            <div class="seat rotate occupied"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+        </div>
+        <div class="row">
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate"></div>
+            <div class="seat rotate "></div>
+            <div class="seat rotate occupied"></div>
+            <div class="seat rotate occupied"></div>
+            <div class="seat rotate occupied"></div>
+            <div class="seat rotate"></div>
+        </div>
+        </div>
+      
+    </div>
+      <p class="text">You have selected <span id="count">0</span> seats for a price of $<span id="total">0</span></p>
     <script src="script.js"></script>
 </body>
+
 </html>

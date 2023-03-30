@@ -1,0 +1,37 @@
+
+/*desktp */ 
+@media (max-width:64em) { 
+    html { 
+        font-size: 58%;
+    }
+    .kanban-board { 
+        max-width: 83%;
+    }
+}
+/*desktop */ 
+@media (max-width:59em) { 
+    .kanban-board { 
+        max-width: 90%;
+    }
+}
+/* table */ 
+@media (max-width:51em) { 
+    .kanban-board { 
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 38rem;
+     }
+     .task-container { 
+        width: 36rem;
+     }
+}
+/* mobile */ 
+@media (max-width:25em) { 
+     html { 
+        font-size: 50%;
+     }
+     .header { 
+        font-size: 40px;
+     }
+      }
