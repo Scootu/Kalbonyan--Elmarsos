@@ -165,9 +165,18 @@ function inputFun(event) {
 }
 
 function controlFunFirst(event) {
-
+  let li = event.target.parentElement.parentElement ; 
   let input = event.target.parentElement.previousElementSibling;
   input.disabled = false;
+  window.onclick = e =>  {
+    li.style.opacity = 1; 
+    if(!li.contains(e.target)){
+        input.disabled = true; 
+        let storage = getClassName(li.parentElement);
+         //console.log(storage,li);
+        updateTaskEvent(li.parentElement, storage);
+    }
+   }
 
 }
 function controlFunLast(event) {
@@ -186,84 +195,15 @@ function edit(li) {
 
   let input = li.firstElementChild;
   let control = input.nextElementSibling;
-  console.log('hello');
   
+ 
   // we use addEventListener because , for remove theme 
   input.addEventListener("keydown", inputFun);
   control.firstElementChild.addEventListener("click", controlFunFirst);
   control.lastElementChild.addEventListener('click', controlFunLast);
 }
 
-let isEdited = false;
-function updateLocalStorage(elem, storage, tasks) {
-  // //(tasks);
-  const index = elem.getAttribute("data-index");
-  let item = {
-    index: index,
-    content: elem.firstElementChild.value,
-  };
 
-
-
-  //item.index = tasks.length;
-  //elem.setAttribute('data-index',item.index);
-  //tasks.push(item);
-  ////('5');
- /* if (!tasks.includes(`${item.content}`) && item.index < tasks.length) {
-    //("10");
-    // alert("you have error");
-    tasks[index] = item ; 
-    localStorage.setItem(`${storage}`, JSON.stringify(tasks));
-  } */ if (index == tasks.length) {
-    //(100);
-    tasks.push(item);
-    localStorage.setItem(`${storage}`, JSON.stringify(tasks));
-  } else if (index > tasks.length) {
-    //(tasks, item);
-    alert("you have an error , this task will be not save , please reload");
-    //automatic remove .
-  } else if (tasks.findIndex((task) => task.index === index) !== -1) {
-    // define flag variable outside the loop
-    if (!isEdited) {
-      //(item);
-      //('005');
-      //(tasks[index], tasks[item.index]);
-      //(tasks[index].content, item.content);
-      tasks[item.index].content = item.content;
-      //(tasks);
-      localStorage.setItem(`${storage}`, JSON.stringify(tasks));
-      //(localStorage.getItem(`${storage}`) || '[]');
-
-      isEdited = true; // set flag variable to true after the condition is executed
-    } else {
-      const confirmReload = confirm('To save your changes, please reload the website.');
-      if (confirmReload) {
-        window.location.reload(); // reload the website if the user clicks "OK"
-      }
-
-    }
-  }
-
-  /*
-    tasks.push(item);
-   
-    elem.setAttribute("data-index", tasks.length - 1);
-    tasks[tasks.length - 1].index = elem.getAttribute("data-index");
-    //("false");
-    localStorage.setItem(`${storage}`, JSON.stringify(tasks));*/
-  /* else if (!tasks.hasOwnProperty(index)) {
-    //(index); 
-    //("7");
-    tasks.push(item);
-    elem.setAttribute("data-index", tasks.length - 1);
-    tasks[tasks.length - 1].index = elem.getAttribute("data-index");
-    //tasks.push(item);
-  }*/
-
-  //three local storage
-
-  //("save", tasks, storage);
-}
 let element;
 
 function dragOver(e) {
@@ -299,11 +239,10 @@ if(!isTouchDevice) {
   
   task.addEventListener("dragover", dragOver);
   task.addEventListener("dragleave", (event)=> { 
-    console.log('leave');
     
     task.classList.remove("move");
     task.style.opacity = 1 ;
-    console.log(task,task.style.opacity);
+    
   });
   task.addEventListener("drop", (event) => {
     elementEvent.style.opacity = 1 ; 
