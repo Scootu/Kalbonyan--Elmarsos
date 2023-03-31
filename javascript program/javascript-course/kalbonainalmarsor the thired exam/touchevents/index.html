@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>touchevents </title>
+</head>
+<style>
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        padding: 10px;
+        border: 1px solid black;
+        margin: 5px;
+    }
+</style>
+
+<body>
+    <ul>
+        <li draggable="true">Item 1</li>
+        <li draggable="true">Item 2</li>
+        <li draggable="true">Item 3</li>
+        <li draggable="true">Item 4</li>
+        <li draggable="true">Item 5</li>
+        <li draggable="true">Item 6</li>
+    </ul>
+    <script>
+
+        const liElements = document.querySelectorAll('li');
+
+        liElements.forEach(li => {
+            let touchX, touchY;
+            let originalIndex;
+            let draggedIndex;
+            let draggedOverIndex;
+
+            // Touch start event listener
+            li.addEventListener('touchstart', function (event) {
+                touchX = event.touches[0].clientX;
+                touchY = event.touches[0].clientY;
+                originalIndex = Array.from(this.parentNode.children).indexOf(this);
+
+                // Set the opacity of the current li element
+                this.style.opacity = 0.5;
+            });
+
+            // Touch move event listener
+            li.addEventListener('touchmove', function (event) {
+                event.preventDefault();
+                const deltaX = event.touches[0].clientX - touchX;
+                const deltaY = event.touches[0].clientY - touchY;
+                this.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+
+                // Get the index of the current li element
+                draggedIndex = Array.from(this.parentNode.children).indexOf(this);
+
+                // Get the element at the current touch point
+                const intersectingElement = document.elementFromPoint(event.touches[0].clientX, event.touches[0].clientY);
+
+                // Check if the intersecting element is an li element
+                if (intersectingElement.nodeName === 'LI') {
+                    // Get the index of the intersecting li element
+                    draggedOverIndex = Array.from(this.parentNode.children).indexOf(intersectingElement);
+
+                    // Calculate the distance between the centers of the two li elements
+                    const distance = Math.abs(draggedIndex - draggedOverIndex);
+
+                    // If the distance is less than 2, change the background color of the intersecting li element to red
+                    if (distance < 2) {
+                        intersectingElement.style.backgroundColor = 'red';
+                    }
+                }
+            });
+
+            // Touch end event listener
+            li.addEventListener('touchend', function (event) {
+                // Reset the opacity and position of the current li element
+                this.style.opacity = 1;
+                this.style.transform = `translate(0, 0)`;
+
+                // Reset the background color of all li elements
+                liElements.forEach(li => {
+                    li.style.backgroundColor = '';
+                });
+
+                // If the dragged over index is valid and not the same as the original index, move the current li element to the new index
+                if (draggedOverIndex != null && draggedOverIndex !== originalIndex) {
+                    const parent = this.parentNode;
+
+                    // If the dragged over index is greater than the original index, insert the current li element after the intersecting li element
+                    if (draggedOverIndex > originalIndex) {
+                        parent.insertBefore(this, parent.children[draggedOverIndex + 1]);
+                    }
+                    // If the dragged over index is less than the original index, insert the current li element before the intersecting li element
+                    else {
+                        parent.insertBefore(this, parent.children[draggedOverIndex]);
+                    }
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

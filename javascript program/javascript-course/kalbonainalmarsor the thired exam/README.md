@@ -14,5 +14,5 @@
 
 ### this project is dynamic you can do multible operation in one time 
 
- #### For next update i will make this project more dynamic 
- **save , edit ,delet and drag more than one task**
+ #### For next update i will make this project for mobile device 
+ 
