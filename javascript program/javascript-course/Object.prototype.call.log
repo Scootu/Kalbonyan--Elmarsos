@@ -1,0 +1,62 @@
+content.build.min.js:1          GET chrome-extension://njgehaondchbmjmajphnhlojfnbfokng/js/contentScripts/dom.js net::ERR_FILE_NOT_FOUND
+(anonymous) @ content.build.min.js:1
+(anonymous) @ content.build.min.js:1
+// how we use call() method 
+undefined
+//The call() method calls the function with a given this value and arguments provided individually. ,  If the function is not in strict mode, null and undefined will be replaced with the global object, 
+undefined
+function Product(name, price) {
+  this.name = name;
+  this.price = price;
+}
+
+function Food(name, price) {
+  Product.call(this, name, price);
+  this.category = 'food';
+}
+
+console.log(new Food('cheese', 5).name);
+// Expected output: "cheese"
+VM660:11 cheese
+undefined
+// the Food fun invoked by the Product function that means the call() change the attribute this value  in Food function and call the Product fun with the new this and assign the value of name and price to the Food function  , you can see that by : 
+undefined
+function Product(name, price) {
+  this.name = name;
+  this.price = price;
+  console.log(this);
+}
+
+function Food(name, price) {
+  Product.call(this, name, price);
+  this.category = 'food';
+  console.log(this) ; 
+}
+
+console.log(new Food('cheese', 5).name);
+// Expected output: "cheese"
+VM1694:4 Food {name: 'cheese', price: 5}
+VM1694:10 Food {name: 'cheese', price: 5, category: 'food'}
+VM1694:13 cheese
+undefined
+//so this is the call() and for appply() have similare function 
+undefined
+// Know you can see the that we need to prevent use non static Object.prototype , because that have an damage : 
+undefined
+const obj = {
+  foo: 1,
+  // You should not define such a method on your own object,
+  // but you may not be able to prevent it from happening if
+  // you are receiving the object from external input
+  propertyIsEnumerable() {
+    return false;
+  },
+};
+
+obj.propertyIsEnumerable("foo"); // false; unexpected result
+Object.prototype.propertyIsEnumerable.call(obj, "foo"); // true; expected result
+true
+obj.propertyIsEnumerable()
+false
+Object.prototype.propertyIsEnumerable.call(obj,"foo");
+true
