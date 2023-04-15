@@ -1,0 +1,89 @@
+*{ 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{ 
+
+}
+.container { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.container > header { 
+    margin: 16px 0 ;
+}
+
+form { 
+   display: flex;
+   flex-direction: column;
+   min-width: 270px;
+   margin-bottom: 12px;
+}
+.form-item { 
+   display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+.form-item > input { 
+    padding: 5px 5px;
+}
+/* for form button */ 
+.addBtn{ 
+    padding: 8px ; 
+    
+}
+.addBtn:hover { 
+    cursor: pointer;
+}
+/* grid for slideShow section */
+.grid { 
+    display: flex;
+    width: 70%;
+    border: 2px solid #333;
+} 
+.title{ 
+    background-color: #dee2e6;
+    width: 40%;
+    
+}
+.title h3 { 
+    background-color: #fff;
+}
+.Author { 
+    background-color: #dee2e6;
+    width: 30%;
+    
+}
+.Author h3 { 
+    background-color: #fff;
+}
+
+.ISBN{ 
+    background-color: #dee2e6;
+    width: 30%;
+    
+    
+}
+.ISBN h3 { 
+    background-color: #fff;
+}
+.icon { 
+    background-color: #dee2e6 ; 
+}  
+.icon h3 { 
+    background-color: #fff;
+}
+.p{ 
+    display: inline-block;
+    background-color: #dee2e6;
+}
+.remove { 
+    display: block;
+    border-bottom: 10px solid #fff;
+}
+.item { 
+    border-bottom: 10px solid #fff;
+}

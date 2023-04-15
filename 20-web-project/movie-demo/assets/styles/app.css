@@ -1,0 +1,82 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ /* BTN */ 
+ body { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:#BDBEA9;
+    font-size: 24px;
+ }
+ .btn { 
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: rgb(185, 155, 155);
+    border: none;
+    border-radius: 30px ; 
+    background-color: #3587a4;
+ }
+ .btn:hover{ 
+    cursor: pointer;
+ }
+ .sub-con { 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+ }
+ textarea { 
+    font-size: 24px;
+ }
+
+.container .sub-con:first-of-type textarea { 
+    min-width: 270px;
+    min-height: 10px;
+    max-width: 400px;
+    max-height: 100px;
+    resize: both;
+    
+ }
+ .container .sub-con:last-of-type textarea { 
+    min-width: 270px;
+    min-height: 30px;
+    max-width: 400px;
+    resize: both;
+ }
+ .blackCard { 
+    width: 80%;
+    
+    background-color: #fff;
+ }
+ .blackCard > h2 { 
+    text-align: center;
+ }
+ .movie-list{ 
+   visibility: hidden;
+   pointer-events: none;
+   position: absolute;
+   opacity: 0;
+   list-style-type: none;
+ }
+ .visibility { 
+   visibility: visible;
+   pointer-events: all;
+   position: relative;
+   opacity: 1;
+ }
+ li { 
+   font-size: 24px;
+   color: #fa0a5e;
+   border-bottom: 5px solid #333;
+ }
+ #filter { 
+  margin-left: 5%;
+ }
+ input { 
+   font-size: 16px;
+   padding: 5px 30px;
+   border-radius: 10px;
+ }
