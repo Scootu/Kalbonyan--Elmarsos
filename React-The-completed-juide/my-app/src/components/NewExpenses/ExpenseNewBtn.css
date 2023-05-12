@@ -1,0 +1,19 @@
+.btn { 
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+.newBtn { 
+    padding: 16px;
+    border: none;
+    border-radius: 13px;
+    background-color: #680368;
+    color: #FFF;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.newBtn:hover { 
+    cursor: pointer;
+}

@@ -27,7 +27,6 @@ function App() {
   ]; 
 
   const [extanded,setExtanded] = useState(DAMMY_EXPENSES);
-  const [RecovoryExtanded ,setRecovory] = useState(extanded);
 
   function getNewExpenses(expense) {
 
@@ -43,20 +42,14 @@ function App() {
   // }
  
   }
- function modExpenseFilter(filter) {
-     console.log(extanded);
-     setRecovory(extanded => 
-        extanded.filter((expense)=> { 
-        return (expense.date.getFullYear().toString() === filter );
-     }))
-     }
+
     
     //setExtanded()
   return (
     // put attribute for make the component dynamic !
     <div className="container"> 
       <NewExpenses onNewExpenses = {getNewExpenses} /> 
-      <RenderExpens item = {extanded} onAppGetOptionVal ={modExpenseFilter}/>
+      <RenderExpens item = {extanded} />
 
     </div>
   );

@@ -7,6 +7,7 @@ const [title, setTitle] = useState('');
 const [amount, setAmount] = useState('');
 const [date, setDate] = useState('');
 
+
 const titleChangeHandler = (event) => { 
       setTitle(event.target.value);   
 } ; 
@@ -18,6 +19,7 @@ const dateChangeHandler = (event) => {
 } ; 
 
 const storeInputValue = (event) => {
+
     event.preventDefault() ; 
     let arrayDate = date.split('-');
     
@@ -29,12 +31,15 @@ const storeInputValue = (event) => {
     }
   
     props.onExpenseForm(expense);
-    
+    props.onResponse();
+
     setTitle('');
     setAmount('');
     setDate('');
+
 }
 
+  
   return (
     <form className="form">
       <div className="formLabel">
@@ -50,6 +55,7 @@ const storeInputValue = (event) => {
         <input type="Date" value={date} onChange={dateChangeHandler}/>
       </div>
       <button className="btnExpense" onClick={storeInputValue}>Add Expense</button>
+     <button className="btnExpense cancel" onClick={()=>{props.onResponse()}}>Cancled</button>  
     </form>
   );
 };
