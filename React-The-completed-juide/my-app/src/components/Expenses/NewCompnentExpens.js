@@ -1,27 +1,31 @@
+import React, { useState } from "react";
 import Card from "../UI/Card";
 import ExpensItem from "./ExpensItem";
-import './NewCompnentExpens.css' ; 
+import ExpenseFilter from "../NewExpenses/ExpenseFilter";
+import ExpensList from './ExpensList.js' ; 
+import "./NewCompnentExpens.css";
+// import '../NewExpenses/ExpenseForm.css' ;
 function RenderExpens(props) {
-  // this is an array
-  console.log(props.item);
+  const [filteredVal, setFiltered] = useState("2020");
+
+  const getExpenseFilterVal = (filter) => {
+    setFiltered(filter);
+    console.log(filter);
+  };
+
+  const filteredExpense = props.item.filter((expense) => {
+    return expense.date.getFullYear().toString() === filteredVal;
+  });
+
+
+  
   return (
     <Card className="expenses">
-      <ExpensItem
-        title ={props.item[0].title }
-        amount={props.item[0].amount}
-        date={props.item[0].date}
-      />
-       <ExpensItem
-        title ={props.item[1].title }
-        amount={props.item[1].amount}
-        date={props.item[1].date}
-      />
-       <ExpensItem
-        title ={props.item[2].title }
-        amount={props.item[2].amount}
-        date={props.item[2].date}
-      />
+      <ExpenseFilter onNewGetOptionVal={getExpenseFilterVal} />
+
+      <ExpensList />
     </Card>
   );
+  
 }
 export default RenderExpens;

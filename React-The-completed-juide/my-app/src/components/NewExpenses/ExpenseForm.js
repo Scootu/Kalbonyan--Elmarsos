@@ -2,51 +2,52 @@ import React, {useState} from "react";
 import './ExpenseForm.css'; 
 
 
-const ExpenseForm = () => {
-let titel ; 
-let amount ; 
-let date = new Date() ; 
+const ExpenseForm = (props) => {
+const [title, setTitle] = useState('');
+const [amount, setAmount] = useState('');
+const [date, setDate] = useState('');
 
-let obj = {} ; 
-
-const titleChangeHandler = (elem) => { 
-    titel = elem.target.value ; 
-    console.log(titel);
+const titleChangeHandler = (event) => { 
+      setTitle(event.target.value);   
 } ; 
-const amountChangeHandler = (elem) => { 
-  amount = elem.target.value ; 
-  console.log(amount);
+const amountChangeHandler = (event) => { 
+      setAmount(event.target.value);
 } ; 
-const dateChangeHandler = (elem) => {
-  date =  elem.target.value  ;   
-  console.log(date);
+const dateChangeHandler = (event) => {
+      setDate(event.target.value);
 } ; 
 
 const storeInputValue = (event) => {
     event.preventDefault() ; 
-
-    obj = { 
-      titel : titel , 
+    let arrayDate = date.split('-');
+    
+    let expense = { 
+      id:Math.random() , 
+      title : title , 
       amount : amount , 
-      date : date 
+      date : new Date(arrayDate[0],arrayDate[1],arrayDate[2])
     }
-
-    console.log(obj);
+  
+    props.onExpenseForm(expense);
+    
+    setTitle('');
+    setAmount('');
+    setDate('');
 }
 
   return (
     <form className="form">
       <div className="formLabel">
         <label>Titel</label>
-        <input type="text" onChange={titleChangeHandler}/>
+        <input type="text" value={title} onChange={titleChangeHandler}/>
       </div>
       <div className="formLabel">
         <label>Amount</label>
-        <input type="number" onChange={amountChangeHandler}/>
+        <input type="number" value={amount} onChange={amountChangeHandler}/>
       </div>
       <div className="formLabel">
         <label>Date</label>
-        <input type="Date" onChange={dateChangeHandler}/>
+        <input type="Date" value={date} onChange={dateChangeHandler}/>
       </div>
       <button className="btnExpense" onClick={storeInputValue}>Add Expense</button>
     </form>
