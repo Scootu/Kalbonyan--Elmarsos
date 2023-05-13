@@ -2,7 +2,6 @@ import "./App.css";
 import NewExpenses from './components/NewExpenses/NewExpenses'; 
 import RenderExpens from "./components/Expenses/NewCompnentExpens";
 import React , { useState } from "react";
-
 function App() {
 
     let DAMMY_EXPENSES = [
@@ -31,9 +30,10 @@ function App() {
   function getNewExpenses(expense) {
 
     setExtanded((prevExpense) => { 
+      console.log(prevExpense);
       return ([expense ,...prevExpense]) ; 
     }); // this not update the DOM 
-    console.log(extanded);
+    // console.log(extanded);
     
     // and this don't update the dom ? 
 
@@ -48,9 +48,8 @@ function App() {
   return (
     // put attribute for make the component dynamic !
     <div className="container"> 
-      <NewExpenses onNewExpenses = {getNewExpenses} /> 
+      <NewExpenses onNewExpenses = {getNewExpenses} />
       <RenderExpens item = {extanded} />
-
     </div>
   );
 }

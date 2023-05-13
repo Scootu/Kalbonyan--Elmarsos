@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Card from "../UI/Card";
 // import ExpensItem from "./ExpensItem";
 import ExpenseFilter from "../NewExpenses/ExpenseFilter";
-import ExpensList from './ExpensList.js' ; 
+import ExpensList from "./ExpensList.js";
+import ExpensChart from "./ExpensChart";
 import "./NewCompnentExpens.css";
 // import '../NewExpenses/ExpenseForm.css' ;
 function RenderExpens(props) {
@@ -17,13 +18,11 @@ function RenderExpens(props) {
   });
 
   return (
-    
     <Card className="expenses">
       <ExpenseFilter onNewGetOptionVal={getExpenseFilterVal} />
-      <ExpensList items = {filteredExpense}/>
+      <ExpensChart items= {filteredExpense} /> 
+      <ExpensList items={filteredExpense} />
     </Card>
-    
   );
-  
 }
 export default RenderExpens;

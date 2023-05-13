@@ -22,7 +22,7 @@ const storeInputValue = (event) => {
 
     event.preventDefault() ; 
     let arrayDate = date.split('-');
-    
+    console.log(arrayDate);
     let expense = { 
       id:Math.random() , 
       title : title , 
