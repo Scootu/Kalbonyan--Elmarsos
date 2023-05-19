@@ -1,0 +1,19 @@
+.form-control { 
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 1rem;
+    border-radius: 11px;
+    background-color: #fff;
+    margin-bottom: 12px;
+}
+.form-control label { 
+    
+   font-weight: bold;
+}
+.form-control input { 
+    font-size: 18px;
+    border: 1px solid #ccc;
+    padding: 0.15rem;
+    
+}

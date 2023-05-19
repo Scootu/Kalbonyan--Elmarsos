@@ -1,0 +1,35 @@
+.outErrorBox {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: rgba(0,0,0,0.75);
+ }
+
+ /*we can using */
+.insideErrorBox { 
+    max-width: 40rem;
+    width: 80%;
+    margin: 19% auto;
+}
+
+.insideHeaderText { 
+    background: #4f005f;
+    padding: 1rem;
+    font-weight: bold;
+    color: #FFF;
+}
+.insidesubText { 
+    background: #FFF;
+    padding: 1rem;
+}
+.button { 
+    padding: 1rem;
+    background-color: #FFF;
+
+}
+.button Button { 
+    display: block;
+    margin-left: auto;
+}
