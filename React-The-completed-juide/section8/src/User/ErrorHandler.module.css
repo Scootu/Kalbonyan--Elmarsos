@@ -9,9 +9,10 @@
 
  /*we can using */
 .insideErrorBox { 
+    position: fixed;
     max-width: 40rem;
     width: 80%;
-    margin: 19% auto;
+    margin: 17% 13%;
 }
 
 .insideHeaderText { 

@@ -21,13 +21,13 @@ const UserList = () => {
   }
 
   return (
-    <div>
+    <React.Fragment>
       {isError && <ErrorHandler onGetAns= {setIsErrorAnsFalse}/>}
       <AddUser setGetUserData={getUserData}  onGetAns={setIsErrorAnsTrue}/>
       <Card className={styled.users}>
            <RendredList onAddFormArr ={addForm}/>
       </Card>
-    </div>
+    </React.Fragment>
   );
 };
 export default UserList;
