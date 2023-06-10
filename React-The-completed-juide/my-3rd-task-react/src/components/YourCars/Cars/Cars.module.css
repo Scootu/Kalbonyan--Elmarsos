@@ -1,0 +1,11 @@
+.Cars { 
+    position: relative;
+}
+
+.subText { 
+    color: #741906;
+}
+.carsContent { 
+    padding-top: 7rem;
+    height: 575px;
+}

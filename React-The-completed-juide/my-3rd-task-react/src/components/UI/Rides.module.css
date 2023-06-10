@@ -1,0 +1,17 @@
+.rides {
+  position: absolute;
+  width: 698px;
+  height: 165px;
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 84px;
+  line-height: 164px;
+
+  /* left: 0;
+  top: -22px; */
+  left: -10px;
+  top: -60px;
+  color: #ebebeb; 
+  z-index: -1;
+}

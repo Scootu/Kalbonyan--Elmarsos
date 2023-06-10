@@ -1,11 +1,12 @@
 import React from "react";
 import classes from "./Home.module.css";
 import Header from "./Header";
+
 const Home = () => {
   return (
     <section className={classes.home}>
       <Header />
-      <div className={`${classes.container} ${classes.grid}`}>
+      <div className={`${classes.grid} grid grid-col2 container`}>
         <div></div>
         <div className={` ${classes.homeText}`}>
           <p>
@@ -16,7 +17,7 @@ const Home = () => {
             Visit us today and drive away with your dream car!
           </p>
           <button className={classes.button} type="button">
-           <span>Discover</span><span class="material-symbols-outlined">north_east</span>
+           <span>Discover</span><span className="material-symbols-outlined">north_east</span>
           </button>
         </div>
       </div>

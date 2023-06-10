@@ -1,33 +1,20 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment } from "react";
 import "./App.css";
 import Home from "./components/YourCars/Home/Home";
 import About from "./components/YourCars/About/About";
+import Services from "./components/YourCars/Services/Services.js";
+import Cars from "./components/YourCars/Cars/Cars";
+
 
 function App() {
-  const [data, setData] = useState({});
-
-  const fetchData = async () => {
-    fetch("data.json", {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => {
-        return res.json();
-      })
-      .then((myjson) => {
-        console.log(myjson);
-      });
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []); // Empty dependency array to ensure effect runs only once
-
+  console.log(window.screenY);
   return (
     <Fragment>
       <Home />
       <About />
+      <Services />
+
+      <Cars />
     </Fragment>
   );
 }

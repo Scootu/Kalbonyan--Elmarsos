@@ -2,9 +2,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 87.64%;
+
   margin: 0 auto;
-  padding: 0 0;
+  width: 100%;
+  padding: 0.4rem 7rem;
+}
+.navSticky {
+  background-color: #ffffff;
+  color: #12273d;
+  position: fixed;
+  z-index: 10;
+  transition: 0.3s ease-in-out;
+}
+.navSticky .navBarLogo { 
+  color: #12273d;
+}
+.navSticky .navBarList li a { 
+  color: #12273d;
+}
+.navSticky .img { 
+  color: #12273d;
+}
+.navSticky .navBarList li a:hover { 
+  color: #ffffff;
 }
 .navBarLogo {
   font-family: "Lora";
@@ -21,6 +41,7 @@
 
 .navBarList {
   display: flex;
+  align-items: center;
   list-style-type: none;
   gap: 20px;
 }
@@ -28,7 +49,7 @@
   font-family: "Noto Sans";
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 33px;
   /* identical to box height */
   padding: 4.5px 8.516px;
@@ -36,11 +57,13 @@
   color: #ffffff;
 }
 .navBarList li a:hover {
-    
-    background: #741906;
-    border-radius: 6px;
-    cursor: pointer;
- }
+  background: #741906;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.navBarList li span {
+  cursor: pointer;
+}
 .img {
-    color: #FFFFFF;
+  color: #ffffff;
 }
