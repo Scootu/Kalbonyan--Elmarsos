@@ -15,11 +15,14 @@ import CardCar from "./CardCar/CardCar";
 const SlidesCard = () => {
   const data = useContext(CardDataContext);
   // const ArrayData = useContext(CardData);
-  console.log(data);
-  const swiperCardSlide = data.cars.map((elem) => {
+  console.log(data.cars);
+  const swiperCardSlide = data.cars.map((elem,index) => {
+    
     return (
       <SwiperSlide key={Math.random()}>
-        <CardCar
+        <CardCar 
+          key={elem.name}
+          ind={index}
           name={elem.name}
           class={elem.class}
           description={elem.description}

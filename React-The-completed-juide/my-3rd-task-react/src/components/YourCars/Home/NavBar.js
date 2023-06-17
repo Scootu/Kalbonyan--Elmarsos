@@ -1,27 +1,29 @@
 import React, {
   Fragment,
-  useContext,
   useEffect,
-  useRef,
   useState,
 } from "react";
 import styled from "./NavBar.module.css";
-import CardDataContext from "../../../Context/CardData";
-import Purchese from "./Purchese";
+// import CardDataContext from "../../../Context/CardData";
+import Purchese from "./Purchese/Purchese";
 const NavBar = () => {
-  const ctx = useContext(CardDataContext);
-
+  
+  const [isBtnValid, setIsBtnValid] = useState(false);
   const [isValid, setIsValid] = useState(false);
+  const clickBtn = () => {
+    setIsBtnValid(!isBtnValid);
+    // console.log(isBtnValid);
+  };
 
   useEffect(() => {
     const navScroolBar = () => {
       setIsValid(window.scrollY >= 716.8);
-      
     };
-    
+
     window.addEventListener("scroll", navScroolBar);
+    
     return () => {
-      window.removeEventListener('scroll',navScroolBar);
+      window.removeEventListener("scroll", navScroolBar);
     };
   });
 
@@ -49,13 +51,18 @@ const NavBar = () => {
             <a href="https://google.com">Contact us</a>
           </li>
           <li className={styled.img}>
-            <span className="material-symbols-outlined" onClick={ctx.Valid}>
+            <span
+              className={`${
+                isBtnValid ? styled.imgClickBtn : ""
+              } material-symbols-outlined`}
+              onClick={clickBtn}
+            >
               shopping_cart
             </span>
           </li>
-        </ul>
+        </ul> 
+        <Purchese response={isBtnValid}/>
       </nav>
-      <Purchese />
     </Fragment>
   );
 };
