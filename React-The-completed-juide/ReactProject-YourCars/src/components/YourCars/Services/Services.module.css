@@ -1,0 +1,130 @@
+.service {
+  background: url(/public/images/CTABG.png), url(/public/images/Rectangle3.png);
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  position: relative;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+}
+
+.styleGridGap {
+  column-gap: 155px;
+}
+
+.icon {
+  width: 100%;
+}
+
+.content {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  /* or 75% */
+
+  text-align: center;
+  letter-spacing: -0.005em;
+
+  color: #12273d;
+}
+
+.content span {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.imgsContainer {
+  width: 18%;
+  position: relative;
+}
+
+.notSelected {
+  position: absolute;
+  top: 52%;
+  left: 59%;
+}
+
+.notSelected img {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* seconde item */
+.imgsContainerRental {
+  position: relative;
+  width: 20%;
+  top: -40px;
+}
+
+.carRental {
+  width: 100%;
+  height: 56px;
+}
+
+/* thired item*/
+.imgsContainerSelling {
+  position: relative;
+  width: 21%;
+}
+
+/*Rides and subText */
+.ridesPosition {
+  top: 132px;
+  color: #ebebeb;
+  opacity: 1;
+}
+
+.subText {
+  color: #12273d;
+  top: 69px;
+  margin-bottom: 17rem;
+}
+
+@media (max-width:68.75em) {
+  .styleGridGap {
+    column-gap: 114px;
+  }
+
+}
+
+@media (max-width:64em) {
+  .styleGridGap {
+    column-gap: 50px;
+  }
+
+}
+
+@media (max-width:46.875em) {
+  .styleGridGap {
+    grid-template-columns: 1fr;
+    row-gap: 90px;
+  }
+
+
+}
+
+@media (max-width:33.125em) {
+  .service {
+    background-position: bottom;
+  }
+
+  .ridesPosition {
+    font-size: 86px;
+    max-width: 400px;
+  }
+
+  .content {
+    width: 336px;
+  }
+
+}
+@media (max-width:25em) {
+   .ridesPosition { 
+    font-size: 6rem;
+   }
+}

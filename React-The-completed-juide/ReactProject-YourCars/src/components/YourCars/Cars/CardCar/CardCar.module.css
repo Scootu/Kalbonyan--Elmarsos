@@ -1,0 +1,92 @@
+.Card {
+  padding: 0 3rem;
+  box-shadow: 4px 10px 30px rgba(0, 0, 0, 0.1);
+  height: 89%;
+
+}
+
+.text {
+  font-family: "Nunito Sans";
+  font-style: normal;
+}
+
+.HeaderText {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  /* identical to box height */
+
+  color: #741906;
+}
+
+.subHeader {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+
+  color: rgba(35, 34, 34, 0.96);
+}
+
+.description {
+  padding: 1rem 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  /* or 18px */
+  margin-bottom: 3rem;
+  color: rgba(35, 34, 34, 0.96);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 50px;
+}
+
+.info {
+  width: 127px;
+}
+
+.info div {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.imgCard {
+  width: 18% !important;
+}
+
+.paragraphe {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+
+  color: #741906;
+}
+
+@media (max-width:68.75em) {
+  .Card {
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width:64em) {
+  .Card {
+    padding: 0 3rem;
+  }
+
+  .footer {
+
+    width: 83%;
+  }
+}
+
+@media (max-width:46.875em) {
+  .img img {
+    width: 70%;
+    margin: auto;
+  }
+}

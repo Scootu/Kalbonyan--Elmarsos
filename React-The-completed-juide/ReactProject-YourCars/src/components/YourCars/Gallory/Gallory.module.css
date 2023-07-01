@@ -1,0 +1,75 @@
+.main {
+    /* height:100vh; have :not full with her child element don't take the full height depending in her child element but (icnoring this) and take just the 100% from viewPore (screen) */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.galloryImg {
+    width: 100%;
+    height: 100%;
+}
+
+.galloryMid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    background-image: url('/public/images/GalloryImg/Rectangle2.png');
+    color: #ffffff;
+
+}
+
+.galloryMid p {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.galloryMid span {
+    font-size: 16px;
+}
+
+.Button {
+    padding: 0.5rem 2rem;
+    border-radius: 7px;
+    border: 2px solid #ffffff;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.Button:hover {
+    cursor: pointer;
+}
+
+@media (max-width:46.875em) {
+    .main {
+        grid-template-columns: 1fr;
+    }
+
+    .galloryImg:nth-of-type(n):not(:last-child) {
+        opacity: 0;
+        position: absolute;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .galloryImg:last-of-type {
+        max-width: 400px;
+        width: unset;
+        justify-self: center;
+    }
+
+    .galloryMid {
+        max-width: 400px;
+        width: 100%;
+        height: 270px;
+        justify-self: center;
+        background-repeat: no-repeat;
+    }
+
+}
+@media (max-width:29.375em) { 
+   
+}

@@ -1,0 +1,238 @@
+.patrent {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    background-color: #fafafa;
+    padding: 8rem 9rem;
+    gap: 86px;
+    align-items: center;
+
+}
+
+.imgPatrent {
+    width: 100%;
+}
+
+.mainFooter {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    padding: 2rem;
+    justify-items: center;
+    gap: 135px;
+    grid-template-areas: 'logo new contact';
+}
+
+.footerLogo {
+    font-family: "Lora";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 61px;
+
+    color: #741906;
+}
+
+.your {
+    font-weight: 700;
+}
+
+.logoElem {
+    grid-area: logo;
+}
+
+.logoElem p {
+    margin-left: 16px;
+    margin-bottom: 10px;
+
+    color: #12273D;
+
+    font-size: 16px;
+    font-family: "Nunito Sans";
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0.8px;
+
+}
+
+.flex {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+}
+
+.newLetter {
+    gap: 28px;
+    grid-area: new;
+}
+
+.newLetter p {
+    margin: 0px 17%;
+    text-align: center;
+    color: #12273D;
+    font-size: 16px;
+    font-family: "Nunito Sans";
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0.8px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.formInut {
+    padding: 1rem 5rem;
+    border: 1px solid #741906;
+    outline: none;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    color: #FFFFFFFF;
+    /* font-size: 16px; */
+    font-weight: 700;
+    background-color: #741906;
+    border: none;
+}
+
+.socialMedia {
+    display: flex;
+    gap: 34px;
+}
+
+.icons {
+    height: 80%;
+}
+
+.icons:hover {
+    cursor: pointer;
+}
+
+.contact {
+    grid-area: contact;
+}
+
+.contact>p {
+    margin-bottom: 20px;
+}
+
+
+.contactInfo {
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.contactInfo div {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.contactInfo p {
+    color: #12273D;
+    font-size: 16px;
+    font-family: "Nunito Sans";
+}
+
+.endSection {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 80%;
+    align-items: center;
+    gap: 18px;
+    padding-bottom: 40px;
+}
+
+hr {
+    background-color: #741906;
+    width: 100%;
+    height: 3px;
+    border: none;
+}
+
+.endSection p {
+    font-size: 16px;
+}
+
+@media (max-width:80em) {
+    .formInut {
+        padding: 1rem 3rem;
+    }
+
+    .mainFooter {
+        gap: 92px;
+    }
+
+    .newLetter p {
+        margin: 0 14%;
+    }
+}
+
+@media (max-width:68.75em) {
+    .mainFooter {
+        gap: 55px;
+    }
+
+    .patrent {
+        gap: 50px;
+    }
+
+}
+
+@media (max-width:64em) {
+    .patrent {
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 165px;
+        row-gap: 18px;
+    }
+
+    .mainFooter {
+        column-gap: 150px;
+        row-gap: 18px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "logo contact"
+            "new new"
+        ;
+    }
+}
+
+@media (max-width:46.875em) {
+    .patrent {
+        column-gap: 100px;
+    }
+
+    .mainFooter {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'logo'
+            'new'
+            'contact';
+    }
+
+    .logoElem {
+        text-align: center;
+        width: 248px;
+    }
+
+}
+
+@media (max-width:40.625em) {
+    .patrent {
+
+        column-gap: 60px;
+    }
+}
+
+@media (max-width:33.125em) {
+    .patrent {
+        padding: 5rem 5rem;
+
+    }
+}
