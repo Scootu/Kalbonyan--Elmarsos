@@ -38,24 +38,24 @@ const Footer = () => {
                         <Button className={classes.btn} >Subscribe</Button>
                     </form>
                     <div className={classes.socialMedia}>
-                        <img className={classes.icons} src='/images/social_Icons/facebook.png' ></img>
-                        <img className={classes.icons} src="/images/social_Icons/instragram.png"></img>
-                        <img className={classes.icons} src="/images/social_Icons/twitter.png"></img>
+                        <img className={classes.icons} src='/images/social_Icons/facebook.png' alt="icon facebook" ></img>
+                        <img className={classes.icons} src="/images/social_Icons/instragram.png" alt="twitter icon "></img>
+                        <img className={classes.icons} src="/images/social_Icons/twitter.png" alt="instragram icon "></img>
                     </div>
                 </div>
                 <div className={`${classes.flex} ${classes.contact}`} >
                     <p className={classes.footerLogo}>Contact</p>
                     <div className={`${classes.flex} ${classes.contactInfo}`}>
                         <div>
-                            <img className={classes.contactIcon} src="/images/contact_Icons/Vector1.png" />
+                            <img className={classes.contactIcon} src="/images/contact_Icons/Vector1.png " alt="contact icon " />
                             <p>2038 2nd Avenue <br></br>Las Vegas, United States</p>
                         </div>
                         <div>
-                            <img className={classes.contactIcon} src="/images/contact_Icons/Vector2.png" />
+                            <img className={classes.contactIcon} src="/images/contact_Icons/Vector2.png" alt='contact icon ' />
                             <p>01444773421423<br></br>01477678449405</p>
                         </div>
                         <div>
-                            <img className={classes.contactIcon} src="/images/contact_Icons/Vector3.png" />
+                            <img className={classes.contactIcon} src="/images/contact_Icons/Vector3.png"alt='contact icon '/>
                             <p>info@YourCar.com</p>
                         </div>
                     </div>

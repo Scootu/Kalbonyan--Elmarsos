@@ -1,22 +1,12 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import SmallInput from "./SmallInput";
 import classes from "./slip.module.css";
-import CardDataContext from "../../../../Context/CardData";
+
 
 const Slip = (props) => {
-  const ctx = useContext(CardDataContext);
+
   const [isValid, setIsValid] = useState(true);
 
-  const saveInLocalStorage = () => { // modify make it save directly in the dataSource cars 
-    const dataArr = JSON.parse(localStorage.getItem('dataCars'));
-    if (dataArr.length === 6) {
-      console.log(dataArr, props.data.index);
-      dataArr[props.data.index].value = 0;
-      localStorage.setItem('dataCars', JSON.stringify(dataArr));
-      console.log('good', dataArr);
-    }
-
-  }
   const deleteSlip = () => {
     props.data.value = 0;
     setIsValid(false);

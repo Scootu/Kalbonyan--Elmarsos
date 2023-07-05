@@ -1,20 +1,17 @@
 import React, {
-  Fragment,
-  useReducer,
-  useContext,
   useState,
   useEffect,
   useRef,
 } from "react";
 import classes from "./Input.module.css";
-import CardDataContext from "../../../../Context/CardData";
+
 import { createPortal } from "react-dom";
 import Slip from "../../Home/Purchese/Slip";
 const Input = (props) => {
   // input interact from the begning( use the value from the props ) and save  in the end (in the localStorage) 
   const item = useRef();
   const sideBarContainer = document.getElementById("slipContainer");
-  const ctx = useContext(CardDataContext);
+
   const getValFromLocalStorage = () => {
     let arr = JSON.parse(localStorage.getItem('dataCars') || '[]');
     if (arr[props.props.ind] === undefined) {

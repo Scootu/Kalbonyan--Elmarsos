@@ -152,9 +152,8 @@ body {
 .imgSlide {
   position: absolute;
   color: #FFFFFF;
-  top: 15px;
   right: 8%;
-  padding: 1rem;
+  padding: 2% 0 0 0;
 
 }
 
@@ -179,6 +178,16 @@ body {
   transition: 0s ease-in-out;
 }
 
+.SumValues {
+  font-size: 24px;
+  right: 8%;
+  /* padding: 2% 0 0 0; */
+  top: 1%;
+  position: absolute;
+  border-radius: 4px;
+  background: #F8D7A4;
+}
+
 /* Media querry  */
 
 @media (max-width:80em) {
@@ -198,7 +207,7 @@ body {
 
   /* .imgSlide {
     /* right: 6rem; */
-   /* }  */
+  /* }  */
 }
 
 @media (max-width:64rem) {

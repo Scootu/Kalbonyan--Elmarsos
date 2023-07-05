@@ -5,16 +5,13 @@ import React, {
 } from "react";
 import styled from "./NavBar.module.css";
 // import CardDataContext from "../../../Context/CardData";
-import Purchese from "./Purchese/Purchese";
+
 const NavBar = () => {
 
-  const [isBtnValid, setIsBtnValid] = useState(false);
+
   const [isValid, setIsValid] = useState(false);
   const [isMobileValid, setMobileValid] = useState(false);
-  const clickBtn = () => {
-    setIsBtnValid(!isBtnValid);
-    // console.log(isBtnValid);
-  };
+
   const clickedMobile = () => {
     setMobileValid(!isMobileValid);
    

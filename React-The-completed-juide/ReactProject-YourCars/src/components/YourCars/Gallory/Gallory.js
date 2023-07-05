@@ -2,9 +2,7 @@ import Button from '../../UI/Button';
 import classes from './Gallory.module.css' ; 
 
 const Gallory = () => {
-   const gridArea = {
-    'grid-area':'tesla'
-   }
+  
     return (
         <section className={classes.main} >
                <img className={classes.galloryImg} src='/images/GalloryImg/Car.png' alt='pochaty in the sahara'/>

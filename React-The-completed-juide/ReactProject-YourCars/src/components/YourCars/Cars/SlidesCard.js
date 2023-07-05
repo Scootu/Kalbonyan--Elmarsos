@@ -17,18 +17,7 @@ const SlidesCard = () => {
   const [width, setWidth] = useState(3)
   // const ArrayData = useContext(CardData);
   // modify set to get 
-  const arr = [];
 
-  const saveDataLocalStorage = (elem, index) => {
-    arr.push({
-      value: '0',
-      index: index,
-      name: elem.name,
-      class: elem.class,
-      image: elem.image
-    });
-    localStorage.setItem('dataCars', JSON.stringify(arr));
-  }
 
 
   const swiperCardSlide = data.cars.map((item, index) => {

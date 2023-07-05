@@ -4,9 +4,7 @@ import Button from "../../../UI/Button";
 // import CardDataContext from "../../../../Context/CardData";
 const Purchese = (props) => {
   //   const ctxValue = useContext(CardDataContext);
-  const [dataCars, setDataCars] = useState(
-    JSON.parse(localStorage.getItem("dataCars"))
-  );
+
   const getLocalStorage = () => {
     //  setDataCars(JSON.parse(localStorage.getItem('dataCars')))
     return JSON.parse(localStorage.getItem("dataCars"));
