@@ -41,7 +41,9 @@
 .img img {
   width: 100%;
 }
-
+.delete {
+  cursor: pointer;
+}
 .visible { 
   opacity: 1;
   pointer-events: all;

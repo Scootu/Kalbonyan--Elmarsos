@@ -7,28 +7,33 @@
   text-align: center;
   font-size: 24px;
 }
+
 /* INPUT  */
 
 .counter {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 117px; /*this provent flexbility */
+  width: 117px;
+  /*this provent flexbility */
   border-radius: 4px;
   overflow: hidden;
 }
+
 .counter span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
-  line-height: 33px;
-  display: block;
+
   width: 100%;
   height: 100%;
-  color: #ffffff;
-  color: #ffffff;
 
+  color: #ffffff;
   background: #741906;
   cursor: pointer;
+
 }

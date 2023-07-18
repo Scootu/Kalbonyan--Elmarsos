@@ -1,21 +1,20 @@
-import React, {
-  Fragment,
-  useEffect,
-  useState,
-} from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import styled from "./NavBar.module.css";
+import CardDataContext from "../../../Context/CardContext";
 // import CardDataContext from "../../../Context/CardData";
 
-const NavBar = () => {
-
-
+const NavBar = (props) => {
+  const ctx = useContext(CardDataContext);
   const [isValid, setIsValid] = useState(false);
   const [isMobileValid, setMobileValid] = useState(false);
-
+  const [isCLicked, setIsClicked] = useState(false);
+  const iconClickedCart = () => {
+    props.onClickIconCart();
+    setIsClicked(!isCLicked);
+  };
   const clickedMobile = () => {
     setMobileValid(!isMobileValid);
-   
-  }
+  };
   useEffect(() => {
     const navScroolBar = () => {
       setIsValid(window.scrollY >= 716.8);
@@ -35,7 +34,12 @@ const NavBar = () => {
           <span>Your</span>
           <span>Car</span>
         </div>
-        <ul className={`${styled.navBarList} ${styled.navMobile} ${isMobileValid ? styled.navMobileTransilate : ''}`}>
+
+        <ul
+          className={`${styled.navBarList} ${
+            isMobileValid ? styled.navMobileTransilate : ""
+          }`}
+        >
           <li>
             <a href="https://google.com">Home</a>
           </li>
@@ -51,15 +55,26 @@ const NavBar = () => {
           <li>
             <a href="https://google.com">Contact us</a>
           </li>
-          <li className={styled.img}>
-
-          </li>
-         
-          
-          
         </ul>
-        <span className={styled.indicate} onClick={clickedMobile}>slide</span>
-        {/* <Purchese response={isBtnValid}/> */}
+        <div className={styled.img}>
+          <span
+            className={`${isCLicked ? styled.imgClickBtn : ""} ${
+              isValid ? styled.black : styled.white
+            }  material-symbols-outlined `}
+            onClick={iconClickedCart}
+          >
+            shopping_cart
+          </span>
+          <span className={`${styled.badge}`}>{ctx.totalAmount}</span>
+          <span
+            className={`${styled.show} ${
+              isValid ? styled.black : styled.white
+            } material-symbols-outlined`}
+            onClick={clickedMobile}
+          >
+            menu
+          </span>
+        </div>
       </nav>
     </Fragment>
   );

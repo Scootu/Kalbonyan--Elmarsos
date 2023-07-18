@@ -1,0 +1,29 @@
+.button {
+    border-radius: 4px;
+    background: #741906;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    gap: 10px;
+    border: none;
+    color: #FFFFFF;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.cartList {
+    list-style-type: none;
+    overflow-y: scroll;
+    max-height: 70vh;
+
+}
+
+.cartAlert {
+    font-size: 16px;
+    color: #FFFFFF;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+}

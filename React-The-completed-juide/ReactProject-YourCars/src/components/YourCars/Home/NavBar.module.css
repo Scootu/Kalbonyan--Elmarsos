@@ -1,12 +1,10 @@
 .navBar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 
   margin: 0 auto;
   width: 100%;
   padding: 0.4rem 7rem;
-
 }
 
 .navSticky {
@@ -53,6 +51,7 @@
   list-style-type: none;
   gap: 20px;
   z-index: 15;
+  margin-left: 38%;
 }
 
 .navBarList li a {
@@ -78,19 +77,43 @@
 }
 
 .img {
-  width: 8rem;
+  position: relative;
+  margin-left: 30px;
+}
+
+.img span:nth-child(1) {
+  cursor: pointer;
+}
+
+.black {
+  color: black;
+}
+
+.white {
+  color: #ffffff;
+}
+
+.badge {
+  position: absolute;
+  border-radius: 4px;
+  background: #F8D7A4;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 14px;
+  padding: 1px 3px;
+  top: -9px;
+  left: 18px;
 }
 
 .imgClickBtn {
   color: #741906;
 }
 
-.indicate {
+.show {
   opacity: 0;
   position: absolute;
   visibility: hidden;
   pointer-events: none;
-
+  cursor: pointer;
 }
 
 /* mobile navBar */
@@ -102,44 +125,65 @@
   }
 
   .navBarList {
-    gap: 16px;
+    margin-left: 10%;
   }
 
-  .img {
-    width: 4rem;
-  }
 
 }
 
 @media (max-width:46.875em) {
-  .indicate {
+
+  .show {
     opacity: 1;
-    right: 4%;
     pointer-events: all;
     visibility: visible;
+    position: relative;
+    margin-left: 12px;
+  }
+
+  .navBar {
+    justify-content: space-between;
   }
 
   .navBarList {
-    gap: 31px;
-  }
 
-  .navMobile {
     flex-direction: column;
     position: absolute;
+    justify-content: center;
     right: 0;
     top: 69px;
     background: rgba(18, 39, 61, 0.95);
     backdrop-filter: blur(25px);
     height: 646.5px;
-    padding: 13rem 12rem 22rem 2rem;
-    align-items: flex-start;
+
     transform: translate(100%, 0);
     transition: 0.3s ease-in-out;
     color: #ffffff;
+    width: 60%;
+    max-width: 336px;
+  }
+
+  .navSticky .navBarList li a {
+    color: #ffffff;
+  }
+
+  .navBarList li {
+    width: 100%;
+    height: 40px;
+    padding-left: 3rem;
+  }
+
+  .navBarList li:hover {
+    background: #741906;
+    cursor: pointer;
   }
 
   .navMobileTransilate {
     transform: translate(0, 0);
+  }
+
+  .img {
+    margin-left: 0;
   }
 }
 

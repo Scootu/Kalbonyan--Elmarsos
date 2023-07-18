@@ -1,111 +1,114 @@
-import React, {
-  createContext,
-  useCallback,
-  useEffect,
-  useReducer,
-  useState
-} from "react";
-
-const CardDataContext = createContext({
-  info: {},
-  cars: [""],
-  testimonials: [""],
-  onPurches: () => { },
-  array: () => { }
-});
+import React, { useReducer } from "react";
+import CardDataContext from "./CardContext.js";
 
 export const CardData = (props) => {
-  let arr = [
-{ value: 0, index: 0, name: 'Porsche 911', class: 'Sports Car', image: '/images/porsche-911-1.png' }
-,
-{ value: 0, index: 1, name: 'BMW 7 Series', class: 'Luxury Car', image: '/images/bmw-7-series.png' }
-,
-{ value: 0, index: 2, name: 'Range Rover Sport', class: 'SUV', image: '/images/range-rover-sport.png' }
-,
-{ value: 0, index: 3, name: 'Mercedes-Benz S-Class', class: 'Luxury Car', image: '/images/mercedes-benz-s-class.png' }
-,
-{ value: 0, index: 4, name: 'Tesla Model S', class: 'Electric Car', image: '/images/tesla-model-s.png' }
-,
-{ value: 0, index: 5, name: 'Bentley Bentayga', class: 'Luxury SUV', image: '/images/bentley-bentayga.png' }
-  ]; // main arr
+
+  const defaultValue = JSON.parse(
+    localStorage.getItem("dataCars") || '{"items": [], "totalAmount": 0}'
+  );
+
   const dataReducer = (state, action) => {
-    if (action.type === "update") {
+    if (action.type === "ADD") {
+      let updateTotalAmount;
+
+      const existingCartItemIndex = state.items.findIndex((item) => {
+        return item.id === action.item.id;
+      });
+      const existingCartItem = state.items[existingCartItemIndex];
+      let updatedItems;
+
+      if (existingCartItem) {
+        const updatedItem = {
+          ...existingCartItem,
+          amount: action.item.amount,
+        };
+        updatedItems = [...state.items];
+        updatedItems[existingCartItemIndex] = updatedItem;
+        updateTotalAmount = updatedItems.reduce((preVal, curVal) => {
+          return preVal + curVal.amount;
+        }, 0);
+      } else {
+        updatedItems = state.items.concat(action.item);
+        updateTotalAmount = state.totalAmount + action.item.amount;
+      }
+      localStorage.setItem(
+        "dataCars",
+        JSON.stringify({
+          items: updatedItems,
+          totalAmount: updateTotalAmount,
+        })
+      );
       return {
-        cars: action.cars,
-        testimonials: action.testimonials,
-      };
-    } else if (action.type === "info") {
-      return {
-        info: action.info,
-        cars: action.cars,
-        testimonials: action.testimonials,
-        onPurches: () => { },
-      };
-    } else {
-      return {
-        cars: ["0"],
+        items: updatedItems,
+        totalAmount: updateTotalAmount,
       };
     }
+
+    if (action.type === "REMOVE") {
+      const existingCartItemIndex = state.items.findIndex((item) => {
+        return item.id === action.id;
+      });
+
+      const existingCartItem = state.items[existingCartItemIndex];
+      let updateTotalAmount;
+      let updatedItems;
+      if (existingCartItem) {
+        updateTotalAmount = state.totalAmount - existingCartItem.amount;
+        updatedItems = state.items.filter((item) => {
+          return item.id !== action.id;
+        });
+      } else {
+        updateTotalAmount = state.totalAmount;
+        updatedItems = state.items;
+      }
+      localStorage.setItem(
+        "dataCars",
+        JSON.stringify({
+          items: updatedItems,
+          totalAmount: updateTotalAmount,
+        })
+      );
+      return {
+        items: updatedItems,
+        totalAmount: updateTotalAmount,
+      };
+    }
+    if ((action.type = "REMOVEALL")) {
+      localStorage.setItem(
+        "dataCars",
+        JSON.stringify({ items: [], totalAmount: 0 })
+      );
+      return {
+        items: [],
+        totalAmount: 0,
+      };
+    }
+    return defaultValue;
   };
 
-  const [data, dispatch] = useReducer(dataReducer, {
-    type: "update",
-    cars: [""],
-    testimonials: [""],
-  });
-  const [info, setInfo] = useState({});
+  const [data, dispatch] = useReducer(dataReducer, defaultValue);
 
-  const purcheseVal = () => {
-    setInfo({ true: 'true' });
+  const addCardHandler = (item) => {
+    dispatch({ type: "ADD", item: item });
   };
-  const saveLocalStorage = (value) => {
-    arr[value.index].value = value.value ;
-    console.log('changed');
-    localStorage.setItem('dataCars', JSON.stringify(arr));
-    
-  }
-  /* fetch api 1.0 version 
 
-  // fetch("data.json")
-  //     .then((respons) => {
-  //       return respons.json();
-  //     })
-  //     .then((result) => {
-  //       dispatch({
-  //         type: "update",
-  //         cars: result.cars,
-  //         testimonials: result.testimonials,
-  //       });
-  //     })
-  */
-
-  const getCars = useCallback(async () => {
-    const responce = await fetch("data.json");
-    const result = await responce.json();
-
-    dispatch({
-      type: "update",
-      cars: result.cars,
-      testimonials: result.testimonials,
-    });
-  }, []);
-
-  useEffect(() => {
-    getCars();
-  }, [getCars]);
-
+  const removeCardHandler = (id) => {
+    dispatch({ type: "REMOVE", id: id });
+  };
+  const removeAllCartItems = () => {
+    dispatch({ type: "REMOVEALL" });
+  };
   /*   VALIDE VALue  */
+  const cardDataValues = {
+    items: data.items,
+    totalAmount: data.totalAmount,
+    addCard: addCardHandler,
+    removeCard: removeCardHandler,
+    deleteAllItems: removeAllCartItems,
+  };
 
   return (
-    <CardDataContext.Provider
-      value={{
-        info: {},
-        cars: data.cars,
-        testimonials: data.testimonials,
-        onPurches: purcheseVal,
-        array: saveLocalStorage
-      }}
-    >
+    <CardDataContext.Provider value={cardDataValues}>
       {props.children}
     </CardDataContext.Provider>
   );

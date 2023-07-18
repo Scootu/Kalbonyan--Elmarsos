@@ -1,0 +1,40 @@
+.module {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.backdrop {
+    overflow-y: auto;
+    position: fixed;
+    background: #12273D;
+    opacity: 1;
+    top: 69px;
+    right: 0;
+    width: 25%;
+    min-width: 400px;
+    height: 100vh;
+    padding: 1rem;
+    z-index: 30;
+    animation: slide-down 300ms ease-out forwards;
+    backdrop-filter: blur(25px);
+    padding: 2rem;
+}
+
+@keyframes slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(-3rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width:31.25em) {
+    .backdrop { 
+        width: 100%;
+    }
+}

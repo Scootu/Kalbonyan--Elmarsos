@@ -1,8 +1,28 @@
-import React  from "react";
+import React, { useContext } from "react";
 import classes from "./CardCar.module.css";
-import Input from "./Input";
+import Input from "../../../UI/Input";
+import CardDataContext from "../../../../Context/CardContext";
+// send for item context
 
 const CardCar = (props) => {
+  const ctx = useContext(CardDataContext);
+  const entredItemIndex = ctx.items.findIndex((item) => {
+    return props.id === item.id;
+  });
+  const updateAmountItem = (amount) => {
+    if (amount > 0) {
+      ctx.addCard({
+        id: props.id,
+        name: props.name,
+        class: props.class,
+        image: props.image,
+        amount: amount,
+      });
+    } else {
+      ctx.removeCard(props.id);
+    }
+  };
+
   return (
     <React.Fragment>
       <div className={classes.Card}>
@@ -35,7 +55,15 @@ const CardCar = (props) => {
               </div>
             </div>
 
-            <Input props={props} />
+            <Input
+              onGetAmount={updateAmountItem}
+              amount={
+                ctx.items[entredItemIndex]
+                  ? ctx.items[entredItemIndex].amount
+                  : 0
+              }
+              
+            />
           </div>
         </div>
       </div>

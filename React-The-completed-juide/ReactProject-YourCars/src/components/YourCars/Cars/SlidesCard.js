@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import CardDataContext from "../../../Context/CardData";
+import React, { useEffect, useState } from "react";
+// import CardDataContext from "../../../Context/CardContext";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -13,54 +13,59 @@ import { Navigation, Pagination } from "swiper";
 import CardCar from "./CardCar/CardCar";
 
 const SlidesCard = () => {
-  const data = useContext(CardDataContext);
-  const [width, setWidth] = useState(3)
+  // const dataItems = useContext(CardDataContext);
+  const [width, setWidth] = useState(3);
   // const ArrayData = useContext(CardData);
-  // modify set to get 
+  // modify set to get
 
+  const [dataCars, setDataCars] = useState([]);
 
+  const getCars = async () => {
+    const responce = await fetch("data.json");
+    const result = await responce.json();
 
-  const swiperCardSlide = data.cars.map((item, index) => {
+    const swiperCardSlide = result.cars.map((item, index) => {
+     
 
-    // saveDataLocalStorage(item,index);
+      return (
+        <SwiperSlide key={item.name}>
+          <CardCar
+            class={item.class}
+            id={index}
+            name={item.name}
+            description={item.description}
+            seats={item.seats}
+            luggage={item.luggage}
+            image={item.image}
+            
+          />
+        </SwiperSlide>
+      );
+    });
+    setDataCars(swiperCardSlide);
+  };
 
-    return (
-      <SwiperSlide key={Math.random()}>
-        <CardCar
-          key={item.name}
-          // val ={data.onPurches()}
-          ind={index}
-          name={item.name}
-          class={item.class}
-          description={item.description}
-          seats={item.seats}
-          luggage={item.luggage}
-          image={item.image}
-        />
-      </SwiperSlide>
-    );
-  });
+  useEffect(() => {
+    getCars();
+  }, []);
 
   const slideParViewFun = () => {
     if (window.innerWidth <= 750) {
       setWidth(1);
     } else if (window.innerWidth <= 1024) {
       setWidth(2);
+    } else if (window.innerWidth > 1024) {
+      setWidth(3);
     }
-    else if (window.innerWidth > 1024) {
-      setWidth(3)
-    }
-
-
-  }
+  };
   useEffect(() => {
-    // add event listener to screen resolution change 
-    window.addEventListener('mousemove', slideParViewFun);
+    // add event listener to screen resolution change
+    window.addEventListener("mousemove", slideParViewFun);
     return () => {
-      window.removeEventListener('mousemove', slideParViewFun);
-    }
-  })
-  console.log(window.innerWidth);
+      window.removeEventListener("mousemove", slideParViewFun);
+    };
+  });
+
   return (
     <>
       <Swiper
@@ -71,7 +76,7 @@ const SlidesCard = () => {
         modules={[Navigation, Pagination]}
         className="mySwiper"
       >
-        {swiperCardSlide}
+        {dataCars !== [] ? dataCars : ""}
       </Swiper>
     </>
   );
