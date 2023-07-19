@@ -18,7 +18,8 @@
 ### [S5](./Challenges/05-Design/)
 #### design a chair shop 
 - [ ] [demo](https://chairdesignshop.netlify.app/)
-
+### [S6](./Challenges/06-Components/)
+#### design a different component 
 ## [projects](./Projects)
 - [ ] [code](./Projects/Omnifood/code)
 - [ ] [liveDemo](https://ominofood-anes.netlify.app/) 
