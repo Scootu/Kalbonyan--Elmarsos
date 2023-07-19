@@ -1,7 +1,7 @@
 ## Build Responsive Real-World Websites with HTML and CSS by Jonas Schmedtmann
 
--[Challenges]()
+-[Challenges](./Challenges)
 
 #S2()
--[]ch1()
--[]PR1()   
+-[ ]ch1()
+-[ ]PR1()   
