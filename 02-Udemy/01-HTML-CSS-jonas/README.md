@@ -18,3 +18,6 @@
 ### [S5](./Challenges/05-Design/)
 #### design a chair shop 
 - [ ] [demo](https://chairdesignshop.netlify.app/)
+
+## [projects](./Projects)
+
