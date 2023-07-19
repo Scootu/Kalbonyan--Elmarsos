@@ -20,6 +20,6 @@
 - [ ] [demo](https://chairdesignshop.netlify.app/)
 
 ## [projects](./Projects)
-- [ ] [code]()
-- [ ] [liveDemo] 
+- [ ] [code](./Projects/Omnifood/code)
+- [ ] [liveDemo](https://ominofood-anes.netlify.app/) 
 
