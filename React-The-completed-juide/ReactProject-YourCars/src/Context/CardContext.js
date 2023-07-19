@@ -1,5 +1,5 @@
-import React, { createContext } from "react";
-const CardDataData = () => {};
+import  { createContext } from "react";
+
 const CardDataContext = createContext({
   items: [],
   totalAmount: 0,

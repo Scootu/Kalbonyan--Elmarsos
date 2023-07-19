@@ -15,3 +15,9 @@
   color: #ebebeb; 
   z-index: -1;
 }
+
+@media (max-width:31.25em) {
+  .rides { 
+    width: 375px;
+  }
+}

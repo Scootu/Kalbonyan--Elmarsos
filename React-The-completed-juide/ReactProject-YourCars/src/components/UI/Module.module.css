@@ -6,14 +6,13 @@
 }
 
 .backdrop {
-    overflow-y: auto;
     position: fixed;
     background: #12273D;
     opacity: 1;
     top: 69px;
     right: 0;
     width: 25%;
-    min-width: 400px;
+    min-width: 375px;
     height: 100vh;
     padding: 1rem;
     z-index: 30;

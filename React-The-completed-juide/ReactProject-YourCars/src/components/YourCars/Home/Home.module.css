@@ -143,11 +143,11 @@
   .button {
     font-size: 22px;
     padding: 14px 14px;
-    margin-top: 161px;
+    margin-top: 120px;
   }
 }
-
-@media (max-width:29.375em) {
+/*old value : 29.375em*/
+@media (max-width:31.25em) {
   .homeText p:nth-child(1) {
     font-size: 32px;
     width: 80%;
@@ -163,7 +163,8 @@
     padding: 1rem 2rem;
 
   }
-  .button { 
-     margin-top: 62%;
+
+  .button {
+    margin-top: 50%;
   }
 }

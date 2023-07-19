@@ -59,6 +59,7 @@ const SlidesCard = () => {
     }
   };
   useEffect(() => {
+    slideParViewFun();
     // add event listener to screen resolution change
     window.addEventListener("mousemove", slideParViewFun);
     return () => {

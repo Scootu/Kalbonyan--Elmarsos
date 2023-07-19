@@ -147,6 +147,7 @@ form {
     align-items: center;
     gap: 18px;
     padding-bottom: 40px;
+    text-align: center;
 }
 
 hr {
@@ -226,7 +227,7 @@ hr {
 @media (max-width:40.625em) {
     .patrent {
 
-        column-gap: 60px;
+        column-gap: 32px;
     }
 }
 
