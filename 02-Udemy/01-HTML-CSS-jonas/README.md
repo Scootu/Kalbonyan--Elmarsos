@@ -9,4 +9,4 @@
 - [ ] [ch1](./Challenges/03-CSS-Fundamentals/ch/s3ch1)
 - [ ] [ch2](./Challenges/03-CSS-Fundamentals/ch/s3ch2)
 - [ ] [ch3](./Challenges/03-CSS-Fundamentals/ch/s3ch3)
-- [ ] [Project](./Challenges/03-CSS-Fundamentals/pr) [demo]() 
+- [ ] [Project](./Challenges/03-CSS-Fundamentals/pr) [demo](codemagazinev2.netlify.app) 
