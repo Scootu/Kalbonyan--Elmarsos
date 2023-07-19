@@ -15,4 +15,5 @@
 - [ ] [ch2](./Challenges/04-CSS-Layouts/ch/s4ch2)
 - [ ] [ch3](./Challenges/04-CSS-Layouts/ch/s4ch3)
 - [ ] [project](./Challenges/04-CSS-Layouts/pr) [demo](codemagazinev3.netlify.app)
-### [S5]()
+### [S5](./Challenges/05-Design/)
+- [ ] [liveDeme-project-design-a-chair-shop](chairdesignshop.netlify.app) 
