@@ -20,4 +20,6 @@
 - [ ] [demo](https://chairdesignshop.netlify.app/)
 
 ## [projects](./Projects)
+- [ ] [code]()
+- [ ] [liveDemo] 
 
