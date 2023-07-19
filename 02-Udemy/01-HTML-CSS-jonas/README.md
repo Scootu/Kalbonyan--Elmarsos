@@ -1,6 +1,6 @@
 # Build Responsive Real-World Websites with HTML and CSS by Jonas Schmedtmann
 
-## -[Challenges](./Challenges)
+##  [Challenges](./Challenges)
 
 ### [S2](./Challenges/02-HTML-Fundamentals)
 - [ ] [ch1](./Challenges/02-HTML-Fundamentals/challange/ch1)
