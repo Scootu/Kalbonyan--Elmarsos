@@ -1,1 +1,10 @@
 ## React - The Complete Guide (incl Hooks, React Router, Redux) 
+### expenses-app(s5)
+- [code](./01-expenses-app(s3-s5))
+- [project](https://expenses-app-react.onrender.com/)
+### goels-app (s6-s7)
+- [code](./02-goals-app(s6-s7))
+- [project](https://goels-app-react.onrender.com/)
+### section8-section9 project 
+- [code](./03-section8&section9)
+- [project](https://section8-secition9pr.onrender.com)
