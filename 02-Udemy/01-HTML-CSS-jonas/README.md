@@ -14,4 +14,5 @@
 - [ ] [ch1](./Challenges/04-CSS-Layouts/ch/s4ch1)
 - [ ] [ch2](./Challenges/04-CSS-Layouts/ch/s4ch2)
 - [ ] [ch3](./Challenges/04-CSS-Layouts/ch/s4ch3)
-- [ ] [project](./Challenges/04-CSS-Layouts/pr) [demo]()
+- [ ] [project](./Challenges/04-CSS-Layouts/pr) [demo](codemagazinev3.netlify.app)
+### [S5]()
