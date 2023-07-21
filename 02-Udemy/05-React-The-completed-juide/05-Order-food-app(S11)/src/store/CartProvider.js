@@ -8,19 +8,16 @@ const defaultCart = {
 
 const cartReducer = (state, action) => {
   if (action.type === "ADD") {
-    const updateTotalAmount =
-      state.totalAmount + action.item.price * action.item.amount;
-
     const existingCartItemIndex = state.items.findIndex(
       (item) => item.id === action.item.id
     );
     const existingCartItem = state.items[existingCartItemIndex];
     let updatedItems;
-
+    const updateTotalAmount = state.totalAmount + action.item.price;
     if (existingCartItem) {
       const updatedItem = {
         ...existingCartItem,
-        amount:existingCartItem.amount + action.item.amount,
+        amount: existingCartItem.amount + 1,
       };
 
       updatedItems = [...state.items];
@@ -33,11 +30,33 @@ const cartReducer = (state, action) => {
       items: updatedItems,
       totalAmount: updateTotalAmount,
     };
-  }else { 
+  }
+  if (action.type === "REMOVE") {
+    const existingCartItemIndex = state.items.findIndex((item) => {
+      return item.id === action.id;
+    });
+    const existingCartItem = state.items[existingCartItemIndex];
+    const updateTotalAmount = state.totalAmount - existingCartItem.price; // because there no cas when the existingCartItem === undefinde
+    let updatedItems;
+    if (existingCartItem.amount === 1) {
+      updatedItems = state.items.filter((item) => {
+        return item.id !== action.id;
+      });
+    } else {
+      const updatedItem = {
+        ...existingCartItem,
+        amount: existingCartItem.amount - 1,
+      };
+      updatedItems = [...state.items];
+      updatedItems[existingCartItemIndex] = updatedItem;
+    }
+    return {
+      items: updatedItems,
+      totalAmount: updateTotalAmount,
+    };
+  } else {
     return defaultCart;
   }
-
-  
 };
 
 const CartProvider = (props) => {
@@ -48,10 +67,12 @@ const CartProvider = (props) => {
     //  console.log(cartDataContext.item);
     dispatchCart({ type: "ADD", item: item });
   };
-  const removeItemHandler = (id) => {};
+  const removeItemHandler = (id) => {
+    dispatchCart({ type: "REMOVE", id: id });
+  };
 
   const cartDataContext = {
-    item: CartState.items,
+    items: CartState.items,
     totalAmount: CartState.totalAmount,
     addItem: addItemHandler,
     removeItem: removeItemHandler,
