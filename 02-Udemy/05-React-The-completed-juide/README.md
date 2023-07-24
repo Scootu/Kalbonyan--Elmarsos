@@ -1,9 +1,12 @@
 ## React - The Complete Guide (incl Hooks, React Router, Redux) 
 ### expenses-app(s5)
-- [code](./01-expenses-app(s3-s5))
+#### code 
+- [code](./code/)
+#### project
+- [code](./project/01-expenses-app(s3-s5))
 - [project-demo](https://expenses-app-react.onrender.com/)
 ### goels-app (s6-s7)
-- [code](./02-goals-app(s6-s7))
+- [project-code](./project/02-goals-app(s6-s7))
 - [project-demo](https://goels-app-react.onrender.com/)
 ### section8-section9 project 
 - [code](./03-section8&section9)
@@ -22,3 +25,7 @@
 - [ch1](./07-class-based-component/code/ch1)
 - [project-code](./07-class-based-component/project)
 - [project-demo](https://class-based-component-react-project.onrender.com)
+### Movie project(s14)
+- [code](./code/14-http-requestes)
+- [project-code]
+- [project-demo]
