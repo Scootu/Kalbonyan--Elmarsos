@@ -27,5 +27,5 @@
 - [project-demo](https://class-based-component-react-project.onrender.com)
 ### Movie project(s14)
 - [code](./code/14-http-requestes)
-- [project-code]
-- [project-demo]
+- [project-code](./project/08-movie-app)
+- [project-demo](https://movie-seat-project.onrender.com)
