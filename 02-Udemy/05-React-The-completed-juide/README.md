@@ -48,4 +48,4 @@
 ### Redux Cart(s19)
 - [code](./project/13-Redux-cart)
 - [project-demo](https://redux-cart.onrender.com)
-- ![screen](./project/13-Redux-cart/redux-cart.png)
+- ![screen](./projects/13-Redux-cart/redux-cart.png)
