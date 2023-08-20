@@ -1,5 +1,5 @@
-import { Fragment, useCallback, useEffect, useState } from "react";
-import EventsList from "../Event/EventsList";
+// import { Fragment } from "react";
+// import EventsList from "../Event/EventsList";
 
 function EventsPage() {
   const [DUMMY_ARRAY, setDummyArray] = useState([]);
@@ -23,4 +23,4 @@ function EventsPage() {
   );
 }
 
-export default EventsPage;
+// export default EventsPage;
