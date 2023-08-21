@@ -9,11 +9,12 @@ import EventsPage, {
   loader as fetchRootEvent,
 } from "./components/Pages/Events";
 import EditEventPage from "./components/Pages/EditEventPage";
-import NewEventPage from "./components/Pages/NewEventPage";
+import NewEventPage, {
+  action as actionNewEvent,
+} from "./components/Pages/NewEventPage";
 import RootLayout from "./components/Pages/Root";
 import EventRoot from "./components/Pages/EventRoot";
 import ErrorPage from "./components/Pages/Error";
-
 
 function App() {
   const router = createBrowserRouter([
@@ -34,11 +35,19 @@ function App() {
             },
             {
               path: ":idEvent",
-              element: <EventDetailPage />,
+              id: "event-edit",
               loader: eventDetailFetch,
+
+              children: [
+                {
+                  index: true,
+                  element: <EventDetailPage />,
+                },
+                { path: "edit", element: <EditEventPage /> },
+              ],
             },
-            { path: "new", element: <NewEventPage /> },
-            { path: ":idEvent/edit", element: <EditEventPage /> },
+
+            { path: "new", element: <NewEventPage />, action: actionNewEvent },
           ],
         },
       ],

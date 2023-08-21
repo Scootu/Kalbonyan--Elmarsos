@@ -9,6 +9,7 @@ export async function loader() {
   // we can use any Browser API
 
   const response = await fetch("http://localhost:8080/events");
+  
   if (!response.ok) {
     // throw new Response(JSON.stringify({ message: "Coulde not fetch data" }), {
     //   status: 500,

@@ -1,11 +1,1 @@
-{
-  "events": [
-    {
-      "id": "e1",
-      "title": "A dummy event",
-      "date": "2023-02-22",
-      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
-      "description": "Join this amazing event and connect with fellow developers."
-    }
-  ]
-}
+{"events":[{"title":"Event ","image":"https://i.ibb.co/1K102h2/Events.png","date":"2023-08-08","description":"i just this is the best ","id":"f202c804-5ece-4fe8-a0f8-d6c3f1931451"},{"title":"hello world ","image":"https://images.app.goo.gl/wffejY9xWNSrGXc48","date":"2023-08-25","description":"i was just wendring whan i can just stop thsi problem","id":"b9b869b0-8eec-4f28-aaca-8a8e794fbd2e"},{"id":"e1","title":"A dummy event","date":"2023-02-22","image":"https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg","description":"Join this amazing event and connect with fellow developers."}]}
