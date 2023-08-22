@@ -1,12 +1,13 @@
 import classes from "./EventItem.module.css";
 import { Link, useSubmit } from "react-router-dom";
 function EventItem({ event }) {
-  const submit = useSubmit()
+  const submit = useSubmit();
   function startDeleteHandler() {
-     const propr = window.confirm('You want Delete it ?');
-     if(propr) {
-        submit(null,{method:'DELETE'});
-     }
+    const propr = window.confirm("You want Delete it ?");
+    // we use useSubmit() to submit the form without the use or in same condition
+    if (propr) {
+      submit(null, { method: "DELETE" });
+    }
   }
 
   return (
