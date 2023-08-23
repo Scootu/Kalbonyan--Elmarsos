@@ -1,5 +1,5 @@
 import EventForm from "../Event/EventForm";
-import { json, redirect } from "react-router-dom";
+import { json } from "react-router-dom";
 const NewEventPage = () => {
   return <EventForm />;
 };
@@ -21,7 +21,9 @@ export async function action({ request }) {
     },
     body: JSON.stringify(eventData),
   });
-
+  if (responce.status === 422) {
+    return responce;
+  }
   if (!responce.ok) {
     return json(
       { message: "Coulde not fetch data" },
@@ -30,5 +32,4 @@ export async function action({ request }) {
       }
     );
   }
-  return redirect("/events");
 }
