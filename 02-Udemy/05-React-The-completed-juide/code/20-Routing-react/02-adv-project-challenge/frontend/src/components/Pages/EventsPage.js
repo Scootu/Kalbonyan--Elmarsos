@@ -1,9 +1,13 @@
 // import { Fragment } from "react";
 // import EventsList from "../Event/EventsList";
 
+import { useActionData } from "react-router-dom";
+
 function EventsPage() {
   const [DUMMY_ARRAY, setDummyArray] = useState([]);
   const [loading, setLoading] = useState(false);
+  const data = useActionData();
+  console.log(data);
   const sendRequest = useCallback(async () => {
     setLoading(true);
     const responce = await fetch("events.json");
