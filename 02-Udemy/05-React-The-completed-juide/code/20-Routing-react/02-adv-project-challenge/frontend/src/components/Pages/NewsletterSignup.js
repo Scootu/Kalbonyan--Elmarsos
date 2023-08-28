@@ -1,8 +1,22 @@
+import { useEffect } from "react";
 import classes from "./NewsletterSignup.module.css";
-import { Form } from "react-router-dom";
+import { useFetcher } from "react-router-dom";
 function NewsletterSignup() {
+  const fetcher = useFetcher();
+  const { data, state } = fetcher;
+
+  useEffect(() => {
+    if (state === "idle" && data && data.message) {
+      window.alert(data.message);
+    }
+  }, [state, data]);
+
   return (
-    <Form method="POST" className={classes.newsletter}>
+    <fetcher.Form
+      method="POST"
+      action="/newsletter"
+      className={classes.newsletter}
+    >
       <input
         type="email"
         name="email"
@@ -10,7 +24,7 @@ function NewsletterSignup() {
         aria-label="Sign up for newsletter"
       />
       <button type="submit">Sign up</button>
-    </Form>
+    </fetcher.Form>
   );
 }
 

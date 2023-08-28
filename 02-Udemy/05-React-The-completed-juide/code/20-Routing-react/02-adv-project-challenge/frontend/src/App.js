@@ -18,6 +18,10 @@ import { action as manipulateAcion } from "./components/Event/EventForm";
 import NewsletterPage, {
   action as newsletterAction,
 } from "./components/Pages/Newsletter";
+import Authentication, {
+  loader as loaderAutoData,
+} from "./components/Pages/Authentication";
+// import { checkAuthLoader } from "./components/util/auth";
 function App() {
   const router = createBrowserRouter([
     {
@@ -50,17 +54,28 @@ function App() {
                   path: "edit",
                   element: <EditEventPage />,
                   action: manipulateAcion,
+                  // loader: checkAuthLoader,
                 },
               ],
             },
 
-            { path: "new", element: <NewEventPage />, action: manipulateAcion },
+            {
+              path: "new",
+              element: <NewEventPage />,
+              action: manipulateAcion,
+              // loader: checkAuthLoader,
+            },
           ],
         },
         {
           path: "newsletter",
           element: <NewsletterPage />,
           action: newsletterAction,
+        },
+        {
+          path: "authentication",
+          element: <Authentication />,
+          loader: loaderAutoData,
         },
       ],
     },
