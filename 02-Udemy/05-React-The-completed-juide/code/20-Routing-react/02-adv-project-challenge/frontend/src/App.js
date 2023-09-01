@@ -8,6 +8,7 @@ import EventDetailPage, {
 } from "./components/Pages/EventDetailPage";
 import EventsPage, {
   loader as fetchRootEvent,
+  action as actionToForm,
 } from "./components/Pages/Events";
 import EditEventPage from "./components/Pages/EditEventPage";
 import NewEventPage from "./components/Pages/NewEventPage";
@@ -38,6 +39,7 @@ function App() {
               index: true,
               element: <EventsPage />,
               loader: fetchRootEvent,
+              action: actionToForm,
             },
             {
               path: ":idEvent",

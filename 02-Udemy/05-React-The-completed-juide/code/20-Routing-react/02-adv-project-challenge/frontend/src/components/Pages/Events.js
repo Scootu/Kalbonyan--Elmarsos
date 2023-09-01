@@ -1,21 +1,37 @@
-import { useLoaderData, json, } from "react-router-dom";
+import { useLoaderData, json, defer, Await } from "react-router-dom";
 import EventsList from "../Event/EventsList";
-import { Fragment } from "react";
+import { Suspense } from "react";
 
-function EventsPage() {
-  const events = useLoaderData();
-  return (
-    <Fragment>
-      {/* <Form method="GET" action="/event">
+/* <Form method="GET" action="/event">
         <input type="text" name="title" />
         <button type="submit">submit</button>
+   </Form>
+ */
+
+function EventsPage() {
+  const { events } = useLoaderData();
+  const loading = <p style={{ textAlign: "center" }}>Loading...</p>;
+  // const data = useActionData();
+  return (
+    <>
+      <Suspense fallback={loading}>
+        <Await resolve={events}>
+          {(loaderData) => {
+            return <EventsList events={loaderData} />;
+          }}
+        </Await>
+      </Suspense>
+      {/* <Form method="post" action="/events">
+        <button className="submit">Submit</button>
       </Form> */}
-      <EventsList events={events.events} />;
-    </Fragment>
+    </>
   );
 }
 
-export async function loader() {
+// export async function action() {
+//   return "hello";
+// }
+async function loaderEvent() {
   // we can use any Browser API
   const response = await fetch("http://localhost:8080/events");
 
@@ -30,7 +46,14 @@ export async function loader() {
       }
     );
   } else {
-    return response;
+    const respData = await response.json();
+    console.log(respData);
+    return respData.events;
   }
+}
+export function loader() {
+  return defer({
+    events: loaderEvent(),
+  });
 }
 export default EventsPage;
