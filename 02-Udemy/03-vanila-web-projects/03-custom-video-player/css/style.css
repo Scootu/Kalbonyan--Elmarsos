@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-family: 'Rubik', sans-serif;
+}
+
+html {
+    font-size: 60%;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: #666;
+
+}
+
+.video-container {
+    margin: auto;
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-container video {
+    aspect-ratio: 16 / 9;
+}
+
+.btn button {
+    border: none;
+    background: transparent;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn button .icon {
+    font-size: 24px;
+}
+
+.btn .play {
+    color: #28a745;
+}
+
+.btn .stop {
+    color: #dc3545;
+}
+
+.btn .pause {
+    color: #fff;
+}
+
+.btn {
+    display: flex;
+    gap: 5px;
+}
+
+.timestam {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.controle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #333;
+    border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 1rem;
+    color: #fff;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 300;
+    color: #fff;
+}
+
+.controle,
+.screen {
+    width: 100%;
+
+}
+
+.screen {
+    /* width: clamp(400px, 70%, 800px); */
+    background-color: #000;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+@media (max-width:800px) {
+
+    .screen,
+    .controle {
+        width: 90%;
+    }
+
+}

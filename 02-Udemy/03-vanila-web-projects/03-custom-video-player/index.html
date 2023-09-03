@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Video Player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/progress.css">
+    <!--Icons-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <section class="video-container">
+        <h1>Custom Video Player</h1>
+        <video id="video" class="screen" muted="true" loop poster="/img/poster.png">
+            <source src="media/video (540p).mp4" type="video/mp4" />
+            <p>
+                Your browser doesn't support HTML video. Here is a
+                <a href="https://www.pexels.com/video/aerial-footage-of-sea-waves-rushing-to-shore-3546903/">link to the
+                    video instead.</a>
+            </p>
+        </video>
+        <div class="controle">
+            <div class="btn">
+                <button class="play">
+                    <ion-icon class="icon" name="play"></ion-icon>
+                </button>
+                <button class="stop">
+                    <ion-icon class="icon" name="stop"></ion-icon>
+                </button>
+            </div>
+            <input type="range" id="progress" min="0" max="100" step="0.1" value="0" />
+            <span class="timestam" id="timestam">00:00</span>
+        </div>
+
+
+    </section>
+    <i>Play with quran</i>
+    <section class="audio-container">
+        <div class="audio">
+            <audio controls autoplay muted>
+                <source src="media/071.mp3" type="audio/mp3" />
+                <p>Link to the audio <a href="https://mp3quran.net/eng/yasser/71">MP3</a></p>
+            </audio>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
