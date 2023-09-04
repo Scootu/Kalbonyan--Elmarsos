@@ -16,6 +16,8 @@
 </head>
 
 <body>
+
+
     <section class="video-container">
         <h1>Custom Video Player</h1>
         <video id="video" class="screen" muted="true" loop poster="/img/poster.png">
@@ -28,20 +30,20 @@
         </video>
         <div class="controle">
             <div class="btn">
-                <button class="play">
+                <button class="play" id="play">
                     <ion-icon class="icon" name="play"></ion-icon>
                 </button>
-                <button class="stop">
+                <button class="stop" id="stop">
                     <ion-icon class="icon" name="stop"></ion-icon>
                 </button>
             </div>
             <input type="range" id="progress" min="0" max="100" step="0.1" value="0" />
-            <span class="timestam" id="timestam">00:00</span>
+            <span class="timestamp" id="timestamp">00:00</span>
         </div>
 
 
     </section>
-    <i>Play with quran</i>
+    <!-- <i>Play with quran</i>
     <section class="audio-container">
         <div class="audio">
             <audio controls autoplay muted>
@@ -49,7 +51,7 @@
                 <p>Link to the audio <a href="https://mp3quran.net/eng/yasser/71">MP3</a></p>
             </audio>
         </div>
-    </section>
+    </section> -->
     <script src="script.js"></script>
 </body>
 
