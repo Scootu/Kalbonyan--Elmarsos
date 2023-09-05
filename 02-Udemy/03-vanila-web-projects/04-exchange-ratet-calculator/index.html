@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange rate api</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <section class="exchange">
+        <img src="img/money.png" alt="money exchange image" />
+        <h1>Exchange Rate Calculator</h1>
+        <p>Choose the curency and the amount to get the exchange rate</p>
+        <div class="table_content">
+            <div class="coin-change" id="your-coin">
+                <select id="selctedYour">
+                    <option value="usd" selected>usd</option>
+                </select>
+                <input type="number" id="number-your" name="number" value="1" />
+            </div>
+            <div class="save">
+                <button class="save" id="save">Swap</button>
+                <span class="exchange-rate" id="exchange-rate">1USD = 0</span>
+            </div>
+            <div class="coin-change" id="outher-coin">
+                <select id="selectOuther">
+                    <option value="eur" selected>eur</option>
+                </select>
+                <input type="number" id="number-outher" name="number" value='0' readonly />
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

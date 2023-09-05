@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-family: 'Rubik', sans-serif;
+}
+
+html {
+    font-size: 60%;
+}
+
+body {
+    font-family: var(--font-family);
+    max-height: 100vh;
+}
+
+.exchange {
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 20px;
+}
+
+img {
+    width: 100px;
+}
+
+.exchange p {
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+.exchange h1 {
+    color: #5FBAA7;
+}
+
+.table_content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.coin-change {
+    display: flex;
+    align-items: center;
+}
+
+.coin-change select {
+    text-transform: uppercase;
+    padding: 6px 2px;
+    width: 55px;
+}
+
+.coin-change select:focus {
+    outline: none;
+}
+
+input[type='number'] {
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    padding: 1rem 0;
+    text-align: end;
+}
+
+input[type='number']:focus {
+    outline: none;
+}
+
+.save {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #5FBAA7;
+}
+
+.exchange-rate {
+    font-size: 24px;
+    font-weight: 300;
+    margin-right: 14px;
+}
+
+.save button {
+    color: #fff;
+    background-color: #5FBAA7;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
