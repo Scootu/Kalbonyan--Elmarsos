@@ -1,5 +1,7 @@
-const HomePage = () =>{
-    return <h1 className="content">Home Page Events</h1>;
-}
+import PageContent from "./PageContent";
 
-export default HomePage ; 
+const HomePage = () => {
+  return <PageContent title={"Welcom!"}></PageContent>;
+};
+
+export default HomePage;

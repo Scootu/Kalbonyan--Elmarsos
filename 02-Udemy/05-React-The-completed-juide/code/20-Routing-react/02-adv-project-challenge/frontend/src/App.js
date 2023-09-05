@@ -19,7 +19,7 @@ import NewsletterPage, {
   action as newsletterAction,
 } from "./components/Pages/Newsletter";
 import Authentication, {
-  loader as loaderAutoData,
+  action as actionAuthData,
 } from "./components/Pages/Authentication";
 // import { checkAuthLoader } from "./components/util/auth";
 function App() {
@@ -76,7 +76,7 @@ function App() {
           path: "authentication",
           element: <Authentication />,
           id: "auth",
-          loader: loaderAutoData,
+          action: actionAuthData,
         },
       ],
     },

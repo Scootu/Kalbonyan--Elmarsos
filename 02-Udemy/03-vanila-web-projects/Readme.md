@@ -3,8 +3,9 @@
 ---
 
 ## Projects
-### you can browse all projects in one website 
-- [live-demo](https://20-web-project.vercel.app/)
+### you can browse all projects in one website
+- [link](https://20-web-project.vercel.app/) 
+
 |  #  |                                                       Project Code                                                       |                              Live Demo                               |
 | :-: | :----------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------: |
 | 01  |         [Form Validator](./01-form-validator)         |       [Live Demo](https://form-validator-anes.netlify.app/)        |

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { redirect, useFetcher } from "react-router-dom";
 function Authentication() {
   const fetcher = useFetcher();

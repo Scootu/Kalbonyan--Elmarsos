@@ -1,0 +1,11 @@
+.audio-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.controle-audio { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
