@@ -1,10 +1,4 @@
-import {
-  Form,
-  Link,
-  Outlet,
-  useActionData,
-  useLoaderData,
-} from "react-router-dom";
+import { Form, Link, Outlet, useLoaderData } from "react-router-dom";
 import { getContact, createContact } from "../contacts";
 
 export async function loader() {
@@ -36,7 +30,7 @@ export default function Root() {
             <div id="search-spinner" aria-hidden hidden={true} />
             <div className="sr-only" aria-live="polite"></div>
           </form>
-          <Form method="post">
+          <Form method="get" action="/contacts">
             <button type="submit">New</button>
           </Form>
         </div>
