@@ -1,6 +1,5 @@
-import { Suspense } from "react";
 import { Await, defer, useLoaderData } from "react-router-dom";
-
+import { Suspense } from "react";
 function Info() {
   const { data } = useLoaderData();
 
@@ -28,7 +27,7 @@ function Info() {
   );
 }
 
-export async function loader({ request, action }) {
+export async function loader() {
   let data = [];
   for (let i = 0; i < 1000; i++) {
     data.push(i);
