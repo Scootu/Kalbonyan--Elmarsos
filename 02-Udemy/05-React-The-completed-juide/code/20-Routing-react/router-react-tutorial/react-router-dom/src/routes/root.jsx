@@ -1,19 +1,17 @@
-import { Form, Link, Outlet, useLoaderData } from "react-router-dom";
-import { getContact, createContact } from "../contacts";
+import { Form,  Outlet, redirect, useLoaderData , NavLink } from "react-router-dom";
+import { getContacts, createContact } from "../contacts";
 
 export async function loader() {
-  let contacts = await getContact();
+  let contacts = await getContacts();
   return { contacts };
 }
+
 export async function action() {
   const contact = await createContact();
-  return { contact };
+  return redirect(`/contacts/${contact.id}/edit`);
 }
 export default function Root() {
   let { contacts } = useLoaderData();
-  if (!contacts) {
-    contacts = [];
-  }
   return (
     <>
       <div id="sidebar">
@@ -30,7 +28,7 @@ export default function Root() {
             <div id="search-spinner" aria-hidden hidden={true} />
             <div className="sr-only" aria-live="polite"></div>
           </form>
-          <Form method="get" action="/contacts">
+          <Form method="post">
             <button type="submit">New</button>
           </Form>
         </div>
@@ -39,7 +37,12 @@ export default function Root() {
             <ul>
               {contacts.map((contact) => (
                 <li key={contact.id}>
-                  <Link to={`contacts/${contact.id}`}>
+                  <NavLink
+                    to={`contacts/${contact.id}`}
+                    className={({ isActive, isPending }) =>
+                      isActive ? "active" : isPending ? "pending" : ""
+                    }
+                  >
                     {contact.first || contact.last ? (
                       <>
                         {contact.first} {contact.last}
@@ -48,7 +51,7 @@ export default function Root() {
                       <i>No Name</i>
                     )}{" "}
                     {contact.favorite && <span>★</span>}
-                  </Link>
+                  </NavLink>
                 </li>
               ))}
             </ul>

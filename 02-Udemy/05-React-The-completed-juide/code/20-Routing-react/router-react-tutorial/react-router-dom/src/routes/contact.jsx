@@ -1,19 +1,22 @@
-import { Form } from "react-router-dom";
+import { Form, useLoaderData } from "react-router-dom";
+import { getContact } from "../contacts";
 
 export default function Contact() {
-  const contact = {
-    first: "Your",
-    last: "Name",
-    avatar: "https://placekitten.com/g/200/200",
-    twitter: "your_handle",
-    notes: "Some notes",
-    favorite: true,
-  };
+  const {contact}= useLoaderData();
+  
+  // const contact = {
+  //   first: "Your",
+  //   last: "Name",
+  //   avatar: "https://placekitten.com/g/200/200",
+  //   twitter: "your_handle",
+  //   notes: "Some notes",
+  //   favorite: true,
+  // };
 
   return (
     <div id="contact">
       <div>
-        <img key={contact.avatar} src={contact.avatar || null} />
+        <img key={contact.avatar} src={contact.avatar || null} alt="img" />
       </div>
 
       <div>
@@ -30,7 +33,11 @@ export default function Contact() {
 
         {contact.twitter && (
           <p>
-            <a target="_blank" href={`https://twitter.com/${contact.twitter}`}>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={`https://twitter.com/${contact.twitter}`}
+            >
               {contact.twitter}
             </a>
           </p>
@@ -45,11 +52,11 @@ export default function Contact() {
           <Form
             method="post"
             action="destroy"
-            onSubmit={(event) => {
-              if (!confirm("Please confirm you want to delete this record.")) {
-                event.preventDefault();
-              }
-            }}
+            // onSubmit={(event) => {
+            //   if (!confirm("Please confirm you want to delete this record.")) {
+            //     event.preventDefault();
+            //   }
+            // }}
           >
             <button type="submit">Delete</button>
           </Form>
@@ -58,7 +65,10 @@ export default function Contact() {
     </div>
   );
 }
-
+export async function loader({ params }) {
+  const contact = await getContact(params.idContact);
+  return { contact };
+}
 function Favorite({ contact }) {
   // yes, this is a `let` for later
   let favorite = contact.favorite;
