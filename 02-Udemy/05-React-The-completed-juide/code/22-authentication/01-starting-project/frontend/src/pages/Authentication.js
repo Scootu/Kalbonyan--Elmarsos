@@ -1,4 +1,5 @@
 import { json, redirect } from "react-router-dom";
+
 import AuthForm from "../components/AuthForm";
 
 function AuthenticationPage() {
@@ -14,26 +15,31 @@ export async function action({ request }) {
   if (mode !== "login" && mode !== "signup") {
     throw json({ message: "Unsupported mode." }, { status: 422 });
   }
-  const data = await request.formData();
 
+  const data = await request.formData();
   const authData = {
     email: data.get("email"),
     password: data.get("password"),
   };
 
-  const responce = await fetch(`http://localhost:8080/` + mode, {
+  const response = await fetch("http://localhost:8080/" + mode, {
     method: "POST",
     headers: {
-      "Content-Type": "application:json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(authData),
   });
-  if (responce.status === 422 || responce.status === 401) {
-    return responce;
-  }
-  if (!responce.ok) {
-    throw json({ message: "Could not fetch the data", status: 500 });
+
+  if (response.status === 422 || response.status === 401) {
+    return response;
   }
 
+  if (!response.ok) {
+    throw json({ message: "Could not authenticate user." }, { status: 500 });
+  }
+  // here we save the token in localStorage
+  const resData = await response.json();
+  const token = resData.token;
+  localStorage.setItem("token", JSON.stringify(token));
   return redirect("/");
 }
