@@ -4,14 +4,14 @@
 
 ## Projects
 ### you can browse all projects in one website
-- [link](https://20-web-project.vercel.app/) 
+- [20 web project website](https://20-web-project.vercel.app/) 
 
 |  #  |                                                       Project Code                                                       |                              Live Demo                               |
 | :-: | :----------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------: |
 | 01  |         [Form Validator](./01-form-validator)         |       [Live Demo](https://form-validator-anes.netlify.app/)        |
 | 02  |     [Movie Seat Booking](./02-movie-seat-booking)     |     [Live Demo](https://movie-seat-booking-anes.netlify.app/)      |
 | 03  |    [Custom Video Player](./03-custom-video-player)    |  [Live Demo](https://20-web-project.vercel.app/Projects/03-custom-video-player/index.html)   |
-| 04  |    [Calculator]()            |   [Live Demo]()        |
+| 04  |    [Exchange rate Calculator](./04-exchange-rate-calculator)            |   [Live Demo](https://20-web-project.vercel.app/Projects/04-exchange-rate-calculator/index.html)        |
 | 05  |  [DOM Array Methods Project]()  |     [Live Demo]()      |
 | 06  |     [Menu Slider & Modal]()     |     [Live Demo]()      |
 | 07  |             [Hangman Game]()              |      [Live Demo]()       |

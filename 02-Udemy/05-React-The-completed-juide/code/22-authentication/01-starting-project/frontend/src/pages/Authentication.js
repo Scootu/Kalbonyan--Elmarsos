@@ -10,6 +10,10 @@ export default AuthenticationPage;
 export async function action({ request }) {
   const searchParams = new URL(request.url).searchParams;
   const mode = searchParams.get("mode") || "login";
+
+  if (mode !== "login" && mode !== "signup") {
+    throw json({ message: "Unsupported mode." }, { status: 422 });
+  }
   const data = await request.formData();
 
   const authData = {
@@ -17,18 +21,18 @@ export async function action({ request }) {
     password: data.get("password"),
   };
 
-  const responce = await fetch("frontend/public/data.json", {
-    method: "post",
-    headers:{
+  const responce = await fetch(`http://localhost:8080/` + mode, {
+    method: "POST",
+    headers: {
       "Content-Type": "application:json",
     },
-    body: authData,
+    body: JSON.stringify(authData),
   });
   if (responce.status === 422 || responce.status === 401) {
     return responce;
   }
   if (!responce.ok) {
-    throw json({ message: "Could not fetch the data", status: 422 });
+    throw json({ message: "Could not fetch the data", status: 500 });
   }
 
   return redirect("/");
