@@ -105,3 +105,20 @@ body {
     font-weight: 300;
     margin-bottom: 10px;
 }
+
+.calculate {
+    font-size: 20px;
+    background: #fff;
+    padding: 1rem;
+    border-bottom: 1px solid;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.calculate span {
+    font-weight: 300;
+}
