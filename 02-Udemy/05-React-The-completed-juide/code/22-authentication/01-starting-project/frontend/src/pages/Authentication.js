@@ -40,6 +40,10 @@ export async function action({ request }) {
   // here we save the token in localStorage
   const resData = await response.json();
   const token = resData.token;
+  const expiration = new Date();
+  expiration.setHours(expiration.getHours() + 1);
   localStorage.setItem("token", JSON.stringify(token));
+  localStorage.setItem('expiration', expiration.toISOString()); // save the expiration time 
+  console.log(expiration.getHours());
   return redirect("/");
 }
