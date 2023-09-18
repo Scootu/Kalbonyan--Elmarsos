@@ -12,8 +12,8 @@
 | 02  |     [Movie Seat Booking](./02-movie-seat-booking)     |     [Live Demo](https://movie-seat-booking-anes.netlify.app/)      |
 | 03  |    [Custom Video Player](./03-custom-video-player)    |  [Live Demo](https://20-web-project.vercel.app/Projects/03-custom-video-player/index.html)   |
 | 04  |    [Exchange rate Calculator](./04-exchange-rate-calculator)            |   [Live Demo](https://20-web-project.vercel.app/Projects/04-exchange-rate-calculator/index.html)        |
-| 05  |  [DOM Array Methods Project]()  |     [Live Demo]()      |
-| 06  |     [Menu Slider & Modal]()     |     [Live Demo]()      |
+| 05  |  [DOM Array Methods Project](./05-dom-array-methods)  |     [Live Demo](https://20-web-project.vercel.app/Projects/05-dom-array-methods/index.html)      |
+| 06  |     [Menu Slider & Modal](./06-menu-slider)     |     [Live Demo](https://20-web-project.vercel.app/Projects/06-menu-slider/index.html)      |
 | 07  |             [Hangman Game]()              |      [Live Demo]()       |
 | 08  |          [Meal Finder App]()          |    [Live Demo]()     |
 | 09  |        [Expense Tracker]()        |  [Live Demo]()   |
