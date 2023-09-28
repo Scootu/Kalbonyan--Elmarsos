@@ -1,10 +1,11 @@
-import { Fragment } from "react";
-
+import classes from "./MeetupDetail.module.css";
 export default function MeetupDetail(props) {
-  <Fragment>
-    <img src={props.image} alt={props.title} />
-    <h1>{props.title}</h1>
-    <address>{props.address}</address>
-    <p>{props.description}</p>
-  </Fragment>;
+  return (
+    <section className={classes}>
+      <img src={props.image} alt={props.title} />
+      <h1>{props.title}</h1>
+      <address>{props.address}</address>
+      <p>{props.description}</p>
+    </section>
+  );
 }
