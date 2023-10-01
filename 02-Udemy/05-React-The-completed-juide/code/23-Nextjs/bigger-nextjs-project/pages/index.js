@@ -16,6 +16,12 @@ const DUMMY_ARRAY = [
     description: "a first meetup for bourached",
   },
 ];
-export default function HomePage() {
-  return <MeetupList meetups={DUMMY_ARRAY} />;
+export default function HomePage(props) {
+  return <MeetupList meetups={props.meetups} />;
+}
+
+export async function getStaticProps() {
+  return {
+    props: { meetups: DUMMY_ARRAY },
+  };
 }
