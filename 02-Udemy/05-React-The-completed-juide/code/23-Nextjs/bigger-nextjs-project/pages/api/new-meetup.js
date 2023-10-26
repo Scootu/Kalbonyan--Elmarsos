@@ -3,8 +3,7 @@ export default async function handler(req, res) {
   if (req.method == "POST") {
     const data = req.body;
     const { title, image, address, description } = data;
-    const uri =
-      "mongodb+srv://aneshamdaoui:xs2yKkurfyWjyw6r@cluster0.t6cfa3r.mongodb.net/?retryWrites=true&w=majority";
+    const uri = "mongodb+srv://anes1234:EPJjrR3Op6Y6ipVg@cluster0.9pzjkap.mongodb.net/?retryWrites=true&w=majority";
     // Create a MongoClient with a MongoClientOptions object to set the Stable API version
     const client = new MongoClient(uri);
 
