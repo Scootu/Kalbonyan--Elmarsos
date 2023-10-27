@@ -54,4 +54,7 @@
 - [project-demo]()
 - [build-project-article](https://aneshamdaoui.hashnode.dev/creating-an-authentication-token-for-a-react-app-a-simple-guide)
 - ![screen](./projects/14-Event-new-letter/authentication_screenshot.png)
-
+# React meetups event nextjs (s23)
+- [code](./code/23-Nextjs/bigger-nextjs-project)
+- [project-demo](https://next-js-app-tutorial-mqskrxtdl-scootu.vercel.app/)
+- ![screen](./code/23-Nextjs/bigger-nextjs-project/react-meetups.png)
