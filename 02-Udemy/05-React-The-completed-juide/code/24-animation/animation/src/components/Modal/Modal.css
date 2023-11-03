@@ -10,7 +10,7 @@
   top: 30%;
   left: 25%;
   width: 50%;
-  transition: all 0.3s ease-out;
+  /* transition: all 0.3s ease-out; */
 }
 .ModalOpen {
   /* display: block; */
@@ -18,7 +18,34 @@
 }
 .ModalClosed {
   /* display: none; provent transition effects*/
-  animation: closeModal 0.3s ease-out forwards;
+  animation: closeModal 1s ease-out forwards;
+}
+.fade-slide-enter {
+  /*this were the previous initail stype*/
+}
+.fade-slide-enter-active {
+  animation: openModal 0.3s ease-out forwards;
+}
+.fade-slide-exit {
+}
+.fade-slide-exit-active {
+  animation: closeModal 1s ease-out forwards;
+}
+.item-enter {
+  opacity: 0;
+}
+.item-enter-active {
+  opacity: 1;
+  transition: all 0.3s ease-out;
+}
+.item-exit {
+  opacity: 1;
+}
+.item-exit-active {
+  opacity: 1;
+}
+.list-container {
+  list-style: none;
 }
 @keyframes openModal {
   0% {
