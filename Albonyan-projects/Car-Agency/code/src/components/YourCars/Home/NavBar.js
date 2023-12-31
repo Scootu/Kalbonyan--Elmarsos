@@ -41,19 +41,19 @@ const NavBar = (props) => {
           }`}
         >
           <li>
-            <a href="https://google.com">Home</a>
+            <a href="#home">Home</a>
           </li>
           <li>
-            <a href="https://google.com">About</a>
+            <a href="#about">About</a>
           </li>
           <li>
-            <a href="https://google.com">Services</a>
+            <a href="#services">Services</a>
           </li>
           <li>
-            <a href="https://google.com">Cars</a>
+            <a href="#cars">Cars</a>
           </li>
           <li>
-            <a href="https://google.com">Contact us</a>
+            <a href="#contact">Contact us</a>
           </li>
         </ul>
         <div className={styled.img}>

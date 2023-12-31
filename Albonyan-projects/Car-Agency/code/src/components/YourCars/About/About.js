@@ -4,7 +4,7 @@ import Rides from "../../UI/Rides";
 
 const About = () => {
   return (
-    <section className={`${classes.about} container grid grid-col2`}>
+    <section className={`${classes.about} container grid grid-col2`} id="about">
       <div className={classes.subSection}>
         <Rides styled={`${classes.ridesPosition} ridesPositionLeft`}>ABOUT US</Rides>
         <div className={` ${classes.subTextSection} sub-textSection`}>About</div>

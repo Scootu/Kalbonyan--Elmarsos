@@ -5,7 +5,7 @@ import Button from "../../UI/Button";
 
 const Footer = () => {
     return (
-        <section className={classes.main} >
+        <section className={classes.main} id="contact" >
 
             <div className={classes.patrent}>
                 <img className={classes.imgPatrent} src='/images/patrenes/BMW.png' alt="just a car " />

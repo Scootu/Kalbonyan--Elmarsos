@@ -5,7 +5,7 @@ import SlidesCard from "./SlidesCard";
 const Cars = () => {
   
   return (
-    <section className={`${classes.Cars}`}>
+    <section className={`${classes.Cars}`} id="cars">
       <div className="container">
         <Rides styled={"ridesPositionMiddel"}>CARS</Rides>
         <span className={`${classes.subText} subTextMiddel`}>Cars</span>

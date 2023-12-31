@@ -12,3 +12,4 @@ this project include :
 # this project don't include touch screen , i will update this in the next version 
 
 # Enjoy
+![screen](./kanban_board.png)

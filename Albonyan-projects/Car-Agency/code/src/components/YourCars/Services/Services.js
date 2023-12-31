@@ -5,7 +5,7 @@ const Services = () => {
   
    
   return (
-    <section className={`${styled.service}`}>
+    <section className={`${styled.service}`} id="services">
       <div className="container">
         <Rides styled={`${styled.ridesPosition} ridesPositionMiddel`}>SERVICES</Rides>
         <span className={`${styled.subText} subTextMiddel`}>Services</span>

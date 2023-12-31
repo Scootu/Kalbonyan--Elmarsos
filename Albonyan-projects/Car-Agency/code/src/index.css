@@ -8,6 +8,7 @@
 }
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 .material-symbols-outlined {
