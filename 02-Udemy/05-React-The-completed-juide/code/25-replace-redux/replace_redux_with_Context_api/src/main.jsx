@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./index.css";
-
+import configureStore from "./hooks-store/Products-store";
 import { Router } from "./Router/Router";
 import Products from "./containers/Products";
 import Favorites from "./containers/Favorites";
@@ -32,10 +32,12 @@ const router = createBrowserRouter([
   },
 ]);
 
+configureStore(); // wrape this here 
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ProductProvider>
+   
       <RouterProvider router={router} />
-    </ProductProvider>
+    
   </React.StrictMode>
 );
