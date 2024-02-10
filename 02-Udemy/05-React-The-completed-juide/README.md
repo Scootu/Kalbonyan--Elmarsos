@@ -58,3 +58,7 @@
 - [code](./code/23-Nextjs/bigger-nextjs-project)
 - [project-demo](https://next-js-app-tutorial-mqskrxtdl-scootu.vercel.app/)
 - ![screen](./code/23-Nextjs/bigger-nextjs-project/react-meetups.png)
+# Replacing Redux with React Hooks (S26) 
+- [code](./code/25-replace-redux/replace_redux_with_Context_api)
+- [project-demo](replace-redux-1ow3tko6o-scootu.vercel.app)
+- ![screen](./code/25-replace-redux/replace_redux_with_Context_api/hero.png)
