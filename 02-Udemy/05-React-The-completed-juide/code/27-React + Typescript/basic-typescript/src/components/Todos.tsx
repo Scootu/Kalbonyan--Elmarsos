@@ -1,5 +1,12 @@
 import React from "react";
-
-export const Todos: React.FC = (props) => {
-  return <ul>{props.children}</ul>;
+import Todo from "../Models/Todo";
+import { Task } from "./Task";
+export const Todos: React.FC<{ items: Todo[] }> = (props) => {
+  return (
+    <ul>
+      {props.items.map((item) => (
+        <Task key={item.id} message={item.text} />
+      ))}
+    </ul>
+  );
 };
