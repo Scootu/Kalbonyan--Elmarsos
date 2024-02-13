@@ -1,5 +1,12 @@
 import React from "react";
-
-export const Task: React.FC<{ message: string }> = (props) => {
-  return <li>{props.message}</li>;
+import classes from "./Task.module.css";
+export const Task: React.FC<{
+  message: string;
+  onRemoveTodo: () => void;
+}> = (props) => {
+  return (
+    <li className={classes.item} onClick={props.onRemoveTodo}>
+      {props.message}
+    </li>
+  );
 };

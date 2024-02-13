@@ -1,8 +1,8 @@
 import { useState } from "react";
-import "./App.css";
 import { NewTodo } from "./components/NewTodo";
 import { Todos } from "./components/Todos";
 import Todo from "./Models/Todo";
+import classe from "./App.module.css";
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
   // let obj = { id: "5545", text: "hello" };
@@ -18,10 +18,16 @@ function App() {
       return prevTodo.concat(newTodo);
     });
   };
+  const removeTodoHandler = (id: string) => {
+    // const itemIndex = todos.findIndex((item) => item.id === id);
+    // if (itemIndex > -1) {
+    setTodos((prevTodo) => prevTodo.filter((item) => item.id !== id));
+    // }
+  };
   return (
-    <div>
+    <div className={classe.main}>
       <NewTodo onAddTodo={addTodoHandler} />
-      <Todos items={todos} />
+      <Todos items={todos} onRemove={removeTodoHandler} />
     </div>
   );
 }
