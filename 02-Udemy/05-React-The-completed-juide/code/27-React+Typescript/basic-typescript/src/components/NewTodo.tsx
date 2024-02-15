@@ -1,10 +1,10 @@
 //@ts-check
 
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import classes from "./NewTodo.module.css";
-export const NewTodo: React.FC<{ onAddTodo: (text: string) => void }> = (
-  props
-) => {
+import { TodoContext } from "../store/todos-context";
+export const NewTodo: React.FC = () => {
+  const todosCtx = useContext(TodoContext);
   const todoTextInputRef = useRef<HTMLInputElement>(null);
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
@@ -14,7 +14,7 @@ export const NewTodo: React.FC<{ onAddTodo: (text: string) => void }> = (
       //throw an error
       return;
     }
-    props.onAddTodo(enteredText);
+    todosCtx.addTodo(enteredText);
   };
   return (
     <form className={classes.form} onSubmit={submitHandler}>

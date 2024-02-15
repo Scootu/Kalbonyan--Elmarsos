@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import Todo from "../Models/Todo";
+import { TodoContextType } from "../@types/todo";
 
-type todosContextObj = {
-  items: Todo[];
-  addTodo: (todoItem: string) => void;
-  removeTodo: (id: string) => void;
-};
-
-export const TodosContext = React.createContext<todosContextObj>({
+export const TodoContext = React.createContext<TodoContextType >({
   items: [],
   addTodo: () => {},
   removeTodo: (id: string) => {},
@@ -29,16 +24,13 @@ const TodoProvider: React.FC<{ children: React.ReactNode }> = ({
     setTodos((prevTodo) => prevTodo.filter((item) => item.id !== id));
     // }
   };
-  const contextValue: todosContextObj = {
+  const contextValue: TodoContextType = {
     items: todos,
     addTodo: addTodoHandler,
     removeTodo: removeTodoHandler,
   };
   return (
-    <TodosContext.Provider value={contextValue}>
-      {props.children}
-    </TodosContext.Provider>
+    <TodoContext.Provider value={contextValue}>{children}</TodoContext.Provider>
   );
 };
-
-export { TodoProvider };
+export default TodoProvider;
