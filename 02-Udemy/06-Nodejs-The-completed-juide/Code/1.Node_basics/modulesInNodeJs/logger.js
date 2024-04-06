@@ -6,5 +6,6 @@ function log(message, level = info) {
   console.log(`${level}: ${message}`);
 }
 
-export default log;
-export { error, warning, info };
+
+
+module.exports = {log,error,warning,info}; // just export the last one why ? you need to have one export module
