@@ -9,3 +9,4 @@ function Add() {
   };
 }
 module.exports = new Add(); // why is not secure ?
+
