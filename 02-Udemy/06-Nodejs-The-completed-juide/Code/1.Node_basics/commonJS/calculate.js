@@ -3,17 +3,27 @@
 //     return a + b;
 //   },
 // };
-function Add() {
-  // constructor
-  // user-definded object-type function constructor
-  // this is a function declaration
-  this.result = (a, b) => {
-    // a property
-    return a + b;
-  };
-  this.name = "10";
+//  function Add() {
+//    // constructor
+//    // user-definded object-type function constructor
+//    // this is a function declaration
+//    this.result = (a, b) => {
+//      // a property
+//      return a + b;
+//    };
+//    this.name = "10";
+//  }
+class Add {
+  constructor(a, b) {
+    this.a = a;
+    this.b = b;
+  }
+  result() {
+    return this.a + this.b;
+  }
 }
-const add = new Add();
+// Well there is a diffrence between the function constructor and class in the [[prototype]] the class can access to the prototype value directly without create new instance with new keyword
+const add = Add;
 // new keyword point the newinstance [[prototype]] to the function constructor prototype
 // in another word  if you see the Add().prototype is empty how we can get the property of Add() constructor to the [[prototype]] of newInstance
 // and we want to point it to the newInstance
